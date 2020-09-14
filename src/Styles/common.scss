@@ -1,0 +1,33 @@
+$theme-background-color: #FAFAFA;
+$theme-color: #262626;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@mixin flex {
+  display: flex;
+}
+@mixin flexJcAic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexJcc {
+  display: flex;
+  justify-content: center;
+}
+@mixin flexAic {
+  display: flex;
+  align-items: center;
+}
+@mixin flexJcsb {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin commentCommon {
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
