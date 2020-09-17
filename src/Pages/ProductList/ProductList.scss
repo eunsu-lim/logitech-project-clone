@@ -1,0 +1,176 @@
+@import "../../Styles/common.scss";
+
+.productList {
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    font-family: $font;
+    .category {
+        width: 1265px;
+        height: 510px;
+        padding: 0 30px;
+        background-color: #00b8fC;
+        display: flex;
+        flex-direction: column;
+        .categoryData {
+            width: 1205px;
+            height: 168px;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(120%);
+            span {
+                font-size: 20px;
+                margin: 18px 0px 11px 8px;
+                font-weight: 400;
+            }
+            h1 {
+                margin-left: 8px;
+                font-size: 70px;
+                letter-spacing: 1px;
+            }
+            h6{
+                margin-left: 8px;
+                font-size: 17.28px;
+                margin: 11px 0px;
+            }
+        }
+        .mouseImage{
+            width: 1600px;
+            height: 327px;
+        }
+    }
+    .filterSorter {
+        width: 1265px;
+        height: 50px;
+        padding: 0px 60px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid gray;
+        button {
+            &:first-child {
+                padding-left: 10px;
+                float: left;
+                display: flex;
+                align-items: center;
+                img {
+                    width: 14px;
+                    height: 11.38px;
+                    margin-right: 10px;
+                }
+            }
+            &:nth-child(2) {
+                display: flex;
+                align-items: center;
+                padding-right: 10px;
+                float: right;
+                img {
+                    width: 20px;
+                }
+            }
+        }
+    }
+    .pfc{
+        padding: 0 30px;
+        .productFilterContainer {
+            width: 1205px;
+            height: 3256px;
+            display: flex;
+            flex-direction: row;
+            padding: 0 30px;
+            border: 1px solid red;
+            .filterSidebar {
+                width: 250px;
+                height: 898px;
+                border: 1px solid blue;
+            }
+        .container {
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                .List {
+                    .productContainer {
+                        width: 298px;
+                        height: 388px;
+                        margin: 20px;
+                        padding: 10px;
+                        border: 1px solid transparent; 
+                        &:hover{
+                            border: 1px solid black;
+                        }
+                        .productImage {
+                            position: relative;
+                            width: 276px;
+                            height: 276px;
+                            .check{
+                                position: absolute;
+                                top: 25px;
+                                left: 25px;
+                                z-index: 1;
+                            }
+                            img{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                width: 220px;
+                                height: 220px;
+                                margin-top: -110px;
+                                margin-left: -110px;
+                                }
+                            }
+                        }
+                        &:nth-child(5n+1){
+                            .productContainer {
+                                &:hover {
+                                    .productImage{
+                                        background-color: #FF7F2C;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &:nth-child(5n+2){
+                            .productContainer {
+                                &:hover {
+                                    .productImage{
+                                        background-color: #DCFD00;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &:nth-child(5n+3){
+                            .productContainer {
+                                &:hover {
+                                    .productImage{
+                                        background-color: #814EFA;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(5n+4){
+                            .productContainer {
+                                &:hover {
+                                    .productImage{
+                                        background-color: #0088FC;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        &:nth-child(5n){
+                            .productContainer {
+                                &:hover {
+                                    .productImage{
+                                        background-color: #FF2947;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }    
+            }    
+        } 
+    }   
+}        

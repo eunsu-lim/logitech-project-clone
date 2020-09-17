@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Account from "./Pages/Acoount/Account";
+import Account from "./Pages/Account/Account";
 import Login from "./Pages/Login/Login";
 import Main from "./Pages/Main/Main";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import ProductList from "./Pages/ProductList/ProductList";
-import SignUp from "./Pages/SignUp";
+import SignUp from "./Pages/SignUp/SignUp";
 
 class Routes extends React.Component {
     render() {
