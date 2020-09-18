@@ -1,0 +1,28 @@
+@import '../../Styles/common.scss';
+
+.searchBar {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  .searchBarContainer {
+    @include flexJcsb;
+    align-items: center;
+    height: 90px;
+    padding: 0 40px;
+    margin: 0 72px;
+    .searchBarLogo {
+      width: 132px;
+      height: 45px;
+    }
+    div a {
+      padding: 15px;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+    .searchBarInput {
+      width: 100px;
+      height: 20px;
+    }
+  }
+}
