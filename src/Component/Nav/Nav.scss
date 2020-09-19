@@ -98,6 +98,23 @@
     }
     .navRight {
       @include flex;
+      a {
+        line-height: 25px;
+        font-size: 12px;
+      }
+      .flagLink {
+        padding: 10px 20px 10px 5px;
+      }
+      .accountLink {
+        padding: 10px 20px;
+      }
+      .cartLink {
+        padding: 12px 0 10px 20px;
+      }
+      .flag {
+        background: url(https://www.logitech.com/asset/images/flags/united-states.gif)
+          no-repeat;
+      }
     }
   }
 }

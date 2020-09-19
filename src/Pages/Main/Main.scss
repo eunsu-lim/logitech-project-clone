@@ -33,8 +33,15 @@
         margin: 0 auto;
         padding: 18px 40px;
         background-color: #2f3132;
+        border: 2px solid #2f3132;
         color: #fff;
         font-weight: bold;
+      }
+      a:hover {
+        background-color: transparent;
+        color: #2f3132;
+        border: 2px solid #2f3132;
+        transition: 0.2s;
       }
     }
   }
@@ -52,25 +59,75 @@
         'a a b'
         'a a e'
         'c d e';
-      .listItemA {
+      a {
+        position: relative;
+        overflow: hidden;
+        background-color: #f4f4f4;
+      }
+      .listItem {
+        transform: scale(1);
+        transition: transform 0.5s;
+      }
+
+      .listItem:hover {
+        transform: scale(1.1);
+      }
+      .listItemMice {
         grid-area: a;
-        background-color: #f4f4f4;
+
+        .textA {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
       }
-      .listItemB {
+      .listItemStreaming {
         grid-area: b;
-        background-color: #f4f4f4;
+        .textB {
+          position: absolute;
+          left: 50%;
+          top: 50px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
       }
-      .listItemC {
+      .listItemMobile {
         grid-area: c;
-        background-color: #f4f4f4;
+        .textC {
+          position: absolute;
+          bottom: 40px;
+          left: 50%;
+
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
       }
-      .listItemD {
+      .listItemHeadsets {
         grid-area: d;
-        background-color: #f4f4f4;
+        .textD {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
       }
-      .listItemE {
+      .listItemVideo {
         grid-area: e;
-        background-color: #f4f4f4;
+        .textE {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
       }
     }
   }
@@ -126,9 +183,16 @@
           color: white;
           margin: 0 auto;
           padding: 18px 40px;
+          border: 2px solid white;
           background-color: #fff;
           color: #2f3132;
           font-weight: bold;
+        }
+        span:hover {
+          background-color: black;
+          color: white;
+          border: 2px solid white;
+          transition: 0.2s;
         }
       }
     }
@@ -140,26 +204,42 @@
       @include flexJcsb;
       width: 100%;
       padding: 130px 72px 140px 72px;
+      transform: scale(1);
+      div {
+        width: 286px;
+        height: 428px;
+      }
       .pangeaPicA {
         background: url('https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-logi-cares-2.jpg?v=1')
           no-repeat;
-        width: 286px;
-        height: 428px;
+      }
+      .pangeaPicA:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
       }
       .pangeaPicB {
         background: url('https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-sustainability-2.jpg?v=1')
           no-repeat;
-        width: 284px;
+      }
+      .pangeaPicB:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
       }
       .pangeaPicC {
         background: url('https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-awards.jpg?v=1')
           no-repeat;
-        width: 284px;
+      }
+      .pangeaPicC:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
       }
       .pangeaPicD {
         background: url('https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-about.jpg?v=1')
           no-repeat;
-        width: 284px;
+      }
+      .pangeaPicD:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
       }
       span {
         @include flexJcAic;

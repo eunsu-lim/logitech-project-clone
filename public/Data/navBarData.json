@@ -1,0 +1,36 @@
+{
+  "MainMenu": [
+    {
+      "id": 1,
+      "category": "MICE + KEYBOARD",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Mice",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Combos",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "category": "Ipad Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 5,
+          "category": "Tablet Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    }
+  ]
+}

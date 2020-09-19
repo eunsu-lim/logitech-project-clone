@@ -13,7 +13,7 @@ class Main extends Component {
         <section>
           <div className="mainTop">
             <img
-              alt=""
+              alt="/#"
               className="mainBanner"
               src="https://resource.logitech.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/hero-banners/learn-from-home-hpb-desktop.jpg?v=1
             "
@@ -36,40 +36,45 @@ class Main extends Component {
         <section>
           <div className="productListInfo">
             <div className="listInfo">
-              <a href="/#" className="listItemA">
+              <a href="/#" className="listItemMice">
                 <img
-                  className="listItemA"
+                  className="listItem"
                   alt="/#"
                   src="https://resource.logitech.com/w_797,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/product-grid/desktop-mice-and-keyboards.png?v=1"
                 />
+                <span className="textA">MICE & KEYBOARDS</span>
               </a>
-              <a href="/#" className="listItemB">
+              <a href="/#" className="listItemStreaming">
                 <img
-                  className="listItemB"
+                  className="listItem"
                   alt="/#"
                   src="https://resource.logitech.com/w_797,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/product-grid/desktop-streaming.png?v=1"
                 />
+                <span className="textB">STREAMING</span>
               </a>
-              <a href="/#" className="listItemC">
+              <a href="/#" className="listItemMobile">
                 <img
-                  className="listItemC"
+                  className="listItem"
                   alt="/#"
                   src="https://resource.logitech.com/w_797,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/product-grid/desktop-mobile-devices.png?v=1"
                 />
+                <span className="textC">MOBILE DEVICES</span>
               </a>
-              <a href="/#" className="listItemD">
+              <a href="/#" className="listItemHeadsets">
                 <img
-                  className="listItemD"
+                  className="listItem"
                   alt="/#"
                   src="https://resource.logitech.com/w_797,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/product-grid/desktop-headsets.png?v=1"
                 />
+                <span className="textD">HEADSETS</span>
               </a>
-              <a href="/#" className="listItemE">
+              <a href="/#" className="listItemVideo">
                 <img
-                  className="listItemE"
+                  className="listItem"
                   alt="/#"
                   src="https://resource.logitech.com/w_797,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/product-grid/desktop-video-conferencing.png?v=1"
                 />
+                <span className="textE">VIDEO CONFERENCING</span>
               </a>
             </div>
           </div>
@@ -120,18 +125,26 @@ class Main extends Component {
         <section>
           <div class="pangeaWrap">
             <div className="pangeaCmp">
-              <div className="pangeaPicA">
-                <span>SOCIAL IMPACT</span>
-              </div>
-              <div className="pangeaPicB">
-                <span>SUSTAINABILITY</span>
-              </div>
-              <div className="pangeaPicC">
-                <span>DESIGN AWARDS</span>
-              </div>
-              <div className="pangeaPicD">
-                <span>ABOUT US</span>
-              </div>
+              <a href="/#">
+                <div className="pangeaPicA">
+                  <span>SOCIAL IMPACT</span>
+                </div>
+              </a>
+              <a href="/#">
+                <div className="pangeaPicB">
+                  <span>SUSTAINABILITY</span>
+                </div>
+              </a>
+              <a href="/#">
+                <div className="pangeaPicC">
+                  <span>DESIGN AWARDS</span>
+                </div>
+              </a>
+              <a href="/#">
+                <div className="pangeaPicD">
+                  <span>ABOUT US</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>

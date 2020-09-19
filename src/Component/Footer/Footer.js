@@ -3,28 +3,18 @@ import './Footer.scss';
 import SITE_MAP from './Data/siteMapData';
 
 class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      siteMapList: [],
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      siteMapList: SITE_MAP,
-    });
-  }
+  state = {
+    siteMapList: SITE_MAP,
+  };
 
   render() {
     const { siteMapList } = this.state;
     return (
-      <footer className="componentFooter">
+      <footer className="Footer">
         <div className="container">
           <div className="footerSiteMap">
             <ul className="siteMap">
-              {siteMapList.map((link) => {
-                const { id, content } = link;
+              {siteMapList.map(({ id, content }) => {
                 return (
                   <div>
                     <li key={id}>{content}</li>
@@ -60,7 +50,7 @@ class Footer extends Component {
           <div className="subscriptionWrap">
             <form>
               <div>
-                <input type="email" placeholder="ENTER EMAIL ADDRESS"></input>
+                <input type="email" placeholder="ENTER EMAIL ADDRESS" />
                 <button type="submit">
                   <span className="submitIcon"></span>
                 </button>

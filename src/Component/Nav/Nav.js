@@ -36,19 +36,19 @@ class Nav extends Component {
             </ul>
             <ul className="navRight">
               <li>
-                <a href="/#">
+                <a className="flagLink" href="/#">
                   <span className="flag"></span>
                   <span>EN</span>
                 </a>
               </li>
               <li>
-                <a href="/#">
+                <a className="accountLink" href="/#">
                   <span className="account"></span>
                   <span>MY ACCOUNT</span>
                 </a>
               </li>
               <li>
-                <a href="/#">
+                <a className="cartLink" href="/#">
                   <span className="cart"></span>
                   <span>MY CART</span>
                 </a>
