@@ -1,0 +1,157 @@
+.loginModalBackGround {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+
+  &.isActive {
+    display: block;
+  }
+
+  .loginModal {
+    position: absolute;
+    width: 540px;
+    height: 600px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+  }
+
+  .loginLogoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+  }
+
+  .loginText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    color: #222222;
+  }
+
+  .inputInfoAndLoginBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 70px;
+
+    .inputInfo {
+      width: 400px;
+      height: 45px;
+      padding: 15px 7px;
+      border: 1px solid rgb(195, 195, 195);
+      border-radius: 2px;
+    }
+
+    #passwordInfo {
+      margin-top: 5px;
+    }
+
+    .forgetText {
+      margin: 20px 0;
+      color: #6f7678;
+      font-size: 12px;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .loginBtn {
+      width: 400px;
+      height: 50px;
+      border-radius: 2px;
+      background-color: #00b8fc;
+      font-size: 13px;
+      font-weight: bold;
+      &:hover {
+        background-color: transparent;
+        border: 2px solid #00b8fc;
+        color: #00b8fc;
+        transition: linear 0.08s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .orTextAndLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 69px;
+    width: 400px;
+
+    .orText {
+      color: #6f7678;
+      text-align: center;
+    }
+
+    .orLine {
+      width: 170px;
+      height: 1px;
+      background-color: #e1e2e3;
+    }
+  }
+
+  .otherSiteBtns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 200px;
+
+    .otherSiteBtn {
+      width: 34px;
+      height: 34px;
+      margin-top: 30px;
+      background-image: url(https://www.logitech.com/etc.clientlibs/logitech-common/clientlibs/my-account/login-auth/resources/images/login-sprite.svg);
+      background-size: 100% auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    #facebook {
+      background-position: 0 -41px;
+    }
+
+    #google {
+      background-position: 0 -80px;
+    }
+  }
+
+  .clickLinks {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+
+    .clickLink {
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #00b8fc;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: " >";
+      }
+    }
+  }
+}

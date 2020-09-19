@@ -1,0 +1,161 @@
+.accountModalBackground {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+
+  &.isActive {
+    display: block;
+  }
+  
+  .createAccountModal {
+    width: 540px;
+    height: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+
+    .logoContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    .createAccountTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      margin-bottom: 15px;
+      font-size: 25px;
+      font-weight: bold;
+      color: #222222;
+    }
+
+    .createAccountText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      font-weight: lighter;
+      color: #222222;
+    }
+
+    .inputInfoAndCreateBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 70px;
+
+      .inputInfo {
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+      }
+
+      .policyCheck {
+        display: flex;
+        margin-top: 2px;
+        padding-right: 20px;
+
+        .policyCheckbox {
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          background: #fff;
+          cursor: pointer;
+        }
+
+        .policyCheckText {
+          margin-top: 5px;
+          margin-bottom: 20px;
+          color: #6f7678;
+        }
+
+        .privacyPolicy {
+          text-decoration: underline;
+          font-weight: bold;
+          &:hover {
+            text-decoration: none;
+            color: #00a0dd;
+          }
+        }
+      }
+
+      .notRobotBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        height: 74px;
+        padding: 0 10px;
+        border-radius: 3px;
+        border: 1px solid #d3d3d3;
+        background-color: #f9f9f9;
+
+        .notRobotCheckbox {
+          width: 24px;
+          height: 24px;
+          border-radius: 2px;
+          border: 2px solid #d3d3d3;
+        }
+
+        .notRobot {
+          display: flex;
+          align-items: center;
+
+          .notRobotText {
+            margin-left: 10px;
+          }
+        }
+
+        .reCAPTCHABox {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          font-size: 10px;
+
+          img {
+            width: 30px;
+            margin-bottom: 4px;
+            margin-right: 10px;
+          }
+          .reCAPCHATLink:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .createBtn {
+        width: 400px;
+        height: 50px;
+        margin-top: 20px;
+        border-radius: 2px;
+        background-color: #00b8fc;
+        font-size: 13px;
+        font-weight: bold;
+        &:hover {
+          background-color: transparent;
+          border: 2px solid #00b8fc;
+          color: #00b8fc;
+          transition: linear 0.08s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

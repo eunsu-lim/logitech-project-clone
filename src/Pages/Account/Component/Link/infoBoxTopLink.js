@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./infoBoxLink.scss";
+
 class InfoBoxTopLink extends Component {
   render() {
+    const { links } = this.props
     return (
       <div>
         <ul>
-          {this.props.links.map((link, index) => {
+          {links.map((link, index) => {
             return (
               <li key={index} className="links">
                 <a href="http://localhost:3000/Account">{link}</a>
