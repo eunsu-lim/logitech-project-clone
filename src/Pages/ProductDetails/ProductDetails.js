@@ -1,29 +1,73 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
 import ProductImg from "./component/ProductImg";
+import COLOR from "./colorData";
+import PRODUCTCOLOR from "./data";
+import PRODUCTSET from "./setupData";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./ProductDetails.scss";
 
+const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
+
 class ProductDetails extends Component {
-  constructor() {
-    super();
-    this.state = {
-      productInfos: [],
-    };
-  }
+  state = {
+    productInfos: [],
+    imgColor: "White",
+    imgIndex: 0,
+    modal: false,
+    video: "",
+  };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/productInfo.json", {
-      method: "GET",
-    })
+    fetch("/data/productInfo.json")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
           productInfos: result.productInfo,
+          slideImg: result.slide,
         });
       });
   }
 
+  handleImgColor = (e) => {
+    const { name } = e.target;
+    // console.log(name);
+    this.setState({
+      imgColor: name,
+    });
+  };
+
+  handleModal = () => {
+    this.setState(
+      (prev) => {
+        console.log(this.state.modal);
+        return {
+          modal: !prev.modal,
+        };
+      },
+      () => {
+        this.setState({
+          video: this.state.modal
+            ? "https://www.youtube.com/embed/NJXbGxCBmYI?autoplay=1"
+            : "",
+        });
+      }
+    );
+  };
+
   render() {
-    const { productInfos } = this.state;
+    const { productInfos, productSetup, imgIndex, imgColor } = this.state;
+    const slideSet = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      draggable: true,
+    };
+
     return (
       <div className="ProductDetails">
         <section className="containerWrap">
@@ -33,7 +77,7 @@ class ProductDetails extends Component {
                 <li className="productList">
                   <img
                     className="productShot"
-                    src="https://assets.logitech.com/assets/65685/logitech-pebble-m350.png"
+                    src={PRODUCTCOLOR[imgColor][imgIndex]}
                     alt="Logitech Pebble M350 1"
                   />
                 </li>
@@ -50,28 +94,21 @@ class ProductDetails extends Component {
               </div>
 
               <div className="infoColor">
-                <p className="color">White</p>
+                <p className="color">{imgColor}</p>
                 <ul>
-                  <li>
-                    <a href="#">
-                      <img src="https://assets.logitech.com/assets/65882/3/pebble-i345-portable-wireless-mouse.jpg" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="https://assets.logitech.com/assets/65608/8/logitech-pebble.jpg" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="https://assets.logitech.com/assets/65608/35/logitech-pebble.jpg" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="https://assets.logitech.com/assets/65685/20/logitech-pebble-m350.jpg" />
-                    </a>
-                  </li>
+                  {COLOR.map((el, i) => {
+                    return (
+                      <li key={i} onClick={this.handleImgColor}>
+                        <a href="#">
+                          <img
+                            name={COLORLIST[i]}
+                            src={el}
+                            alt="color images"
+                          />
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="infoBtn">
@@ -82,26 +119,15 @@ class ProductDetails extends Component {
           </div>
           <div className="productsBelow">
             <ul className="productThumbs">
-              <li>
-                <a href="#">
-                  <img src="https://assets.logitech.com/assets/65685/logitech-pebble-m350.png" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="https://assets.logitech.com/assets/65685/2/logitech-pebble-m350.png" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="https://assets.logitech.com/assets/65685/3/logitech-pebble-m350.png" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="https://assets.logitech.com/assets/65685/4/logitech-pebble-m350.png" />
-                </a>
-              </li>
+              {PRODUCTCOLOR[imgColor].map((el, i) => {
+                return (
+                  <li key={i} onClick={() => this.setState({ imgIndex: i })}>
+                    <a href="#">
+                      <img src={el} />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -109,6 +135,7 @@ class ProductDetails extends Component {
           <div className="bgContent">
             <h2>Minimalist. Modern. Silent.</h2>
             <p>Logitech Pebble Wireless Mouse M350</p>
+            <div onClick={this.handleModal} className="playBtn"></div>
           </div>
         </section>
         <section className="detailTop">
@@ -127,15 +154,30 @@ class ProductDetails extends Component {
         <section className="productImglist">
           <div>
             <h6>Features</h6>
+
             <ul>
               <ProductImg productData={productInfos} />
             </ul>
           </div>
         </section>
         <section className="productSlider">
-          <div>
+          <div className="sliderContainer">
             <h2>HOW TO SET UP</h2>
-            <div className="sliderBox">슬라이드 영역</div>
+            <div className="sliderBox">
+              <div>
+                <Slider {...slideSet}>
+                  {PRODUCTSET.map((el) => {
+                    return (
+                      <div>
+                        <img src={el.img} alt="Set up" />
+                        <h4>{el.slideTitle}</h4>
+                        <p>{el.slideContent}</p>
+                      </div>
+                    );
+                  })}
+                </Slider>
+              </div>
+            </div>
           </div>
         </section>
         <section className="productSpec">
@@ -251,6 +293,22 @@ class ProductDetails extends Component {
             </li>
           </ul>
         </section>
+
+        <div className={this.state.modal ? "modalBox modal" : "modalBox"}>
+          <div className="modalBg" onClick={this.handleModal}>
+            <div className="closeBtn">X</div>
+          </div>
+          <div className="modalContent">
+            <iframe
+              width="640"
+              height="390"
+              src={this.state.video}
+              frameBorder="0"
+              allow="autoplay"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
       </div>
     );
   }
