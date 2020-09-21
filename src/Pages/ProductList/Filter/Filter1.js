@@ -22,7 +22,6 @@ class Filter1 extends Component {
       <ul>
         {/* {this.state.filterList.map((filter, index) => {
                     return (
-
                         <li key={index}>
                             <label>
                                 <input type="checkbox" />

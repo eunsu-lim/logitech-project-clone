@@ -57,7 +57,7 @@ class List extends Component {
                   onMouseOver={this.handleMouseOver}
                 >
                   <div className="gamingMouse">
-                    GAMING MICE>
+                    GAMING MICE >
                     {/* <div className="check" >
                                         <input type="checkbox" />
                                         <span>Compare</span>
