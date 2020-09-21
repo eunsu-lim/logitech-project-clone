@@ -3,7 +3,7 @@ import "./infoBoxLink.scss";
 
 class InfoBoxTopLink extends Component {
   render() {
-    const { links } = this.props
+    const { links } = this.props;
     return (
       <div>
         <ul>

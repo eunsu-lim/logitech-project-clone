@@ -10,10 +10,10 @@
   &.isActive {
     display: block;
   }
-  
+
   .createAccountModal {
     width: 540px;
-    height: 700px;
+    height: 720px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -54,10 +54,11 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 0 70px;
 
-      .inputInfo {
+      .inputEmail {
+        //이메일 인풋박스
         width: 400px;
         height: 45px;
         margin: 5px 0px;
@@ -65,6 +66,107 @@
         border: 1px solid rgb(195, 195, 195);
         border-radius: 2px;
         font-size: 16px;
+        &.notInputEmailClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputEmail {
+        //이메일 안넣었을 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputEmailClicked {
+          display: block;
+        }
+      }
+
+      .inputPw {
+        //패스워드 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notInputPwClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputPw {
+        // 비밀번호 안 넣었을 때텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputPwClicked {
+          display: block;
+        }
+      }
+
+      .confirmPw {
+        //패스워드 확인 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notConfirmPwClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notConfirmPw {
+        //비밀번호 다를 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notConfirmPwClicked {
+          display: block;
+        }
+      }
+
+      .inputName {
+        //이름 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notInputNameClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputName {
+        //이름 안 넣었을 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputNameClicked {
+          display: block;
+        }
       }
 
       .policyCheck {
@@ -100,6 +202,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-left: 50px;
         width: 300px;
         height: 74px;
         padding: 0 10px;
@@ -134,6 +237,7 @@
             margin-bottom: 4px;
             margin-right: 10px;
           }
+
           .reCAPCHATLink:hover {
             text-decoration: underline;
           }

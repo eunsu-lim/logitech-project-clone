@@ -10,8 +10,18 @@ class Account extends Component {
     this.state = {
       loginModal: false,
       createAccountModal: false,
+      emailValue: "",
+      passwordValue: "",
+      inputEmailStatus: null,
+      inputPwStatus: null,
+      //회원가입 state
+      createEmailStatus: null,
+      createPwStatus: null,
+      createConfirmPw: null,
+      createName: null,
     };
   }
+
   closeModal = (e) => {
     const isClickedAccountModal =
       e.target.className === "accountModalBackground isActive";
@@ -31,7 +41,7 @@ class Account extends Component {
       loginModal: !loginModal,
     });
   };
-
+  
   handleCaClick = () => {
     const { createAccountModal } = this.state;
     this.setState({
@@ -39,8 +49,78 @@ class Account extends Component {
     });
   };
 
+  handleEmailValue = (e) => {
+    const { value } = e.target;
+    this.setState({
+      emailValue: value,
+    });
+  };
+
+  handlePwValue = (e) => {
+    const { value } = e.target;
+    this.setState({
+      passwordValue: value,
+    });
+  };
+  //로그인 통신
+  handleLoginBtn = () => {
+    fetch("http://3.34.133.239:8000/account/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.emailValue,
+        password: this.state.passwordValue,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.Authorization) {
+          localStorage.setItem("token", result.Authorization);
+          this.props.history.push("/mainHong");
+        } else if (result.message === "UNAUTHORIZED") {
+          alert("This email is not registered or has a different password!");
+        }
+      });
+  };
+
+  handleLoginBtn = () => {
+    const { emailValue, passwordValue, inputEmailStatus } = this.state;
+    if (inputEmailStatus === false) {
+      this.setState({
+        inputPwStatus: true,
+      });
+    }
+    this.setState({
+      inputEmailStatus: emailValue.length > 1 && emailValue.includes("@"),
+    });
+    if (inputEmailStatus === true && passwordValue.length < 5) {
+      this.setState({
+        inputPwStatus: false,
+      });
+    }
+  };
+
+  handleInputEmailStatus = () => {
+    const { emailValue } = this.state;
+    this.setState({
+      inputEmailStatus: emailValue.length >= 1,
+    });  
+  };
+
+  handleInputPwStatus = () => {
+    const { passwordValue } = this.state;
+    this.setState({
+      inputPwStatus: passwordValue.length >= 1,
+    });
+  };
+
   render() {
-    const { loginModal, createAccountModal } = this.state;
+    const {
+      loginModal,
+      createAccountModal,
+      passwordValue,
+      inputEmailStatus,
+      inputPwStatus,
+    } = this.state;
     return (
       <div className="account">
         <div
@@ -76,10 +156,21 @@ class Account extends Component {
           handleClick={this.handleClick}
           handleCaClick={this.handleCaClick}
         />
-        <LoginModal isActive={loginModal} closeModal={this.closeModal} />
+        <LoginModal
+          isActive={loginModal}
+          inputEmailStatus={inputEmailStatus}
+          inputPwStatus={inputPwStatus}
+          closeModal={this.closeModal}
+          handleEmailValue={this.handleEmailValue}
+          handlePwValue={this.handlePwValue}
+          handleLoginBtn={this.handleLoginBtn}
+          handleInputEmailStatus={this.handleInputEmailStatus}
+          handleInputPwStatus={this.handleInputPwStatus}
+        />
         <CreateAccountModal
           isActive={createAccountModal}
           closeModal={this.closeModal}
+          pwValue={passwordValue}
         />
       </div>
     );

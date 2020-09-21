@@ -25,37 +25,30 @@ class InfoBox extends Component {
           (loginModal && handleClick) || (createAccountModal && handleCaClick)
         }
       >
-        <div className="infoBoxTop">
-          <ul className="infoBoxes">
-            {infoBoxTop.map((info, idx) => {
-              return (
-                <li key={idx} className="infoBox">
-                  <img className="infoImg" src={info.img} alt={info.alt} />
-                  <h2 className="infoTitle">{info.title}</h2>
-                  <div className="infoText">{info.content}</div>
-                  <InfoBoxTopLink className="infoLink" links={info.details} />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="infoBoxBottom">
-          <ul className="infoBoxes" id="infoBoxesBottom">
-            {infoBoxBottom.map((info, idx) => {
-              return (
-                <li key={idx} className="infoBox">
-                  <img className="infoImg" src={info.img} alt={info.alt} />
-                  <h2 className="infoTitle">{info.title}</h2>
-                  <div className="infoText">{info.content}</div>
-                  <InfoBoxBottomLink
-                    className="infoLink"
-                    links={info.details}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className="infoBoxes">
+          {infoBoxTop.map((info, idx) => {
+            return (
+              <li key={idx} className="infoBox">
+                <img className="infoImg" src={info.img} alt={info.alt} />
+                <h2 className="infoTitle">{info.title}</h2>
+                <div className="infoText">{info.content}</div>
+                <InfoBoxTopLink className="infoLink" links={info.details} />
+              </li>
+            );
+          })}
+        </ul>
+        <ul className="infoBoxes" id="infoBoxesBottom">
+          {infoBoxBottom.map((info, idx) => {
+            return (
+              <li key={idx} className="infoBox">
+                <img className="infoImg" src={info.img} alt={info.alt} />
+                <h2 className="infoTitle">{info.title}</h2>
+                <div className="infoText">{info.content}</div>
+                <InfoBoxBottomLink className="infoLink" links={info.details} />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     );
   }

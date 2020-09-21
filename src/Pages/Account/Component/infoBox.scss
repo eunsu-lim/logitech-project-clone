@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
   .infoBoxes {
     display: flex;
     text-align: center;
-    height: 100%;
-
-    .infoBox {
+      .infoBox {
       margin: 0 72px;
 
       .infoImg {
@@ -27,10 +25,9 @@
         color: #6f7678;
         font-weight: 300;
       }
-
-      #infoBoxesBottom {
-        margin-bottom: 70px;
-      }
     }
+  }
+  #infoBoxesBottom{
+    padding-bottom: 90px;
   }
 }

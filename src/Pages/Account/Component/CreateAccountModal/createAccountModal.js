@@ -27,22 +27,25 @@ class CreateAccountModal extends Component {
           </div>
           <div className="inputInfoAndCreateBtn">
             <input
-              id="idInfo"
-              className="inputInfo"
+              className="inputEmail"
               type="text"
               placeholder="Email address"
             />
+            <div className="notInputEmail">Please enter a valid email address</div>
             <input
-              className="inputInfo"
+              className="inputPw"
               type="password"
               placeholder="Password"
             />
+            <div className="notInputPw">Password does not meet requirements</div>
             <input
-              className="inputInfo"
+              className="confirmPw"
               type="password"
               placeholder="Confirm Password"
             />
-            <input className="inputInfo" type="text" placeholder="Name" />
+            <div className="notConfirmPw">Password does not match</div>
+            <input className="inputName" type="text" placeholder="Name" />
+            <div className="notInputName">Please enter name</div>
             <div className="policyCheck">
               <input className="policyCheckbox" type="checkbox" />
               <span className="policyCheckText">

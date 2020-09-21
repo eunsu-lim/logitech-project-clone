@@ -3,7 +3,16 @@ import "./loginModal.scss";
 
 class LoginModal extends Component {
   render() {
-    const { isActive, closeModal } = this.props;
+    const {
+      isActive,
+      closeModal,
+      inputEmailStatus,
+      inputPwStatus,
+      handleEmailValue,
+      handlePwValue,
+      handleLoginBtn,
+      handleInputEmailStatus,
+    } = this.props;
     return (
       <div
         onClick={closeModal}
@@ -22,21 +31,49 @@ class LoginModal extends Component {
           <div className="loginText">Log in with your Logi ID</div>
           <div className="inputInfoAndLoginBtn">
             <input
-              id="idInfo"
-              className="inputInfo"
+              className={
+                inputEmailStatus === null || inputEmailStatus
+                  ? "inputIdInfo"
+                  : "inputIdInfo notInputIdClicked"
+              }
               type="text"
               placeholder="Email address"
+              onChange={handleEmailValue}
+              onKeyUp={handleInputEmailStatus}
             />
+            <div
+              className={
+                inputEmailStatus === null || inputEmailStatus
+                  ? "notInputId"
+                  : "notInputId notInputIdClicked"
+              }
+            >
+              Please enter a valid email address
+            </div>
             <input
-              id="passwordInfo"
-              className="inputInfo"
+              className={
+                inputPwStatus === null || inputPwStatus
+                  ? "inputPwInfo"
+                  : "inputPwInfo notInputPwClicked"
+              }
               type="password"
               placeholder="Password"
+              onChange={handlePwValue}
+              onKeyUp={this.props.handleInputPwStatus}
             />
+            <div
+              className={
+                inputPwStatus === null || inputPwStatus
+                  ? "notInputPw"
+                  : "notInputPw notInputPwClicked"
+              }
+            >
+              Please provide a password
+            </div>
             <div className="forgetText">
               <a href="http://localhost:3000/Account">Forgot Password?</a>
             </div>
-            <button className="loginBtn" type="button">
+            <button className="loginBtn" type="button" onClick={handleLoginBtn}>
               Login
             </button>
           </div>

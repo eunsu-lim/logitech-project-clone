@@ -43,27 +43,65 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 0 70px;
 
-    .inputInfo {
+    .inputIdInfo {
       width: 400px;
       height: 45px;
       padding: 15px 7px;
       border: 1px solid rgb(195, 195, 195);
       border-radius: 2px;
+      &.notInputIdClicked {
+        border: 1px solid #dc4949;
+      }
     }
 
-    #passwordInfo {
+    .notInputId {
+      display: none;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: lighter;
+      color: #dc4949;
+      &.notInputIdClicked {
+        display: block;
+      }
+    }
+
+    .inputPwInfo {
+      width: 400px;
+      height: 45px;
       margin-top: 5px;
+      padding: 15px 7px;
+      border-radius: 2px;
+      border: 1px solid rgb(195, 195, 195);
+      &.notInputPwClicked {
+        border: 1px solid #dc4949;
+      }
+    }
+
+    .notInputPw {
+      display: none;
+      margin-top: 2px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: lighter;
+      color: #dc4949;
+      &.notInputPwClicked {
+        display: block;
+      }
     }
 
     .forgetText {
+      width: 100%;
       margin: 20px 0;
       color: #6f7678;
       font-size: 12px;
       font-weight: bold;
-
+      text-align: right;
       &:hover {
         text-decoration: underline;
       }
