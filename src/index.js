@@ -1,13 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Routes from "./Routes";
-<<<<<<< HEAD
-import "../src/Styles/common.scss";
-import "../src/Styles/reset.scss";
-=======
 import "../src/Styles/reset.scss";
 import "../src/Styles/common.scss";
->>>>>>> master
 
 ReactDOM.render(
   <React.StrictMode>
