@@ -3,7 +3,6 @@
 .searchBar {
   position: absolute;
   width: 100%;
-  z-index: 1;
   .searchBarContainer {
     @include flexJcsb;
     align-items: center;
@@ -14,11 +13,35 @@
       width: 132px;
       height: 45px;
     }
-    a {
-      padding: 15px;
-      font-weight: 700;
-      font-size: 15px;
-      text-transform: uppercase;
+    .searchBarListWrap {
+      @include flex;
+      .searchBarList {
+        margin: 15px;
+        font-weight: 700;
+        font-size: 15px;
+
+        div {
+          font-size: 16px;
+        }
+        .mainList {
+          @include flex;
+          flex-wrap: wrap;
+          position: absolute;
+          width: 100%;
+          margin-top: 25px;
+          padding-left: 150px;
+          padding-right: 170px;
+          background-color: white;
+          z-index: 3;
+          left: 0;
+          &.show {
+            display: flex;
+          }
+          // &.hide {
+          //   display: none;
+          // }
+        }
+      }
     }
     .searchBarInput {
       width: 100px;

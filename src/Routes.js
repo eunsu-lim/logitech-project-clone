@@ -6,6 +6,7 @@ import Main from './Pages/Main/Main';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import ProductList from './Pages/ProductList/ProductList';
 import SignUp from './Pages/SignUp/SignUp';
+
 class Routes extends React.Component {
   render() {
     return (
