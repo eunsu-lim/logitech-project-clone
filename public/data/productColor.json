@@ -1,0 +1,28 @@
+{
+  "productColor": [
+    {
+      "mouseImg1": "https://assets.logitech.com/assets/65882/3/pebble-i345-portable-wireless-mouse.jpg",
+      "mouseImg2": "https://assets.logitech.com/assets/65608/8/logitech-pebble.jpg",
+      "mouseImg3": "https://assets.logitech.com/assets/65608/35/logitech-pebble.jpg",
+      "mouse4Img": "https://assets.logitech.com/assets/65685/20/logitech-pebble-m350.jpg"
+    },
+    {
+      "mouseImg1": "https://assets.logitech.com/assets/65685/9/logitech-pebble-m350.png",
+      "mouseImg2": "https://assets.logitech.com/assets/65685/10/logitech-pebble-m350.png",
+      "mouseImg3": "https://assets.logitech.com/assets/65685/11/logitech-pebble-m350.png",
+      "mouse4Img": "https://assets.logitech.com/assets/65685/12/logitech-pebble-m350.png"
+    },
+    {
+      "mouseImg1": "https://assets.logitech.com/assets/65685/60/logitech-pebble-m350.png",
+      "mouseImg2": "https://assets.logitech.com/assets/65685/61/logitech-pebble-m350.png",
+      "mouseImg3": "https://assets.logitech.com/assets/65685/62/logitech-pebble-m350.png",
+      "mouse4Img": "https://assets.logitech.com/assets/65685/63/logitech-pebble-m350.png"
+    },
+    {
+      "mouseImg1": "https://assets.logitech.com/assets/65685/16/logitech-pebble-m350.png",
+      "mouseImg2": "https://assets.logitech.com/assets/65685/17/logitech-pebble-m350.png",
+      "mouseImg3": "https://assets.logitech.com/assets/65685/18/logitech-pebble-m350.png",
+      "mouse4Img": "https://assets.logitech.com/assets/65685/19/logitech-pebble-m350.png"
+    }
+  ]
+}
