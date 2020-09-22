@@ -1,0 +1,314 @@
+@import "../../Styles/common.scss";
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  font-family: $font;
+
+  .category {
+    height: 475px;
+    justify-content: space-between;
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #00b8fc;
+
+    .categoryData {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      .miceKeyboardMice {
+        width: 300px;
+        .miceKeyboard {
+          width: 160px;
+          text-decoration-line: underline;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        margin: 18px 0px 11px 8px;
+        font-weight: 400;
+      }
+
+      h1 {
+        margin: 8px 0 0 8px;
+        font-weight: bold;
+        font-size: 70px;
+        letter-spacing: 1px;
+      }
+
+      h6 {
+        margin-left: 8px;
+        font-size: 17.28px;
+        margin: 11px 0px;
+      }
+    }
+
+    .mouseImage {
+      display: flex;
+      align-items: flex-end;
+      // width: 800px;
+      height: 100%;
+    }
+  }
+
+  .filterProductContainer {
+    // padding: 0 30px;
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .filterSorter {
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      width: 100%;
+      border-bottom: 1px solid gray;
+
+      button {
+        &:first-child {
+          padding-left: 10px;
+          float: left;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 14px;
+            height: 11px;
+            margin-right: 10px;
+          }
+        }
+
+        &:nth-child(2) {
+          display: flex;
+          align-items: center;
+          padding-right: 10px;
+          float: right;
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    .filterContainer {
+      margin-top: 10px;
+      padding: 0 20px;
+      display: flex;
+    }
+
+    .filterSidebar {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+      padding: 0 30px;
+      .collection2 {
+        width: 500px;
+      }
+
+      .filterTitle {
+        width: 250px;
+        padding: 20px 60px 20px 20px;
+        line-height: 150%;
+        border-bottom: 1px solid #6f7678;
+
+        button {
+          margin: 0 60px 10px 0;
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-right: 60px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+          }
+
+          .expanded {
+            width: 160px;
+            color: #00b8fc;
+          }
+
+          .collapsed {
+            width: 160px;
+          }
+
+          img {
+            width: 18px;
+            height: 18px;
+            align-self: center;
+          }
+        }
+
+        .filterCollectionList {
+          margin-bottom: 3px;
+
+          .filterCollectionLabel {
+            margin: 0 0 5px;
+            font-size: 14px;
+            font-weight: lighter;
+            text-align: left;
+            color: #6f7678;
+          }
+        }
+      }
+    }
+
+    .container {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        .List {
+          .productContainer {
+            width: 298px;
+            transition: width 2s;
+            margin-top: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid transparent;
+
+            &:hover {
+              border: 1px solid black;
+
+              .productInfo {
+                width: 276px;
+                height: 92px;
+                padding: 20px;
+                font-size: 16px;
+
+                .infoDetail {
+                  display: block;
+                  height: 20px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+
+            .gamingMouse {
+              position: relative;
+              width: 276px;
+              height: 276px;
+              background-color: #f4f4f4;
+              text-align: center;
+              padding-top: 138px;
+              font-weight: bold;
+              font-size: 20px;
+            }
+
+            .productImage {
+              position: relative;
+              width: 276px;
+              height: 276px;
+              background-color: #f4f4f4;
+
+              .check {
+                position: absolute;
+                top: 15px;
+                left: 10px;
+                display: none;
+                span {
+                  margin-right: 5px;
+                }
+                input[type="checkbox"] {
+                  display: none;
+                }
+                input[type="checkbox"] + label span {
+                  display: inline-block;
+                  width: 20px;
+                  height: 20px;
+                  background-color: white;
+                }
+                input[type="checkbox"]:checkecd + label sapn {
+                  background-color: black;
+                }
+              }
+
+              img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 220px;
+                height: 220px;
+                margin-top: -110px;
+                margin-left: -110px;
+              }
+            }
+          }
+
+          .productInfo {
+            padding: 20px;
+            line-height: 120%;
+            height: 100px;
+
+            .infoTitle {
+              font-weight: bold;
+            }
+
+            .infoDetail {
+              display: none;
+            }
+          }
+
+          &:nth-child(5n + 1) {
+            .productContainer {
+              &:hover {
+                .productImage {
+                  background-color: #ff7f2c;
+                }
+              }
+            }
+          }
+
+          &:nth-child(5n + 2) {
+            .productContainer {
+              &:hover {
+                .productImage {
+                  background-color: #dcfd00;
+                }
+              }
+            }
+          }
+
+          &:nth-child(5n + 3) {
+            .productContainer {
+              &:hover {
+                .productImage {
+                  background-color: #814efa;
+                }
+              }
+            }
+          }
+
+          &:nth-child(5n + 4) {
+            .productContainer {
+              &:hover {
+                .productImage {
+                  background-color: #0088fc;
+                }
+              }
+            }
+          }
+
+          &:nth-child(5n) {
+            .productContainer {
+              &:hover {
+                .productImage {
+                  background-color: #ff2947;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
