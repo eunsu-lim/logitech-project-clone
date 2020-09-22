@@ -13,7 +13,7 @@ class ProductSection extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.1.167:8000/products/product_mice/187") // 177-204   184 192
+    fetch("http://10.58.1.167:8000/products/product_mice/200") // 177-204   184 192
       .then((res) => res.json())
       .then((result) => {
         console.log("result.mice_data: ", result.mice_data);
@@ -33,14 +33,6 @@ class ProductSection extends Component {
 
   render() {
     const { dataDetail, imgIndex, imgColor } = this.state;
-    console.log(
-      "this.state.dataDetail : ",
-      dataDetail && dataDetail.product_title
-    );
-    // console.log(
-    //   "this.state.dataDetail : ",
-    //   dataDetail[Object.keys(dataDetail)]
-    // );
     return (
       <div>
         <div className="ProductSection">
@@ -98,8 +90,8 @@ class ProductSection extends Component {
                 </div>
               </div>
             </div>
-            {/* <div className="productsBelow">
-              <ul className="productThumbs">
+            <div className="productsBelow">
+              {/* <ul className="productThumbs">
                 {PRODUCTCOLOR[imgColor].map((el, i) => {
                   return (
                     <li key={i} onClick={() => this.setState({ imgIndex: i })}>
@@ -109,8 +101,8 @@ class ProductSection extends Component {
                     </li>
                   );
                 })}
-              </ul>
-            </div> */}
+              </ul> */}
+            </div>
           </section>
         </div>
       </div>

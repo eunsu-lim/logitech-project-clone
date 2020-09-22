@@ -11,118 +11,14 @@
 .ProductDetails {
   font-size: 16px;
   font-family: $font;
-  // .containerWrap {
-  //   background-color: #f4f4f4;
-  //   .detailContainer {
-  //     @include flexAic;
-  //     @include container;
-  //     .detailLeft {
-  //       display: flex;
-  //       flex-direction: column;
-  //       .productList {
-  //         margin: 0 120px;
-  //         .productShot {
-  //           padding: 0 50px;
-  //           width: 100%;
-  //         }
-  //       }
-  //     }
-  //     .productInfo {
-  //       .infoBox {
-  //         padding: 15px 0;
-  //         h3 {
-  //           margin-bottom: 3px;
-  //           font-size: 1.95em;
-  //           font-weight: 600;
-  //           color: #000;
-  //         }
-  //         .infoDetail {
-  //           margin-bottom: 1em;
-  //           font-size: 1em;
-  //         }
-  //         .infoPrice {
-  //           line-height: 1em;
-  //           font-size: 1.5em;
-  //           font-weight: 200;
-  //         }
-  //         em {
-  //           font-size: 13px;
-  //         }
-  //       }
 
-  //       .infoColor {
-  //         padding: 15px 0;
-  //         border-top: 1px solid #c3c6c8;
-  //         border-bottom: 1px solid #c3c6c8;
-  //         font-size: 16px;
-  //         .color {
-  //           margin-bottom: 15px;
-  //         }
-  //         ul {
-  //           display: flex;
-  //           li {
-  //             overflow: hidden;
-  //             margin-right: 10px;
-  //             width: 33px;
-  //             height: 33px;
-  //             border-radius: 100%;
-  //             a {
-  //               img {
-  //                 width: 100%;
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //       .infoBtn {
-  //         margin: 15px 0;
-  //         button {
-  //           display: block;
-  //           padding: 17px 5px;
-  //           width: 49%;
-  //           background-color: #252a2c;
-  //           color: #dcfd00;
-  //           font-size: 0.75em;
-  //           text-transform: uppercase;
-  //           cursor: pointer;
-  //           &:hover {
-  //             background-color: #dcfd00;
-  //             color: #252a2c;
-  //           }
-  //         }
-  //         a {
-  //           display: block;
-  //           margin-top: 40px;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   .productsBelow {
-  //     @include container;
-  //     padding: 25px 0 15px;
-  //     border-top: 1px solid #c3c6c8;
-  //     .productThumbs {
-  //       display: flex;
-  //       li {
-  //         margin-right: 32px;
-  //         margin-bottom: 10px;
-  //         width: 50px;
-  //         a {
-  //           height: 45px;
-  //           img {
-  //             width: 100%;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .mainBg {
     background-image: url("https://assets.logitech.com/assets/65685/34/logitech-pebble-m350.jpg");
     background-position: 39.38% 68.67%;
     position: relative;
     height: 870px;
     transform: translate3d(0px, 0px, 0px);
+
     .bgContent {
       display: flex;
       flex-direction: column;
@@ -130,6 +26,7 @@
       top: 130px;
       width: 100%;
       text-align: center;
+
       h2 {
         margin: 0 auto;
         margin-bottom: 20px;
@@ -137,10 +34,12 @@
         font-size: 44px;
         font-weight: bold;
       }
+
       p {
         font-size: 22px;
         font-weight: lighter;
       }
+
       .playBtn {
         margin: 0 auto;
         margin-top: 40px;
@@ -157,16 +56,20 @@
       }
     }
   }
+
   .detailTop {
     @include padding;
+
     .detailText {
       margin: 0 auto;
       max-width: 640px;
       text-align: center;
+
       h3 {
         margin-bottom: 20px;
         font-size: 34px;
       }
+
       p {
         margin: 0 12px;
         font-size: 18px;
@@ -176,11 +79,14 @@
       }
     }
   }
+
   .productImglist {
     @include container;
+
     div {
       outline: none;
     }
+
     h6 {
       margin: 0 100px 100px 100px;
       padding-bottom: 10px;
@@ -189,98 +95,114 @@
       font-weight: lighter;
       border-bottom: 1px solid #6f7678;
     }
-    ul {
-      .productData {
-        @include container;
-        @include flexJcAic;
-        padding: 50px 0;
-        .productImg {
-          width: 60%;
-          .slick-arrow {
-            display: block;
-            z-index: 1;
-            top: initial;
-            left: initial;
-            bottom: -22px;
-            right: 0;
-            width: 50px;
-            height: 50px;
-            background-color: #fff;
-          }
 
-          .slick-prev {
-            right: 50px;
-          }
-          .slick-prev:before {
-            content: "◀︎";
-            color: #d0d0d0;
-            font-size: 15px;
-            &:hover {
-              color: #262626;
-            }
-          }
-          .slick-next:before {
-            content: "▶︎";
-            color: #d0d0d0;
-            font-size: 15px;
-            &:hover {
-              color: #262626;
-            }
-          }
+    .productData {
+      @include container;
+      @include flexJcAic;
+      padding: 50px 0;
 
-          .slick-dots {
-            bottom: 12px;
-            left: 12px;
-            text-align: left;
-            button:before {
-              font-size: 13px;
-              color: #fff;
-            }
-          }
+      .productImg {
+        width: 60%;
 
-          .slide {
-            display: flex;
+        .slick-arrow {
+          display: block;
+          z-index: 1;
+          top: initial;
+          left: initial;
+          bottom: -22px;
+          right: 0;
+          width: 50px;
+          height: 50px;
+          background-color: #fff;
+        }
+
+        .slick-prev {
+          right: 50px;
+        }
+
+        .slick-prev:before {
+          content: "◀︎";
+          color: #d0d0d0;
+          font-size: 15px;
+
+          &:hover {
+            color: #262626;
           }
         }
-        .productText {
-          width: 35%;
-          padding: 0 100px;
-          h3 {
-            font-size: 30px;
-            margin-bottom: 20px;
+
+        .slick-next:before {
+          content: "▶︎";
+          color: #d0d0d0;
+          font-size: 15px;
+
+          &:hover {
+            color: #262626;
           }
-          p {
-            font-size: 16px;
-            line-height: 20px;
-            font-weight: lighter;
+        }
+
+        .slick-dots {
+          bottom: 12px;
+          left: 12px;
+          text-align: left;
+
+          button:before {
+            font-size: 13px;
+            color: #fff;
           }
+        }
+
+        .slide {
+          display: flex;
         }
       }
-      .reverse {
-        flex-direction: row-reverse;
+
+      .productText {
+        width: 35%;
+        padding: 0 100px;
+
+        h3 {
+          font-size: 30px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: lighter;
+        }
       }
     }
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
   }
+
   .productSlider {
     @include container;
     padding: 40px 0;
+
     h2 {
       padding: 70px 0 20px;
       font-size: 34px;
       font-weight: bold;
       text-align: center;
     }
+
     .sliderBox {
       width: 1000px;
       margin: 0 auto;
       margin-top: 20px;
       margin-bottom: 60px;
+
       div {
         outline: none;
       }
+
       .slick-list {
         margin: 0 20px;
       }
+
       .slick-arrow {
         display: block;
         transform: translateY(-40px);
@@ -293,16 +215,19 @@
         width: 18px;
         background-size: cover;
       }
+
       .slick-prev:before {
         background-image: url(https://www.logitech.com//images/pdp/svg/chevron-left-gray.svg);
       }
+
       .slick-next:before {
         background-image: url(https://www.logitech.com//images/pdp/svg/chevron-right-gray.svg);
       }
+
       img {
         width: 100%;
-        //width: 240px;
       }
+
       h4 {
         margin-top: 12px;
         margin-bottom: 14px;
@@ -311,6 +236,7 @@
         font-weight: 500;
         line-height: 30px;
       }
+
       p {
         margin-bottom: 12px;
         font-size: 16px;
@@ -321,11 +247,14 @@
       }
     }
   }
+
   .productSpec {
     @include container;
     @include padding;
+
     .specBox {
       margin: 0 100px;
+
       h6 {
         margin-bottom: 40px;
         padding-bottom: 10px;
@@ -334,24 +263,27 @@
         font-weight: lighter;
         border-bottom: 1px solid #6f7678;
       }
-      .specList {
-        ul {
+
+      ul {
+        display: flex;
+
+        li {
           display: flex;
-          li {
-            display: flex;
-            flex-direction: column;
-            margin-right: 8px;
-            h4 {
-              margin: 20px 0;
-              font-size: 22px;
-              text-transform: uppercase;
-            }
-            p {
-              font-size: 16px;
-              line-height: 28px;
-              strong {
-                margin: 16px 0;
-              }
+          flex-direction: column;
+          margin-right: 8px;
+
+          h4 {
+            margin: 20px 0;
+            font-size: 22px;
+            text-transform: uppercase;
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 28px;
+
+            strong {
+              margin: 16px 0;
             }
           }
         }
@@ -362,29 +294,35 @@
       @include flexJcAic;
       @include padding;
       flex-direction: column;
+
       h3 {
         margin-top: 56px;
         margin-bottom: 11px;
         font-size: 28px;
       }
+
       button {
         margin: 7px auto;
         padding: 15px 0;
         width: 150px;
         background-color: #00b8fc;
         cursor: pointer;
+
         &:hover {
           background-color: #0090bf;
         }
       }
     }
   }
+
   .productFooter {
     background-color: #252a2c;
+
     ul {
       @include container;
       padding: 50px 0 40px;
       border-bottom: 1px solid #555;
+
       li {
         color: #fff;
         font-size: 12px;
@@ -393,6 +331,7 @@
       }
     }
   }
+
   .modalBox {
     display: none;
     position: fixed;
@@ -409,20 +348,22 @@
       left: 0;
       right: 0;
       bottom: 0;
+
       .closeBtn {
         color: #fff;
         font-size: 20px;
         font-weight: 500;
       }
     }
+
     .modalContent {
       position: relative;
       width: 100%;
       height: 0;
       padding-top: 58px;
       padding-bottom: 56.25%;
-
       z-index: 1;
+
       iframe {
         position: absolute;
         width: 100%;
@@ -430,6 +371,7 @@
       }
     }
   }
+
   .modal {
     display: block;
   }

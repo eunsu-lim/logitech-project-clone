@@ -1,16 +1,12 @@
 import React, { Component } from "react";
+import Slider from "react-slick";
 import SpecList from "./component/SpecList";
 import ProductImg from "./component/ProductImg";
-// import COLOR from "./colorData";
-// import PRODUCTCOLOR from "./data";
 import ProductSection from "./ProductSection";
 import PRODUCTSET from "./setupData";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductDetails.scss";
-
-// const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
 
 class ProductDetails extends Component {
   state = {
@@ -34,7 +30,6 @@ class ProductDetails extends Component {
 
   handleImgColor = (e) => {
     const { name } = e.target;
-    // console.log(name);
     this.setState({
       imgColor: name,
     });
@@ -59,7 +54,7 @@ class ProductDetails extends Component {
   };
 
   render() {
-    const { productInfos, productSetup, imgIndex, imgColor } = this.state;
+    const { productInfos } = this.state;
     const slideSet = {
       dots: true,
       infinite: true,
@@ -72,66 +67,6 @@ class ProductDetails extends Component {
 
     return (
       <div className="ProductDetails">
-        {/* <section className="containerWrap">
-          <div className="detailContainer">
-            <div className="detailLeft">
-              <ul className="">
-                <li className="productList">
-                  <img
-                    className="productShot"
-                    src={PRODUCTCOLOR[imgColor][imgIndex]}
-                    alt="Logitech Pebble M350 1"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div className="productInfo">
-              <div className="infoBox">
-                <h3>LOGITECH PEBBLE M350</h3>
-                <p className="infoDetail">
-                  Modern, Slim, and Silent Wireless and <em>Bluetooth Mouse</em>
-                </p>
-                <p className="infoPrice">$ 29.99</p>
-                <em>Free shipping on orders over $29.00</em>
-              </div>
-              <div className="infoColor">
-                <p className="color">{imgColor}</p>
-                <ul>
-                  {COLOR.map((el, i) => {
-                    return (
-                      <li key={i} onClick={this.handleImgColor}>
-                        <a href="#">
-                          <img
-                            name={COLORLIST[i]}
-                            src={el}
-                            alt="color images"
-                          />
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className="infoBtn">
-                <button>add to cart</button>
-                <a href="#">+ specifications</a>
-              </div>
-            </div>
-          </div>
-          <div className="productsBelow">
-            <ul className="productThumbs">
-              {PRODUCTCOLOR[imgColor].map((el, i) => {
-                return (
-                  <li key={i} onClick={() => this.setState({ imgIndex: i })}>
-                    <a href="#">
-                      <img src={el} />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </section> */}
         <ProductSection />
         <section className="mainBg">
           <div className="bgContent">
