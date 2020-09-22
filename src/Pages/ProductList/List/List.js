@@ -24,7 +24,7 @@ class List extends Component {
     return (
       <ul>
         {this.state.products.map((product, index) => {
-          if (index !== 2) {
+          if (index !== 2 && product.product_details !== "") {
             return (
               <li className="List" key={index}>
                 <div
@@ -33,8 +33,10 @@ class List extends Component {
                 >
                   <div className="productImage">
                     <div className="check">
-                      <input type="checkbox" />
-                      Compare
+                      <input type="checkbox" className="checkbox" />
+                      <label for="checkbox">
+                        <span></span>Compare
+                      </label>
                     </div>
                     <img
                       alt={product.product_title}
@@ -49,6 +51,18 @@ class List extends Component {
                 </div>
               </li>
             );
+          } else if (index === 2) {
+            return (
+              <li className="List" key={index}>
+                <div
+                  className="productContainer"
+                  onMouseOver={this.handleMouseOver}
+                >
+                  <div className="gamingMouse">GAMING MICE ></div>
+                  <div className="noneInfo"></div>
+                </div>
+              </li>
+            );
           } else {
             return (
               <li className="List" key={index}>
@@ -56,14 +70,22 @@ class List extends Component {
                   className="productContainer"
                   onMouseOver={this.handleMouseOver}
                 >
-                  <div className="gamingMouse">
-                    GAMING MICE >
-                    {/* <div className="check" >
-                                        <input type="checkbox" />
-                                        <span>Compare</span>
-                                    </div> */}
+                  <div className="productImage">
+                    <div className="check">
+                      <input type="checkbox" className="checkbox" />
+                      <label for="checkbox">
+                        <span></span>Compare
+                      </label>
+                    </div>
+                    <img
+                      alt={product.product_title}
+                      src={`${product.thumbnail_url}`}
+                    />
                   </div>
-                  <div className="noneInfo"></div>
+                  <div className="productInfo">
+                    <p className="infoTitle">{product.product_title}</p>
+                    <p>{product.price}</p>
+                  </div>
                 </div>
               </li>
             );

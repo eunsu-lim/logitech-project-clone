@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import List from "../ProductList/List/List";
 import FilterConnectivity from "./Filter/FilterConnectivity";
-import Filter from "./Filter/Filter";
+import SidebarFilter from "./sidebar/SidebarFilter";
 //import "../ProductList/ProductList.scss"
 import "./ProductList.scss";
 
@@ -11,6 +11,8 @@ class ProductList extends Component {
     this.state = {
       filters: [],
       hideFilter: true,
+      hideFilterText: "HIDE FILTERS",
+      showFilterIcon: true,
     };
   }
 
@@ -23,16 +25,19 @@ class ProductList extends Component {
   hideFilter() {
     this.setState({
       hideFilter: !this.state.hideFilter,
+      hideFilterText: !this.state.hideFilter ? "HIDE FILTERS" : "SHOW FILTERS",
     });
   }
+
   render() {
     return (
       <div className="productList">
         <div className="category">
           <div className="categoryData">
             <div className="">
-              {/* href...? */}
-              <a className="miceKeyboard">Mice + Keyboards </a> / Mice
+              <div className="miceKeyboardMice">
+                <a className="miceKeyboard">Mice + Keyboards </a> / Mice
+              </div>
             </div>
             <h1>MICE</h1>
             <h6>Logitech Mice</h6>
@@ -51,7 +56,9 @@ class ProductList extends Component {
                 src="https://www.logitech.com/images/icons/filter-toggle.svg"
                 alt=""
               />
-              <span>HIDE FILTER</span>
+              <span className="hideFilterButton">
+                {this.state.hideFilterText}
+              </span>
             </button>
             <button>
               <img
@@ -64,16 +71,19 @@ class ProductList extends Component {
 
           <div className="filterContainer">
             <div className="filterSidebar">
+              {/*  */}
+
               {this.state.hideFilter ? (
                 <div className="collection">
-                  <FilterConnectivity />{" "}
+                  <FilterConnectivity />
+                  <SidebarFilter />
                 </div>
               ) : null}
-              {/* <Filter /> */}
             </div>
             <div className="container">
               <List />
             </div>
+            <div></div>
           </div>
         </div>
       </div>

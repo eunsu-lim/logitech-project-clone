@@ -1,5 +1,6 @@
-const FILTER = [
+const SIDIEBARFILTER = [
   {
+    id: 1,
     filterTitle: "CONNECTIVITY",
     filterList: [
       "USB Receiver",
@@ -10,14 +11,17 @@ const FILTER = [
     ],
   },
   {
+    id: 2,
     filterTitle: "SIZE AND FIT",
     filterList: ["Compact / Portable", "Large / Full Support", "Ambidextrous"],
   },
   {
+    id: 3,
     filterTitle: "PLATFORM",
-    filterList: ["Windows", "Mac", "Chrome", "Surface", "Linux", "iPadOS"],
+    filterList: ["Windows", "Mac", "Chrome", "Surface", "Linux", "ipadOS"],
   },
   {
+    id: 5,
     filterTitle: "FEATURES",
     filterList: [
       "Rechargeable",
@@ -29,9 +33,10 @@ const FILTER = [
     ],
   },
   {
+    id: 6,
     filterTitle: "ADVANCED SCROLL TYPES",
     filterList: [
-      "Smarshift",
+      "Smartshift",
       "Hyper-fast Scroll",
       "Tilt Wheel",
       "MagSpeed Magnetic Scrolling",
@@ -39,17 +44,17 @@ const FILTER = [
       "USB-C Charging",
     ],
   },
-  {
-    filterTitle: "ACTIVES & USE",
-    filterList: [
-      "E-mailing",
-      "Web Browsing",
-      "Text Editing",
-      "Spreadsheet Navigation",
-      "Photo, Video, Music Editing",
-      "3D Creation, Software Developments",
-    ],
-  },
 ];
-
-export default FILTER;
+export default SIDIEBARFILTER;
+// {
+//   id: 7,
+//   filterTitle: "ACTIVE & USE",
+//   filterList: [
+//     "E-mailing",
+//     "Web Browsing",
+//     "Text Editing",
+//     "Spreadsheet Navigation",
+//     "Photo, Video, Music Editing",
+//     "3D Creation, Software Developments",
+//   ],
+// },

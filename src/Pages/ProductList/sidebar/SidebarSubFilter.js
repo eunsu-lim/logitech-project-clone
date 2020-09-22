@@ -1,29 +1,29 @@
 import React, { Component } from "react";
-import DATA from "./FilterConnectivityData";
+import SIDIEBARFILTER from "./SidebarFilterData";
 
-class Filter1 extends Component {
+export default class SidebarSubFilter extends Component {
   constructor() {
     super();
     this.state = {
-      filterList: [],
+      filters: [],
     };
   }
 
   componentDidMount() {
     this.setState({
-      filterList: DATA,
+      filters: SIDIEBARFILTER,
     });
   }
 
   render() {
     return (
       <ul>
-        {this.state.filterList.map((filter) => {
+        {this.state.filters.map((filter) => {
           return (
-            <li className="filterCollectionList" key={filter.id}>
+            <li className="filterCollectionLIst">
               <label className="filterCollectionLabel">
-                <input type="button" />
-                {filter.filterName}
+                {/* <input type="checkbox" /> */}
+                {filter.filterList}
               </label>
             </li>
           );
@@ -32,5 +32,3 @@ class Filter1 extends Component {
     );
   }
 }
-
-export default Filter1;

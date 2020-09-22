@@ -1,6 +1,3 @@
-import React, { Component } from "react";
-import Filter1 from "./Filter1";
-
 class filterConnectivity extends Component {
   state = {
     isOpened: false,
@@ -32,4 +29,34 @@ class filterConnectivity extends Component {
   }
 }
 
-export default filterConnectivity;
+class Filter1 extends Component {
+  constructor() {
+    super();
+    this.state = {
+      filterList: [],
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      filterList: DATA,
+    });
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.filterList.map((filter) => {
+          return (
+            <li className="filterCollectionList" key={filter.id}>
+              <label className="filterCollectionLabel">
+                <input type="button" />
+                {filter.filterName}
+              </label>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+}
