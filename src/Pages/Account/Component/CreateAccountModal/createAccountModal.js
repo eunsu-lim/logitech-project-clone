@@ -3,7 +3,24 @@ import "./createAccountModal.scss";
 
 class CreateAccountModal extends Component {
   render() {
-    const { isActive, closeModal } = this.props;
+    const {
+      isActive,
+      closeModal,
+      saveCreateEmail,
+      saveCreatePw,
+      saveCreateConfirmPw,
+      saveCreateName,
+      enteredEmail,
+      enteredPw,
+      enteredConfirmPw,
+
+      createEmailStatus,
+      createPwStatus,
+      createConfirmPwStatus,
+      createNameStatus,
+      clickedCreateBtn,
+    } = this.props;
+    console.log(createConfirmPwStatus, createNameStatus);
     return (
       <div
         onClick={closeModal}
@@ -26,26 +43,100 @@ class CreateAccountModal extends Component {
             Complete the following fields to create an account
           </div>
           <div className="inputInfoAndCreateBtn">
+            {/* ------------------------------ 여기서부터  -----------------------------------*/}
             <input
-              className="inputEmail"
+              className={
+                createEmailStatus === false
+                  ? "inputEmail notInputEmailClicked"
+                  : "inputEmail"
+              }
               type="text"
               placeholder="Email address"
+              onChange={saveCreateEmail}
+              onKeyUp={enteredEmail}
             />
-            <div className="notInputEmail">Please enter a valid email address</div>
+            <div
+              className={
+                createEmailStatus === false
+                  ? "notInputEmail notInputEmailClicked"
+                  : "notInputEmail"
+              }
+            >
+              Please enter a valid email address
+            </div>
+            {/* 비밀번호 */}
             <input
-              className="inputPw"
+              className={
+                createEmailStatus && createPwStatus === false
+                  ? "inputPw notInputPwClicked"
+                  : "inputPw"
+              }
               type="password"
               placeholder="Password"
+              onChange={saveCreatePw}
+              onKeyUp={enteredPw}
             />
-            <div className="notInputPw">Password does not meet requirements</div>
+            <div
+              className={
+                createEmailStatus && createPwStatus === false
+                  ? "notInputPw notInputPwClicked"
+                  : "notInputPw"
+              }
+            >
+              Password does not meet requirements
+            </div>
+            {/* 비밀번호 확인 */}
             <input
-              className="confirmPw"
+              className={
+                createEmailStatus &&
+                createPwStatus &&
+                createConfirmPwStatus === false
+                  ? "confirmPw notConfirmPwClicked"
+                  : "confirmPw"
+              }
               type="password"
               placeholder="Confirm Password"
+              onChange={saveCreateConfirmPw}
+              onKeyUp={enteredConfirmPw}
             />
-            <div className="notConfirmPw">Password does not match</div>
-            <input className="inputName" type="text" placeholder="Name" />
-            <div className="notInputName">Please enter name</div>
+            <div
+              className={
+                createEmailStatus &&
+                createPwStatus &&
+                createConfirmPwStatus === false
+                  ? "notConfirmPw notConfirmPwClicked"
+                  : "notConfirmPw"
+              }
+            >
+              Password does not match
+            </div>
+            {/* 이름 */}
+            <input
+              className={
+                createEmailStatus &&
+                createPwStatus &&
+                createConfirmPwStatus &&
+                createNameStatus === false
+                  ? "inputName notInputNameClicked"
+                  : "inputName"
+              }
+              type="text"
+              placeholder="Name"
+              onChange={saveCreateName}
+            />
+            <div
+              className={
+                createEmailStatus &&
+                createPwStatus &&
+                createConfirmPwStatus &&
+                createNameStatus === false
+                  ? "notInputName notInputNameClicked"
+                  : "notInputName"
+              }
+            >
+              Please enter name
+            </div>
+            {/* --------------------------------- 여기까지 ---------------------------------- */}
             <div className="policyCheck">
               <input className="policyCheckbox" type="checkbox" />
               <span className="policyCheckText">
@@ -87,8 +178,11 @@ class CreateAccountModal extends Component {
                 </div>
               </div>
             </div>
-
-            <button className="createBtn" type="button">
+            <button
+              className="createBtn"
+              type="button"
+              onClick={clickedCreateBtn}
+            >
               CREATE
             </button>
           </div>
