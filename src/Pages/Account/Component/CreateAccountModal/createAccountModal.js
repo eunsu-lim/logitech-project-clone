@@ -54,6 +54,7 @@ class CreateAccountModal extends Component {
               placeholder="Email address"
               onChange={saveCreateEmail}
               onKeyUp={enteredEmail}
+              value={this.props.email}
             />
             <div
               className={

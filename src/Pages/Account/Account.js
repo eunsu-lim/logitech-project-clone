@@ -39,6 +39,7 @@ class Account extends Component {
       this.setState({
         loginModal: false,
         createAccountModal: false,
+        createEmailValue: "",
       });
   };
   //---------------------------------------------------------------
@@ -158,56 +159,66 @@ class Account extends Component {
   // -----------------------------------------
 
   // 회원가입 기능 구현하는 함수-------------------------------------------
-  clickedCreateBtn = () => {
-    fetch("http://10.58.5.78:8000/account/signup", {
-      method: "POST",
-      body: JSON.stringify({
-        email: this.state.createEmailValue,
-        password: this.state.createPwValue,
-        name: this.state.createNameValue,
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        const {
-          createEmailValue,
-          createPwValue,
-          createConfirmPwValue,
-          createNameValue,
-        } = this.state;
+  // clickedCreateBtn = () => {
+  //   fetch("http://10.58.5.78:8000/account/signup", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: this.state.createEmailValue,
+  //       password: this.state.createPwValue,
+  //       name: this.state.createNameValue,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       const {
+  //         createEmailValue,
+  //         createPwValue,
+  //         createConfirmPwValue,
+  //         createNameValue,
+  //       } = this.state;
 
-        const emailValid =
-          createEmailValue.length > 1 && createEmailValue.includes("@");
-        const passwordValid = createPwValue.length >= 5;
-        const passwordConfirmValid =
-          createConfirmPwValue.length >= 5 &&
-          createPwValue === createConfirmPwValue;
-        const nameValid = createNameValue.length > 1;
+  //       const emailValid =
+  //         createEmailValue.length > 1 && createEmailValue.includes("@");
+  //       const passwordValid = createPwValue.length >= 5;
+  //       const passwordConfirmValid =
+  //         createConfirmPwValue.length >= 5 &&
+  //         createPwValue === createConfirmPwValue;
+  //       const nameValid = createNameValue.length > 1;
 
-        this.setState(
-          {
-            createEmailStatus: emailValid,
-            createPwStatus: passwordValid,
-            createConfirmPwStatus: passwordConfirmValid,
-            createNameStatus: nameValid,
-          },
-          () => console.log(emailValid)
-        );
-        if (result.message === "SUCCESS") {
-          alert("Sign Up Success!");
-          // localStorage.setItem("token", result.Authorization);
-          this.props.history.push("/ProductDetails");
-        } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
-          alert("The email or password you have entered is invalid");
-        }
-      });
-  };
+  //       this.setState(
+  //         {
+  //           createEmailStatus: emailValid,
+  //           createPwStatus: passwordValid,
+  //           createConfirmPwStatus: passwordConfirmValid,
+  //           createNameStatus: nameValid,
+  //         },
+  //         () => console.log(emailValid)
+  //       );
+  //       if (result.message === "SUCCESS") {
+  //         alert("Sign Up Success!");
+  //         // localStorage.setItem("token", result.Authorization);
+  //         this.props.history.push("/ProductDetails");
+  //       } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
+  //         alert("The email or password you have entered is invalid");
+  //       }
+  //     });
+  // };
   //---------------------------------------------------------------------
 
-    clickedCreateBtn = () => {
-      const { createEmailStatus, createPwStatus, createConfirmPwStatus, createNameStatus } = this.state 
-      const succeed = createEmailStatus && createPwStatus && createConfirmPwStatus && createNameStatus === true
-      if(succeed){fetch("http://10.58.5.78:8000/account/signup", {
+  clickedCreateBtn = () => {
+    const {
+      createEmailStatus,
+      createPwStatus,
+      createConfirmPwStatus,
+      createNameStatus,
+    } = this.state;
+    const succeed =
+      createEmailStatus &&
+      createPwStatus &&
+      createConfirmPwStatus &&
+      createNameStatus === true;
+    if (succeed) {
+      fetch("http://10.58.5.78:8000/account/signup", {
         method: "POST",
         body: JSON.stringify({
           email: this.state.createEmailValue,
@@ -217,13 +228,6 @@ class Account extends Component {
       })
         .then((res) => res.json())
         .then((result) => {
-          // const {
-          //   createEmailValue,
-          //   createPwValue,
-          //   createConfirmPwValue,
-          //   createNameValue,
-          // } = this.state;
-  
           const emailValid =
             createEmailValue.length > 1 && createEmailValue.includes("@");
           const passwordValid = createPwValue.length >= 5;
@@ -231,7 +235,7 @@ class Account extends Component {
             createConfirmPwValue.length >= 5 &&
             createPwValue === createConfirmPwValue;
           const nameValid = createNameValue.length > 1;
-  
+
           this.setState(
             {
               createEmailStatus: emailValid,
@@ -248,67 +252,31 @@ class Account extends Component {
           } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
             alert("The email or password you have entered is invalid");
           }
-        });}
-      const {
-        createEmailValue,
-        createPwValue,
-        createConfirmPwValue,
-        createNameValue,
-      } = this.state;
+        });
+    }
+    const {
+      createEmailValue,
+      createPwValue,
+      createConfirmPwValue,
+      createNameValue,
+    } = this.state;
 
-      const emailValid =
-        createEmailValue.length > 1 && createEmailValue.includes("@");
-      const passwordValid = createPwValue.length >= 5;
-      const passwordConfirmValid =
-        createConfirmPwValue.length >= 5 &&
-        createPwValue === createConfirmPwValue;
-      const nameValid = createNameValue.length > 1;
+    const emailValid =
+      createEmailValue.length > 1 && createEmailValue.includes("@");
+    const passwordValid = createPwValue.length >= 5;
+    const passwordConfirmValid =
+      createConfirmPwValue.length >= 5 &&
+      createPwValue === createConfirmPwValue;
+    const nameValid = createNameValue.length > 1;
 
-      this.setState(
-        {
-          createEmailStatus: emailValid,
-          createPwStatus: passwordValid,
-          createConfirmPwStatus: passwordConfirmValid,
-          createNameStatus: nameValid,
-        },
-       
-      );
-     
+    this.setState({
+      createEmailStatus: emailValid,
+      createPwStatus: passwordValid,
+      createConfirmPwStatus: passwordConfirmValid,
+      createNameStatus: nameValid,
+    });
   };
   //---------------------------------------------------------------------
-  
-
-  // clickedCreateBtn = () => {
-
-  //   const {
-  //     createEmailStatus,
-  //     createPwStatus,
-  //     createConfirmPwStatus,
-  //     createNameStatus,
-  //     createEmailValue,
-  //     createPwValue,
-  //     createConfirmPwValue,
-  //     createNameValue,
-  //   } = this.state;
-
-  //   const emailValid =
-  //     createEmailValue.length > 1 && createEmailValue.includes("@");
-  //   const passwordValid = createPwValue.length >= 5;
-  //   const passwordConfirmValid =
-  //     createConfirmPwValue.length >= 5 &&
-  //     createPwValue === createConfirmPwValue;
-  //   const nameValid = createNameValue.length > 1;
-
-  //   this.setState(
-  //     {
-  //       createEmailStatus: emailValid,
-  //       createPwStatus: passwordValid,
-  //       createConfirmPwStatus: passwordConfirmValid,
-  //       createNameStatus: nameValid,
-  //     },
-  //     () => console.log(emailValid)
-  //   );
-  // };
 
   render() {
     const {
@@ -317,9 +285,6 @@ class Account extends Component {
       inputEmailStatus,
       inputPwStatus,
       createEmailStatus,
-      createPwStatus,
-      createConfirmPwStatus,
-      createNameStatus,
     } = this.state;
     return (
       <div className="account">
@@ -372,6 +337,7 @@ class Account extends Component {
           isActive={createAccountModal}
           closeModal={this.closeModal}
           saveCreateEmail={this.saveCreateEmail}
+          email={this.state.createEmailValue}
           saveCreatePw={this.saveCreatePw}
           saveCreateConfirmPw={this.saveCreateConfirmPw}
           saveCreateName={this.saveCreateName}
@@ -383,9 +349,6 @@ class Account extends Component {
           createNameStatus={this.createNameStatus}
           clickedCreateBtn={this.clickedCreateBtn}
           createEmailStatus={createEmailStatus}
-          createPwStatus={createPwStatus}
-          createConfirmPwStatus={createConfirmPwStatus}
-          createNameStatus={createNameStatus}
         />
       </div>
     );
