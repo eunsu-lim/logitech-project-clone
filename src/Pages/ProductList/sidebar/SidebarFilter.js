@@ -67,31 +67,3 @@ export default class SidebarFilter extends Component {
     );
   }
 }
-
-{
-  /* render() {
-    const { filterList } = this.state;
-    return (
-      <div>
-        {filterList.map((filter) => {
-          return (
-            <ul>
-              {filter.filterTitle}
-              <li>
-                {filter.filterList.map((subfilter) => {
-                  return (
-                    <div>
-                      <input type="checkbox" name={subfilter} />
-                      {subfilter}
-                    </div>
-                  );
-                })}
-              </li>
-            </ul>
-          );
-        })}
-      </div>
-    );
-  }
-} */
-}
