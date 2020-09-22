@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import SpecList from "./component/SpecList";
 import ProductImg from "./component/ProductImg";
-import COLOR from "./colorData";
-import PRODUCTCOLOR from "./data";
+// import COLOR from "./colorData";
+// import PRODUCTCOLOR from "./data";
+import ProductSection from "./ProductSection";
 import PRODUCTSET from "./setupData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductDetails.scss";
 
-const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
+// const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
 
 class ProductDetails extends Component {
   state = {
@@ -71,7 +72,7 @@ class ProductDetails extends Component {
 
     return (
       <div className="ProductDetails">
-        <section className="containerWrap">
+        {/* <section className="containerWrap">
           <div className="detailContainer">
             <div className="detailLeft">
               <ul className="">
@@ -130,7 +131,8 @@ class ProductDetails extends Component {
               })}
             </ul>
           </div>
-        </section>
+        </section> */}
+        <ProductSection />
         <section className="mainBg">
           <div className="bgContent">
             <h2>Minimalist. Modern. Silent.</h2>

@@ -11,113 +11,112 @@
 .ProductDetails {
   font-size: 16px;
   font-family: $font;
-  .containerWrap {
-    background-color: #f4f4f4;
-    .detailContainer {
-      @include flexAic;
-      @include container;
-      .detailLeft {
-        display: flex;
-        flex-direction: column;
-        .productList {
-          margin: 0 120px;
+  // .containerWrap {
+  //   background-color: #f4f4f4;
+  //   .detailContainer {
+  //     @include flexAic;
+  //     @include container;
+  //     .detailLeft {
+  //       display: flex;
+  //       flex-direction: column;
+  //       .productList {
+  //         margin: 0 120px;
+  //         .productShot {
+  //           padding: 0 50px;
+  //           width: 100%;
+  //         }
+  //       }
+  //     }
+  //     .productInfo {
+  //       .infoBox {
+  //         padding: 15px 0;
+  //         h3 {
+  //           margin-bottom: 3px;
+  //           font-size: 1.95em;
+  //           font-weight: 600;
+  //           color: #000;
+  //         }
+  //         .infoDetail {
+  //           margin-bottom: 1em;
+  //           font-size: 1em;
+  //         }
+  //         .infoPrice {
+  //           line-height: 1em;
+  //           font-size: 1.5em;
+  //           font-weight: 200;
+  //         }
+  //         em {
+  //           font-size: 13px;
+  //         }
+  //       }
 
-          .productShot {
-            padding: 0 50px;
-            width: 100%;
-          }
-        }
-      }
-      .productInfo {
-        .infoBox {
-          padding: 15px 0;
-          h3 {
-            margin-bottom: 3px;
-            font-size: 1.95em;
-            font-weight: 600;
-            color: #000;
-          }
-          .infoDetail {
-            margin-bottom: 1em;
-            font-size: 1em;
-          }
-          .infoPrice {
-            line-height: 1em;
-            font-size: 1.5em;
-            font-weight: 200;
-          }
-          em {
-            font-size: 13px;
-          }
-        }
-
-        .infoColor {
-          padding: 15px 0;
-          border-top: 1px solid #c3c6c8;
-          border-bottom: 1px solid #c3c6c8;
-          font-size: 16px;
-          .color {
-            margin-bottom: 15px;
-          }
-          ul {
-            display: flex;
-            li {
-              overflow: hidden;
-              margin-right: 10px;
-              width: 33px;
-              height: 33px;
-              border-radius: 100%;
-              a {
-                img {
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-        .infoBtn {
-          margin: 15px 0;
-          button {
-            display: block;
-            padding: 17px 5px;
-            width: 49%;
-            background-color: #252a2c;
-            color: #dcfd00;
-            font-size: 0.75em;
-            text-transform: uppercase;
-            cursor: pointer;
-            &:hover {
-              background-color: #dcfd00;
-              color: #252a2c;
-            }
-          }
-          a {
-            display: block;
-            margin-top: 40px;
-          }
-        }
-      }
-    }
-    .productsBelow {
-      @include container;
-      padding: 25px 0 15px;
-      border-top: 1px solid #c3c6c8;
-      .productThumbs {
-        display: flex;
-        li {
-          margin-right: 32px;
-          margin-bottom: 10px;
-          width: 50px;
-          a {
-            height: 45px;
-            img {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
+  //       .infoColor {
+  //         padding: 15px 0;
+  //         border-top: 1px solid #c3c6c8;
+  //         border-bottom: 1px solid #c3c6c8;
+  //         font-size: 16px;
+  //         .color {
+  //           margin-bottom: 15px;
+  //         }
+  //         ul {
+  //           display: flex;
+  //           li {
+  //             overflow: hidden;
+  //             margin-right: 10px;
+  //             width: 33px;
+  //             height: 33px;
+  //             border-radius: 100%;
+  //             a {
+  //               img {
+  //                 width: 100%;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //       .infoBtn {
+  //         margin: 15px 0;
+  //         button {
+  //           display: block;
+  //           padding: 17px 5px;
+  //           width: 49%;
+  //           background-color: #252a2c;
+  //           color: #dcfd00;
+  //           font-size: 0.75em;
+  //           text-transform: uppercase;
+  //           cursor: pointer;
+  //           &:hover {
+  //             background-color: #dcfd00;
+  //             color: #252a2c;
+  //           }
+  //         }
+  //         a {
+  //           display: block;
+  //           margin-top: 40px;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .productsBelow {
+  //     @include container;
+  //     padding: 25px 0 15px;
+  //     border-top: 1px solid #c3c6c8;
+  //     .productThumbs {
+  //       display: flex;
+  //       li {
+  //         margin-right: 32px;
+  //         margin-bottom: 10px;
+  //         width: 50px;
+  //         a {
+  //           height: 45px;
+  //           img {
+  //             width: 100%;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   .mainBg {
     background-image: url("https://assets.logitech.com/assets/65685/34/logitech-pebble-m350.jpg");
     background-position: 39.38% 68.67%;

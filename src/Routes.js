@@ -4,6 +4,7 @@ import Account from "./Pages/Account/Account";
 import Login from "./Pages/Login/Login";
 import Main from "./Pages/Main/Main";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import ProductSection from "./Pages/ProductDetails/ProductSection";
 import ProductList from "./Pages/ProductList/ProductList";
 import SignUp from "./Pages/SignUp/SignUp";
 
@@ -16,6 +17,7 @@ class Routes extends React.Component {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Main" component={Main} />
           <Route exact path="/ProductDetails" component={ProductDetails} />
+          <Route exact path="/ProductSection" component={ProductSection} />
           <Route exact path="/ProductList" component={ProductList} />
           <Route exact path="/SignUp" component={SignUp} />
         </Switch>
