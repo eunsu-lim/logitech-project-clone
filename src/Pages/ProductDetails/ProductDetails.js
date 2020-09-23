@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import SpecList from "./component/SpecList";
 import ProductImg from "./component/ProductImg";
-import COLOR from "./colorData";
-import PRODUCTCOLOR from "./data";
+import ProductSection from "./ProductSection";
 import PRODUCTSET from "./setupData";
 import DETAIL from "./ProductDetails2";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductDetails.scss";
 
-const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
-
 class ProductDetails extends Component {
   state = {
-    productInfos: [],
+    product: [],
     imgColor: "White",
     imgIndex: 0,
     modal: false,
@@ -25,7 +23,7 @@ class ProductDetails extends Component {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          productInfos: result.productInfo,
+          product: result.productInfo,
           slideImg: result.slide,
         });
       });
@@ -33,7 +31,6 @@ class ProductDetails extends Component {
 
   handleImgColor = (e) => {
     const { name } = e.target;
-    // console.log(name);
     this.setState({
       imgColor: name,
     });
@@ -58,7 +55,7 @@ class ProductDetails extends Component {
   };
 
   render() {
-    const { productInfos, productSetup, imgIndex, imgColor } = this.state;
+    const { product } = this.state;
     const slideSet = {
       dots: true,
       infinite: true,
@@ -71,67 +68,7 @@ class ProductDetails extends Component {
 
     return (
       <div className="ProductDetails">
-        <section className="containerWrap">
-          <div className="detailContainer">
-            <div className="detailLeft">
-              <ul className="">
-                <li className="productList">
-                  <img
-                    className="productShot"
-                    src={PRODUCTCOLOR[imgColor][imgIndex]}
-                    alt="Logitech Pebble M350 1"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div className="productInfo">
-              <div className="infoBox">
-                <h3>LOGITECH PEBBLE M350</h3>
-                <p className="infoDetail">
-                  Modern, Slim, and Silent Wireless and <em>Bluetooth Mouse</em>
-                </p>
-                <p className="infoPrice">$ 29.99</p>
-                <em>Free shipping on orders over $29.00</em>
-              </div>
-
-              <div className="infoColor">
-                <p className="color">{imgColor}</p>
-                <ul>
-                  {COLOR.map((el, i) => {
-                    return (
-                      <li key={i} onClick={this.handleImgColor}>
-                        <a href="#">
-                          <img
-                            name={COLORLIST[i]}
-                            src={el}
-                            alt="color images"
-                          />
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className="infoBtn">
-                <button>add to cart</button>
-                <a href="#">+ specifications</a>
-              </div>
-            </div>
-          </div>
-          <div className="productsBelow">
-            <ul className="productThumbs">
-              {PRODUCTCOLOR[imgColor].map((el, i) => {
-                return (
-                  <li key={i} onClick={() => this.setState({ imgIndex: i })}>
-                    <a href="#">
-                      <img src={el} />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </section>
+        <ProductSection />
         <section className="mainBg">
           <div className="bgContent">
             <h2>Minimalist. Modern. Silent.</h2>
@@ -155,9 +92,8 @@ class ProductDetails extends Component {
         <section className="productImglist">
           <div>
             <h6>Features</h6>
-
             <ul>
-              <ProductImg productData={productInfos} />
+              <ProductImg productData={product} />
             </ul>
           </div>
         </section>
@@ -186,86 +122,7 @@ class ProductDetails extends Component {
             <h6>SPECS & DETAIL</h6>
             <div className="specList">
               <div>
-                <ul>
-                  <li>
-                    <div>
-                      <h4>DIMENSIONS</h4>
-                      <p>
-                        <strong>Mouse Dimensions</strong>
-                      </p>
-                      <p>Height x Width x Depth:</p>
-                      <p>4.21 in (107mm) x 2.32 in (59mm) 1.04 in (26.5mm)</p>
-                      <p>Weight (with batteries): 3.53 oz (100 g)</p>
-                      <p>
-                        <strong>Nano receiver</strong>
-                      </p>
-                      <p>Height x Width x Depth:</p>
-                      <p>
-                        0.74 in (18.7 mm) 0.57 in (14.4 mm) x 0.24 in (6.1 mm)
-                      </p>
-                      <p>Weight: 0.06 oz (1.8 g)</p>
-                      <h4>SYSTEM REQUIREMENTS</h4>
-                      <p>
-                        Windows® | Mac | Chrome® OS | Linux® | Works with
-                        Surface™
-                      </p>
-                      <p>
-                        <strong>Receiver</strong>
-                      </p>
-                      <p>Required: Available USB port</p>
-                      <p>Windows 10 or later, Windows 8, Windows 7</p>
-                      <p>macOS 10.10 or later</p>
-                      <p>Chrome OS</p>
-                      <p>Linux Kernel 2.6+</p>
-                      <p>
-                        <strong>Bluetooth</strong>
-                      </p>
-                      <p>Required: Bluetooth Low Energy technology</p>
-                      <p>Windows 10 or later, Windows 8</p>
-                      <p>macOS 10.10 or later</p>
-                      <p>Chrome OS, Android™ 5.0 or later</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <h4>DIMENSIONS</h4>
-                      <p>
-                        <strong>Mouse Dimensions</strong>
-                      </p>
-                      <p>Height x Width x Depth:</p>
-                      <p>4.21 in (107mm) x 2.32 in (59mm) 1.04 in (26.5mm)</p>
-                      <p>Weight (with batteries): 3.53 oz (100 g)</p>
-                      <p>
-                        <strong>Nano receiver</strong>
-                      </p>
-                      <p>Height x Width x Depth:</p>
-                      <p>
-                        0.74 in (18.7 mm) 0.57 in (14.4 mm) x 0.24 in (6.1 mm)
-                      </p>
-                      <p>Weight: 0.06 oz (1.8 g)</p>
-                      <h4>SYSTEM REQUIREMENTS</h4>
-                      <p>
-                        Windows® | Mac | Chrome® OS | Linux® | Works with
-                        Surface™
-                      </p>
-                      <p>
-                        <strong>Receiver</strong>
-                      </p>
-                      <p>Required: Available USB port</p>
-                      <p>Windows 10 or later, Windows 8, Windows 7</p>
-                      <p>macOS 10.10 or later</p>
-                      <p>Chrome OS</p>
-                      <p>Linux Kernel 2.6+</p>
-                      <p>
-                        <strong>Bluetooth</strong>
-                      </p>
-                      <p>Required: Bluetooth Low Energy technology</p>
-                      <p>Windows 10 or later, Windows 8</p>
-                      <p>macOS 10.10 or later</p>
-                      <p>Chrome OS, Android™ 5.0 or later</p>
-                    </div>
-                  </li>
-                </ul>
+                <SpecList />
               </div>
             </div>
             <div className="productSupport">
