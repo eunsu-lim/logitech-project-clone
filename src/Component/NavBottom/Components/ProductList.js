@@ -10,9 +10,9 @@ class ProductList extends Component {
         <li className="productList">{mainMenu.category}</li>
         {mainMenu.subcategory.map((el) => {
           return (
-            <a href={el.url}>
-              <li key={el.id}>{el.category}</li>
-            </a>
+            <li key={el.id}>
+              <a href={el.url}>{el.category}</a>
+            </li>
           );
         })}
       </ul>

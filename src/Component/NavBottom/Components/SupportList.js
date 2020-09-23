@@ -10,9 +10,9 @@ class SupportList extends Component {
         <li className="supportList">{mainMenu.supportCategory}</li>
         {mainMenu.subcategory.map((el) => {
           return (
-            <a href={el.url}>
-              <li key={el.id}>{el.supportCategory}</li>
-            </a>
+            <li key={el.id}>
+              <a href={el.url}>{el.supportCategory}</a>
+            </li>
           );
         })}
       </ul>

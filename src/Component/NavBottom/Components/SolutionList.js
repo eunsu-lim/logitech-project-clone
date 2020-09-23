@@ -10,9 +10,9 @@ class SolutionList extends Component {
         <li className="solutionList">{mainMenu.solutionCategory}</li>
         {mainMenu.subcategory.map((el) => {
           return (
-            <a href={el.url}>
-              <li key={el.id}>{el.solutionCategory}</li>
-            </a>
+            <li key={el.id}>
+              <a href={el.url}>{el.solutionCategory}</a>
+            </li>
           );
         })}
       </ul>

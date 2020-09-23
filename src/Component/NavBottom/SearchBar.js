@@ -24,8 +24,10 @@ class SearchBar extends Component {
   };
 
   mainNavHover = (num) => {
-    if (this.state.activeTab === num) this.setState({ activeTab: null });
-    else this.setState({ activeTab: num });
+    const { activeTab } = this.state;
+    if (activeTab === num) {
+      this.setState({ activeTab: null });
+    } else this.setState({ activeTab: num });
   };
 
   render() {

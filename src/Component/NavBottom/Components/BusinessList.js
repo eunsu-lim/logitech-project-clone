@@ -10,9 +10,9 @@ class BusinessList extends Component {
         <li className="businessList">{mainMenu.businessCategory}</li>
         {mainMenu.subcategory.map((el) => {
           return (
-            <a href={el.url}>
-              <li key={el.id}>{el.businessCategory}</li>
-            </a>
+            <li key={el.id}>
+              <a href={el.url}>{el.businessCategory}</a>
+            </li>
           );
         })}
       </ul>
