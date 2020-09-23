@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import Nav from "../../Component/Nav/Nav";
+import NavBottom from "../../Component/NavBottom/SearchBar";
+import PriceFilter from "./PriceFilter/PriceFilter";
 import List from "../ProductList/List/List";
-import FilterConnectivity from "./Filter/FilterConnectivity";
 import SidebarFilter from "./sidebar/SidebarFilter";
-//import "../ProductList/ProductList.scss"
+import SidebarfilterColletcion from "./sidebarCollection/SidebarfilterCollection";
+import Footer from "../../Component/Footer/Footer";
 import "./ProductList.scss";
+import "./PriceFilter/PriceFilter.scss";
 
 class ProductList extends Component {
   constructor() {
@@ -18,7 +22,7 @@ class ProductList extends Component {
 
   componentDidMount() {
     this.setState({
-      filters: FilterConnectivity,
+      filters: SidebarfilterColletcion,
     });
   }
 
@@ -32,6 +36,8 @@ class ProductList extends Component {
   render() {
     return (
       <div className="productList">
+        <Nav />
+        <NavBottom />
         <div className="category">
           <div className="categoryData">
             <div className="">
@@ -65,17 +71,15 @@ class ProductList extends Component {
                 src="https://www.logitech.com/images/icons/down-arrow.svg"
                 alt=""
               />
-              <span>SORTY BY: NEWEST</span>
+              <p>SORTY BY: NEWEST</p>
+              <PriceFilter />
             </button>
           </div>
-
           <div className="filterContainer">
             <div className="filterSidebar">
-              {/*  */}
-
               {this.state.hideFilter ? (
                 <div className="collection">
-                  <FilterConnectivity />
+                  <SidebarfilterColletcion />
                   <SidebarFilter />
                 </div>
               ) : null}
@@ -86,6 +90,7 @@ class ProductList extends Component {
             <div></div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

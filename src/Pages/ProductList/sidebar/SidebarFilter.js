@@ -1,35 +1,36 @@
 import React, { Component } from "react";
-import SIDIEBARFILTER from "./SidebarFilterData";
+import SIDIEBAR_PRODUCT_FILTER from "./SidebarFilterData";
+//import SidebarSubFilter from "./SidebarSubFilter";
 
 export default class SidebarFilter extends Component {
   constructor() {
     super();
     this.state = {
-      filterList: SIDIEBARFILTER,
+      sidebarFilterList: SIDIEBAR_PRODUCT_FILTER,
       isOpened: false,
-      isCheckOpened: [false, false, false, false, false],
-      collectionIcon: "https://www.logitech.com/images/icons/icon-expand.svg",
+      isCheckOpened: [false, false, false, false, false, false],
+      expandIcon: "https://www.logitech.com/images/icons/icon-expand.svg",
+      collapseIcon: "https://www.logitech.com/images/icons/icon-collapse.svg",
     };
   }
 
   openSubFilter = (idx) => {
-    const expandIcon = "https://www.logitech.com/images/icons/icon-expand.svg";
-    const collapseIcon =
-      "https://www.logitech.com/images/icons/icon-collapse.svg";
-    // this.setState({
-    //   isOpened: !this.state.isOpened,
-    //   collectionIcon: !this.state.isOpened ? collapseIcon : expandIcon,
-    // });
-    const temp = [...this.state.isCheckOpened];
-    temp[idx] = !temp[idx];
-    this.setState({ isCheckOpened: temp });
+    const { isCheckOpened } = this.state;
+    this.setState({
+      isCheckOpened: isCheckOpened.map((isChecked, index) => {
+        if (index === idx) {
+          return !isChecked;
+        }
+        return isChecked;
+      }),
+    });
   };
 
   render() {
-    const { filterList } = this.state;
+    const { sidebarFilterList, isCheckOpened } = this.state;
     return (
-      <div>
-        {filterList.map((filter, index) => {
+      <div className="SidebarFilter">
+        {sidebarFilterList.map((filter, index) => {
           return (
             <ul>
               <div className="filterTitle">
@@ -44,16 +45,23 @@ export default class SidebarFilter extends Component {
                   >
                     {filter.filterTitle}
                   </span>
-                  <img src={this.state.collectionIcon} />
+                  <img
+                    src={
+                      this.state.isCheckOpened[index]
+                        ? this.state.collapseIcon
+                        : this.state.expandIcon
+                    }
+                  />
                 </button>
+                {/*<SidebarSubFilter />} */}
                 <li className="filterCollectionList">
                   <label className="filterCollectionLabel">
-                    {this.state.isCheckOpened[index] &&
+                    {isCheckOpened[index] &&
                       filter.filterList.map((subfilter) => {
                         return (
                           <div>
-                            <input type="checkbox" />
-                            {subfilter}
+                            <input type="button" />
+                            <label className="subfilter">{subfilter}</label>
                           </div>
                         );
                       })}

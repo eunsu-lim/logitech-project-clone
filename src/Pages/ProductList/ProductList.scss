@@ -17,8 +17,10 @@
       align-self: center;
       display: flex;
       flex-direction: column;
+
       .miceKeyboardMice {
         width: 300px;
+
         .miceKeyboard {
           width: 160px;
           text-decoration-line: underline;
@@ -54,7 +56,6 @@
   }
 
   .filterProductContainer {
-    // padding: 0 30px;
     width: 100%;
     max-width: 1250px;
     display: flex;
@@ -67,7 +68,7 @@
       justify-content: space-between;
       height: 50px;
       width: 100%;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid #aaaaaa;
 
       button {
         &:first-child {
@@ -96,7 +97,6 @@
     }
 
     .filterContainer {
-      margin-top: 10px;
       padding: 0 20px;
       display: flex;
     }
@@ -112,9 +112,9 @@
 
       .filterTitle {
         width: 250px;
-        padding: 20px 60px 20px 20px;
+        padding: 30px 60px 20px 20px;
         line-height: 150%;
-        border-bottom: 1px solid #6f7678;
+        border-bottom: 1px solid #aaaaaa;
 
         button {
           margin: 0 60px 10px 0;
@@ -145,6 +145,7 @@
         }
 
         .filterCollectionList {
+          width: 250px;
           margin-bottom: 3px;
 
           .filterCollectionLabel {
@@ -153,6 +154,9 @@
             font-weight: lighter;
             text-align: left;
             color: #6f7678;
+            input {
+              margin-right: 10px;
+            }
           }
         }
       }
@@ -175,7 +179,7 @@
             border: 1px solid transparent;
 
             &:hover {
-              border: 1px solid black;
+              border: 1px solid #aaaaaa;
 
               .productInfo {
                 width: 276px;
@@ -218,18 +222,6 @@
                 span {
                   margin-right: 5px;
                 }
-                // input[type="checkbox"] {
-                //   // display: none;
-                // }
-                // input[type="checkbox"] + label span {
-                //   display: inline-block;
-                //   width: 20px;
-                //   height: 20px;
-                //   background-color: white;
-                // }
-                // input[type="checkbox"]:checkecd + label sapn {
-                //   background-color: black;
-                // }
               }
 
               img {

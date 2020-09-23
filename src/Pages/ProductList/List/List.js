@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "../../ProductList/ProductList.scss";
 
-class List extends Component {
+class MiceList extends Component {
   state = {
     products: [],
+    isChecked: false,
   };
 
   componentDidMount() {
@@ -20,9 +21,16 @@ class List extends Component {
     this.setState((state) => ({ a: !state.a }));
   };
 
+  handleCheckBox() {
+    this.setState({
+      isChecked: !this.state.isChecked,
+    });
+  }
+
   render() {
+    const { isChecked } = this.state;
     return (
-      <ul>
+      <ul className="MiceList">
         {this.state.products.map((product, index) => {
           if (index !== 2 && product.product_details !== "") {
             return (
@@ -32,9 +40,13 @@ class List extends Component {
                   onMouseOver={this.handleMouseOver}
                 >
                   <div className="productImage">
-                    <div className="check">
-                      <input type="checkbox" className="checkbox" />
-                      <label for="checkbox">
+                    <div className="check" onClick={this.isChecked}>
+                      <input
+                        type="checkbox"
+                        className="productCheckbox"
+                        checked={isChecked}
+                      />
+                      <label for="productCheckbox">
                         <span></span>Compare
                       </label>
                     </div>
@@ -96,4 +108,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default MiceList;
