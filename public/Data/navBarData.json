@@ -1,0 +1,229 @@
+{
+  "MainMenu": [
+    {
+      "id": 1,
+      "category": "MICE + KEYBOARD",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Mice",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Combos",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "category": "Keyboards",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 4,
+          "category": "Ipad Keyboards",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 5,
+          "category": "Tablet Keyboards",
+          "url": "https://www.logitech.com/en-us/mobile/keyboards"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "MOBILE DEVICES",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "iPad Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "iPad Accessories",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Tablet Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "category": "Smartphone Accessories",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "STREAMING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "StreamCam",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Webcams",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Streaming Package",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "category": "All Streaming Gear",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "HEADSETS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Wired Headsets",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": " Wireless Headsets",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Headset Webcam Kits",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "VIDEO CONFERENCING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Conference Cameras",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Conference Room Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Desk Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Accessories",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Webcams",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Logitech Sync Device Management",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "PRESENTATION REMOTES",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Spotlight",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "All Presentation Remotes",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "WIRELESS CHARGING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Wireless Phone Chargers",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "SMART HOME",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Harmony Remotes",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Base Charging Stand",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "HOME SECURITY CAMERAS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Circle View Camera",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "SPEAKERS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "category": "Bluetooth Speakers",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "category": "Computer Speakers",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "category": "Surround Sound Systems",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    }
+  ]
+}
