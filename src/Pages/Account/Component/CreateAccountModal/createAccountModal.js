@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./createAccountModal.scss";
 
 class CreateAccountModal extends Component {
@@ -6,10 +7,7 @@ class CreateAccountModal extends Component {
     const {
       isActive,
       closeModal,
-      saveCreateEmail,
-      saveCreatePw,
-      saveCreateConfirmPw,
-      saveCreateName,
+      saveAccount,
       enteredEmail,
       enteredPw,
       enteredConfirmPw,
@@ -24,7 +22,7 @@ class CreateAccountModal extends Component {
       createNameValue,
       clickedCreateBtn,
     } = this.props;
-    
+
     return (
       <div
         onClick={closeModal}
@@ -56,9 +54,10 @@ class CreateAccountModal extends Component {
               }
               type="text"
               placeholder="Email address"
-              onChange={saveCreateEmail}
+              onChange={saveAccount}
               onKeyUp={enteredEmail}
               value={createEmailValue}
+              name="createEmailValue"
             />
             <div
               className={
@@ -78,9 +77,10 @@ class CreateAccountModal extends Component {
               }
               type="password"
               placeholder="Password"
-              onChange={saveCreatePw}
+              onChange={saveAccount}
               onKeyUp={enteredPw}
               value={createPwValue}
+              name="createPwValue"
             />
             <div
               className={
@@ -102,9 +102,10 @@ class CreateAccountModal extends Component {
               }
               type="password"
               placeholder="Confirm Password"
-              onChange={saveCreateConfirmPw}
+              onChange={saveAccount}
               onKeyUp={enteredConfirmPw}
               value={createConfirmPwValue}
+              name="createConfirmPwValue"
             />
             <div
               className={
@@ -129,9 +130,10 @@ class CreateAccountModal extends Component {
               }
               type="text"
               placeholder="Name"
-              onChange={saveCreateName}
+              onChange={saveAccount}
               onKeyUp={enteredName}
               value={createNameValue}
+              name="createNameValue"
             />
             <div
               className={
@@ -150,12 +152,12 @@ class CreateAccountModal extends Component {
               <input className="policyCheckbox" type="checkbox" />
               <span className="policyCheckText">
                 Yes, I want to receive news and product emails. Read our
-                <a
+                <Link
                   className="privacyPolicy"
-                  href="http://localhost:3000/Account"
+                  to="http://localhost:3000/Account"
                 >
                   privacy policy
-                </a>
+                </Link>
                 .
               </span>
             </div>
@@ -171,19 +173,19 @@ class CreateAccountModal extends Component {
                 />
                 <div className="reCAPCHAText">reCAPTCHA</div>
                 <div>
-                  <a
+                  <Link
                     className="reCAPCHATLink"
-                    href="http://localhost:3000/Account"
+                    to="http://localhost:3000/Account"
                   >
                     Privacy
-                  </a>
+                  </Link>
                   -
-                  <a
+                  <Link
                     className="reCAPCHATLink"
-                    href="http://localhost:3000/Account"
+                    to="http://localhost:3000/Account"
                   >
                     Terms
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -7,12 +7,11 @@ class LoginModal extends Component {
     const {
       isActive,
       closeModal,
+      saveLoginValue,
       inputEmailStatus,
       inputPwStatus,
       emailValue,
       passwordValue,
-      handleEmailValue,
-      handlePwValue,
       handleLoginBtn,
       handleInputEmailStatus,
       goToCreateAccountModal,
@@ -43,9 +42,10 @@ class LoginModal extends Component {
               }
               type="text"
               placeholder="Email address"
-              onChange={handleEmailValue}
+              onChange={saveLoginValue}
               onKeyUp={handleInputEmailStatus}
               value={emailValue}
+              name="emailValue"
             />
             <div
               className={
@@ -64,9 +64,10 @@ class LoginModal extends Component {
               }
               type="password"
               placeholder="Password"
-              onChange={handlePwValue}
+              onChange={saveLoginValue}
               onKeyUp={this.props.handleInputPwStatus}
               value={passwordValue}
+              name="passwordValue"
             ></input>
             <div
               className={

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./infoBoxLink.scss";
+import { Link } from 'react-router-dom';
 
 class InfoBoxTopLink extends Component {
   render() {
@@ -10,7 +11,7 @@ class InfoBoxTopLink extends Component {
           {links.map((link, index) => {
             return (
               <li key={index} className="links">
-                <a href="http://localhost:3000/Account">{link}</a>
+                <Link to="http://localhost:3000/Account">{link}</Link>
               </li>
             );
           })}

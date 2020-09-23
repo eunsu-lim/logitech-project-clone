@@ -47,7 +47,7 @@ class Account extends Component {
         createNameValue: "",
       });
   };
-  //---------------------------------------------------------------
+  //--------------------------------------------------------------
 
   // 모달 창 켜는 함수---------------------------------------------
   handleClick = () => {
@@ -65,20 +65,13 @@ class Account extends Component {
   };
   //--------------------------------------------------------------
   // 로그인에 정보 입력 시 입력된 값 저장하는 함수
-  handleEmailValue = (e) => {
-    const { value } = e.target;
+  saveLoginValue = (e) => {
+    const { value, name } = e.target;
     this.setState({
-      emailValue: value,
+      [name]: value,
     });
   };
-
-  handlePwValue = (e) => {
-    const { value } = e.target;
-    this.setState({
-      passwordValue: value,
-    });
-  };
-  //--------------------------------------------
+  //-------------------------------------------------------------
   // 로그인에 정보 입력 시 빨간 기능 없애는 함수
   handleInputEmailStatus = () => {
     const { emailValue } = this.state;
@@ -94,7 +87,7 @@ class Account extends Component {
     });
   };
   //-----------------------------------------------
-  // 로그인 기능 구현하는 함수-----------------------------------------------------
+  // 로그인 기능 구현하는 함수------------------------------------------------------
   handleLoginBtn = () => {
     fetch("http://10.58.6.147:8000/account/signin", {
       method: "POST",
@@ -107,7 +100,7 @@ class Account extends Component {
       .then((result) => {
         const { emailValue, passwordValue, inputEmailStatus } = this.state;
 
-        if (inputEmailStatus === false) {
+        if (!inputEmailStatus) {
           this.setState({
             inputPwStatus: true,
           });
@@ -115,14 +108,14 @@ class Account extends Component {
         this.setState({
           inputEmailStatus: emailValue.length > 1 && emailValue.includes("@"),
         });
-        if (inputEmailStatus === true && passwordValue.length < 5) {
+        if (inputEmailStatus && passwordValue.length < 5) {
           this.setState({
             inputPwStatus: false,
           });
         }
         if (result.Authorization) {
           localStorage.setItem("token", result.Authorization);
-          this.props.history.push("/ProductDetails");
+          this.props.history.push("/Main");
         } else if (result.message === "UNAUTHORIZED") {
           alert("The email or password you have entered is invalid");
         }
@@ -131,36 +124,15 @@ class Account extends Component {
   //------------------------------------------------------------------------------
 
   // 회원가입에 정보 입력 시 입력된 값 저장하는 함수---------------
-  saveCreateEmail = (e) => {
-    const { value } = e.target;
+  saveAccount = (e) => {
+    const { value, name } = e.target;
     this.setState({
-      createEmailValue: value,
-    });
-  };
-
-  saveCreatePw = (e) => {
-    const { value } = e.target;
-    this.setState({
-      createPwValue: value,
-    });
-  };
-
-  saveCreateConfirmPw = (e) => {
-    const { value } = e.target;
-    this.setState({
-      createConfirmPwValue: value,
-    });
-  };
-
-  saveCreateName = (e) => {
-    const { value } = e.target;
-    this.setState({
-      createNameValue: value,
+      [name]: value,
     });
   };
   //--------------------------------------------------------------
 
-  // 회원가입 정보 입력 시 빨간 기능 없애는 함수
+  // 회원가입 정보 입력 시 빨간 기능 없애는 함수---------
   enteredEmail = () => {
     this.setState({
       createEmailStatus: this.state.createEmailValue.length >= 1,
@@ -190,7 +162,7 @@ class Account extends Component {
       createNameStatus: this.state.createNameValue.length >= 1,
     });
   };
-  // -----------------------------------------
+  // -------------------------------------------------
 
   // 회원가입 기능 구현하는 함수-------------------------------------------
   clickedCreateBtn = () => {
@@ -206,7 +178,7 @@ class Account extends Component {
     } = this.state;
 
     const emailValid =
-      createEmailValue.length > 1 && createEmailValue.includes("@");
+      createEmailValue.length > 1 && createEmailValue.includes("@") && createEmailValue.includes(".");
     const passwordValid = createPwValue.length >= 5;
     const passwordConfirmValid =
       createConfirmPwValue.length >= 5 &&
@@ -258,7 +230,6 @@ class Account extends Component {
       createEmailStatus,
       emailValue,
       passwordValue,
-      createEmailValue,
       createPwValue,
       createConfirmPwValue,
       createPwStatus,
@@ -307,6 +278,7 @@ class Account extends Component {
           inputPwStatus={inputPwStatus}
           emailValue={emailValue}
           passwordValue={passwordValue}
+          saveLoginValue={this.saveLoginValue}
           closeModal={this.closeModal}
           handleEmailValue={this.handleEmailValue}
           handlePwValue={this.handlePwValue}
@@ -318,14 +290,11 @@ class Account extends Component {
         <CreateAccountModal
           isActive={createAccountModal}
           closeModal={this.closeModal}
-          saveCreateEmail={this.saveCreateEmail}
-          createEmailValue={createEmailValue}
+          // saveCreateEmail={this.saveCreateEmail}
+          saveAccount={this.saveAccount}
           createPwValue={createPwValue}
           createConfirmPwValue={createConfirmPwValue}
           createNameValue={createNameValue}
-          saveCreatePw={this.saveCreatePw}
-          saveCreateConfirmPw={this.saveCreateConfirmPw}
-          saveCreateName={this.saveCreateName}
           enteredEmail={this.enteredEmail}
           enteredPw={this.enteredPw}
           enteredConfirmPw={this.enteredConfirmPw}
