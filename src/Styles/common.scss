@@ -3,32 +3,43 @@ $font: "Poppins", sans-serif;
 $theme-background-color: "white";
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 @mixin flex {
   display: flex;
 }
+
 @mixin flexJcAic {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @mixin flexJcc {
   display: flex;
   justify-content: center;
 }
+
 @mixin flexAic {
   display: flex;
   align-items: center;
 }
+
 @mixin flexJcsb {
   display: flex;
   justify-content: space-between;
 }
+
 @mixin commonFont {
   font-family: “brown”, helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 200;
+}
+
+@mixin backGround($background: null, $size: null, $opacity: null) {
+  background: $background;
+  background-size: $size;
+  opacity: $opacity;
 }

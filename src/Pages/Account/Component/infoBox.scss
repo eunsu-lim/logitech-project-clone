@@ -1,0 +1,33 @@
+.myAccountBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .infoBoxes {
+    display: flex;
+    text-align: center;
+      .infoBox {
+      margin: 0 72px;
+
+      .infoImg {
+        margin-top: 100px;
+      }
+
+      .infoTitle {
+        margin: 15px 0;
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      .infoText {
+        width: 260px;
+        margin: 15px 0 25px 0px;
+        color: #6f7678;
+        font-weight: 300;
+      }
+    }
+  }
+  #infoBoxesBottom{
+    padding-bottom: 90px;
+  }
+}

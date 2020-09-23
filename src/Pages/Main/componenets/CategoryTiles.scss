@@ -1,21 +1,13 @@
 .tilesWrap {
-  // transform: translateX(-1219.98px);
-  // width: calc(300% + 60px + 20px);
-  // will-change: transform;
-  // transition: transform 0.5s ease-in-out;
-  // padding-left: 0;
-  // width: calc(200% + 60px + 20px);
-  // display: flex;
-  // flex-direction: row;
   .productListInfo {
     height: 884px;
     padding: 110px 40px;
     .listInfo {
+      display: grid;
       max-width: 1345px;
       width: 100%;
       height: 100%;
       margin: 0 auto;
-      display: grid;
       grid-column-gap: 24px;
       grid-row-gap: 24px;
       grid-template-areas:

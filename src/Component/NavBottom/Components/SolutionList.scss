@@ -2,8 +2,18 @@
   width: 150px;
   height: 140px;
   margin: 60px 20px 0px 0px;
+
   .solutionList {
     width: 150px;
     margin-bottom: 13px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  a {
+    li {
+      margin-bottom: 13px;
+      font-size: 14px;
+      font-weight: 100;
+    }
   }
 }

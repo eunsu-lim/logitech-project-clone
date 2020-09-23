@@ -3,6 +3,7 @@ import ProductList from "./Components/ProductList";
 import SolutionList from "./Components/SolutionList";
 import BusinessList from "./Components/BusinessList";
 import SupportList from "./Components/SupportList";
+import { Link } from "react-router-dom";
 import "./SearchBar.scss";
 
 class SearchBar extends Component {
@@ -23,8 +24,6 @@ class SearchBar extends Component {
   };
 
   mainNavHover = (num) => {
-    // // if (this.state.activeTab === num) this.setState({ activeTab: null });
-    // this.setState({ activeTab: num });
     if (this.state.activeTab === num) this.setState({ activeTab: null });
     else this.setState({ activeTab: num });
   };
@@ -36,11 +35,13 @@ class SearchBar extends Component {
       <div>
         <div className="searchBar">
           <div className="searchBarContainer">
-            <img
-              className="searchBarLogo"
-              alt="logo"
-              src="/Image/Main/logoDark.png"
-            />
+            <Link to="/account">
+              <img
+                className="searchBarLogo"
+                alt="logo"
+                src="/Image/Main/logoDark.png"
+              />
+            </Link>
             <div className="searchBarListWrap">
               <div
                 className="searchBarList"
@@ -67,11 +68,11 @@ class SearchBar extends Component {
                 <div
                   className={`mainList ${activeTab === 1 ? "show" : "hide"}`}
                 >
-                  {/* {productList
+                  {productList
                     .filter((el) => el.solutionCategory)
                     .map((el, index) => {
                       return <SolutionList key={index} mainMenu={el} />;
-                    })} */}
+                    })}
                 </div>
               </div>
               <div
@@ -81,13 +82,15 @@ class SearchBar extends Component {
               >
                 BUSINESS
                 <div
-                  className={`mainList ${activeTab === 2 ? "show" : "hide"}`}
+                  className={`mainList businessMainList ${
+                    activeTab === 2 ? "show" : "hide"
+                  }`}
                 >
-                  {/* {productList
+                  {productList
                     .filter((el) => el.businessCategory)
                     .map((el, index) => {
                       return <BusinessList key={index} mainMenu={el} />;
-                    })} */}
+                    })}
                 </div>
               </div>
               <div
@@ -97,17 +100,21 @@ class SearchBar extends Component {
               >
                 SUPPORT
                 <div
-                  className={`mainList ${activeTab === 3 ? "show" : "hide"}`}
+                  className={`mainList supportMainList ${
+                    activeTab === 3 ? "show" : "hide"
+                  }`}
                 >
-                  {/* {productList
+                  {productList
                     .filter((el) => el.supportCategory)
                     .map((el, index) => {
                       return <SupportList key={index} mainMenu={el} />;
-                    })} */}
+                    })}
                 </div>
               </div>
             </div>
-            <input className="searchBarInput" placeholder="Search" />
+            <a href="/#" className="searchTrigger" role="button">
+              <span>Search</span>
+            </a>
           </div>
         </div>
       </div>

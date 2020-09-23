@@ -1,31 +1,18 @@
 @import "../../../Styles/common.scss";
+.productListWrap {
+  width: 180px;
+  padding-top: 50px;
 
-.searchBar {
-  .productListWrap:first-child {
-    margin: 60px 40px 20px 150px;
-  }
-  .productListWrap:nth-child(6) {
-    margin: 60px 40px 20px 150px;
-  }
-  .productListWrap {
-    font-size: 15px;
-    font-weight: 700;
-    height: 100%;
-    margin: 60px 20px 20px 30px;
-  }
-  .productListWrap:first-child {
-    margin: 60px 20px 20px 0;
-  }
-  .productListWrap:nth-child(n + 6) {
-    margin: 0 47px 20px 0;
-  }
   .productList {
-    padding-bottom: 13px;
     width: 150px;
+    padding-bottom: 13px;
+    font-size: 15px;
   }
-  a li {
-    margin-bottom: 13px;
-    font-size: 14px;
-    font-weight: 300;
+  a {
+    li {
+      margin-bottom: 13px;
+      font-size: 14px;
+      font-weight: 100;
+    }
   }
 }
