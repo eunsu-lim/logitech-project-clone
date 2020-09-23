@@ -4,7 +4,6 @@ import SpecList from "./component/SpecList";
 import ProductImg from "./component/ProductImg";
 import ProductSection from "./ProductSection";
 import PRODUCTSET from "./setupData";
-import DETAIL from "./ProductDetails2";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductDetails.scss";
@@ -167,8 +166,6 @@ class ProductDetails extends Component {
             ></iframe>
           </div>
         </div>
-
-        <DETAIL />
       </div>
     );
   }
