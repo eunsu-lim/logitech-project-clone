@@ -10,7 +10,7 @@ import "./ProductDetails.scss";
 
 class ProductDetails extends Component {
   state = {
-    productInfos: [],
+    product: [],
     imgColor: "White",
     imgIndex: 0,
     modal: false,
@@ -22,7 +22,7 @@ class ProductDetails extends Component {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          productInfos: result.productInfo,
+          product: result.productInfo,
           slideImg: result.slide,
         });
       });
@@ -54,7 +54,7 @@ class ProductDetails extends Component {
   };
 
   render() {
-    const { productInfos } = this.state;
+    const { product } = this.state;
     const slideSet = {
       dots: true,
       infinite: true,
@@ -92,7 +92,7 @@ class ProductDetails extends Component {
           <div>
             <h6>Features</h6>
             <ul>
-              <ProductImg productData={productInfos} />
+              <ProductImg productData={product} />
             </ul>
           </div>
         </section>

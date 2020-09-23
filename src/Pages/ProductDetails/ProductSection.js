@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import COLOR from "./colorData";
 import PRODUCTCOLOR from "./data";
 import "./ProductSection.scss";
+import { api } from "../../config/api.js";
 
 const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
 
@@ -13,7 +14,8 @@ class ProductSection extends Component {
   };
 
   componentDidMount() {
-    fetch("http://10.58.1.167:8000/products/product_mice/200") // 177-204   184 192
+    console.log("cdm start");
+    fetch(`${api}/products/product_mice/190`) // 177-204   184 192
       .then((res) => res.json())
       .then((result) => {
         console.log("result.mice_data: ", result.mice_data);
@@ -33,6 +35,7 @@ class ProductSection extends Component {
 
   render() {
     const { dataDetail, imgIndex, imgColor } = this.state;
+    console.log(dataDetail);
     return (
       <div>
         <div className="ProductSection">
