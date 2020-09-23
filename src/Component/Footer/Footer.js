@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './Footer.scss';
-import SITE_MAP from './Data/siteMapData';
+import React, { Component } from "react";
+import "./Footer.scss";
+import SITE_MAP from "./Data/siteMapData";
 
 class Footer extends Component {
   state = {

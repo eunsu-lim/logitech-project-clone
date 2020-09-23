@@ -1,0 +1,247 @@
+.tilesWrap {
+  // transform: translateX(-1219.98px);
+  // width: calc(300% + 60px + 20px);
+  // will-change: transform;
+  // transition: transform 0.5s ease-in-out;
+  // padding-left: 0;
+  // width: calc(200% + 60px + 20px);
+  // display: flex;
+  // flex-direction: row;
+  .productListInfo {
+    height: 884px;
+    padding: 110px 40px;
+    .listInfo {
+      max-width: 1345px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      grid-template-areas:
+        "a a b"
+        "a a e"
+        "c d e";
+      a {
+        position: relative;
+        overflow: hidden;
+        background-color: #f4f4f4;
+      }
+      .listItem {
+        transform: scale(1);
+        transition: transform 0.5s;
+      }
+
+      .listItem:hover {
+        transform: scale(1.1);
+      }
+      .listItemMice {
+        grid-area: a;
+
+        .textA {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .listItemStreaming {
+        grid-area: b;
+        .textB {
+          position: absolute;
+          left: 50%;
+          top: 50px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .listItemMobile {
+        grid-area: c;
+        .textC {
+          position: absolute;
+          bottom: 40px;
+          left: 50%;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .listItemHeadsets {
+        grid-area: d;
+        .textD {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .listItemVideo {
+        grid-area: e;
+        .textE {
+          position: absolute;
+          left: 50%;
+          bottom: 40px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+    }
+  }
+
+  .secondProductListInfo {
+    height: 884px;
+    padding: 110px 40px;
+    .secondListInfo {
+      max-width: 1345px;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      height: 100%;
+      display: grid;
+      grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      grid-template-areas:
+        "a b c"
+        "a b e"
+        "d b e";
+      a {
+        position: relative;
+        overflow: hidden;
+        background-color: #f4f4f4;
+      }
+      .secondListItem {
+        transform: scale(1);
+        transition: transform 0.5s;
+      }
+
+      .secondListItem:hover {
+        transform: scale(1.1);
+      }
+      .WirelessCharging {
+        grid-area: a;
+
+        .secondTextA {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .securityCamera {
+        grid-area: b;
+        .secondTextB {
+          width: 220px;
+          position: absolute;
+          left: 50%;
+          top: 550px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .speakers {
+        grid-area: c;
+        .secondTextC {
+          position: absolute;
+          bottom: 40px;
+          left: 50%;
+
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .smartHome {
+        grid-area: d;
+        .secondTextD {
+          position: absolute;
+          left: 50%;
+          top: 50px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+      .presentationRemote {
+        grid-area: e;
+        .secondTextE {
+          width: 203px;
+          position: absolute;
+          left: 50%;
+          top: 50px;
+          font-weight: 700;
+          transform: translateX(-50%);
+          color: black;
+        }
+      }
+    }
+  }
+
+  .thirdProductListInfo {
+    height: 884px;
+    padding: 110px 40px;
+    .thirdListInfo {
+      max-width: 1345px;
+      width: 100%;
+      margin: 0 auto;
+      height: 100%;
+      display: grid;
+      grid-column-gap: 24px;
+      grid-row-gap: 24px;
+      grid-template-areas:
+        "a b b"
+        "c b b"
+        "c d e";
+      a {
+        position: relative;
+        overflow: hidden;
+        background-color: black;
+      }
+      .thirdListItem {
+        transform: scale(1);
+        transition: transform 0.5s;
+        background-color: black;
+        color: black;
+        opacity: 0.6;
+      }
+
+      .thirdListItem:hover {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+      .imageA {
+        grid-area: a;
+        position: relative;
+        .logo {
+          position: absolute;
+          z-index: 10;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        .logo:hover {
+        }
+      }
+      .imageB {
+        grid-area: b;
+      }
+      .imageC {
+        grid-area: c;
+      }
+      .imageD {
+        grid-area: d;
+      }
+      .imageE {
+        grid-area: e;
+      }
+    }
+  }
+}

@@ -2,13 +2,13 @@
   "MainMenu": [
     {
       "id": 1,
-      "category": "MICE + KEYBOARD",
+      "category": "PRODUCTS",
       "url": "https://www.logitech.com/en-us/computer-accessories",
       "subcategory": [
         {
           "id": 1,
           "category": "Mice",
-          "url": "https://www.logitech.com/en-us/mice"
+          "url": ""
         },
         {
           "id": 2,
@@ -129,17 +129,17 @@
           "url": "https://www.logitech.com/en-us/mice"
         },
         {
-          "id": 3,
+          "id": 4,
           "category": "Accessories",
           "url": "https://www.logitech.com/en-us/mice"
         },
         {
-          "id": 3,
+          "id": 5,
           "category": "Webcams",
           "url": "https://www.logitech.com/en-us/mice"
         },
         {
-          "id": 3,
+          "id": 6,
           "category": "Logitech Sync Device Management",
           "url": "https://www.logitech.com/en-us/mice"
         }
@@ -221,6 +221,443 @@
         {
           "id": 3,
           "category": "Surround Sound Systems",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "solutionCategory": "MASTER SERIES",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "MX For Coding",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "MX For Creativity",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Master Series Products",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 4,
+          "solutionCategory": "Ipad Keyboards",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 5,
+          "solutionCategory": "Tablet Keyboards",
+          "url": "https://www.logitech.com/en-us/mobile/keyboards"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "solutionCategory": "HEALTHY COMPUTING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Ergo Lab Story",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Ergonomic Products",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "solutionCategory": "FROM HOME",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Work From Home Essentials",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Work From Home Resources",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Learn From Home Essentials",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "solutionCategory": "STREAMING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "YouTube",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Twitch",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 4,
+          "solutionCategory": "Streaming gear for gamers and creators",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "solutionCategory": "K-12 EDUCATION",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Learn From Home",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Teach From Home",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 4,
+          "solutionCategory": "In The Classroom",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 5,
+          "solutionCategory": "Cleaning",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "solutionCategory": "SOFTWARE + APPS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Logitech Options",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Ergo Lab Story",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": "Logitech Flow",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 4,
+          "solutionCategory": "Logitech Capture",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 5,
+          "solutionCategory": "Circle Camera Web App",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 6,
+          "solutionCategory": "Spotlight Presentation Remote",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 7,
+          "solutionCategory": "Alert Web and Mobile Commander",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        },
+        {
+          "id": 8,
+          "solutionCategory": "Spotlight for Mouse",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "solutionCategory": "WORKS WITH",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Apple",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Chromebook",
+          "url": "https://www.logitech.com/en-us/combos"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "solutionCategory": "WIRELESS CHARGING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "solutionCategory": "Why Go Wireless",
+          "url": "https://www.logitech.com/en-us/combos"
+        },
+        {
+          "id": 3,
+          "solutionCategory": " Wireless Chargers",
+          "url": "https://www.logitech.com/en-us/ipad-keyboards"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "solutionCategory": "VIRTUAL REALITY",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": " VR Ink Pilot Edition",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "solutionCategory": "HEALTH CARE",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "solutionCategory": " VC Health care Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "businessCategory": "BUSINESS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "Overview": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "businessCategory": "Work Better Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "businessCategory": "Work Together Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "businessCategory": "Work Remote Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 5,
+          "businessCategory": "Work Healthier Solutions",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 6,
+          "businessCategory": " VR Ink Pilot Edition",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "businessCategory": "VIDEO CONFERENCING",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "businessCategory": "Overview",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "businessCategory": "Products",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "businessCategory": "Resources",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "businessCategory": "Partners",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 5,
+          "businessCategory": "Contact Sales",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 6,
+          "businessCategory": "Find A Reseller",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 7,
+          "businessCategory": "Trade-In Program",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "businessCategory": "PARTNERS",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "businessCategory": "Channel Partners",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "businessCategory": "Technology Partners",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "businessCategory": "Find A Reseller",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "businessCategory": "SOFTWARE",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "businessCategory": "Logitech Sync Device Management",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "businessCategory": "Logi Tune",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "supportCategory": "SUPPORT",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "supportCategory": "Support Home",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "supportCategory": "Register a Product",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "supportCategory": "Downloads",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "supportCategory": "Harmony Support",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 5,
+          "supportCategory": "Education Support",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 6,
+          "supportCategory": "Community",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 7,
+          "supportCategory": "Contact",
+          "url": "https://www.logitech.com/en-us/mice"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "supportCategory": "BUSINESS SUPPORT",
+      "url": "https://www.logitech.com/en-us/computer-accessories",
+      "subcategory": [
+        {
+          "id": 1,
+          "supportCategory": "Video Collaboration Support",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 2,
+          "supportCategory": "MX & Ergo Mice & Keyboards",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 3,
+          "supportCategory": "Video Collaboration Spare Parts",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 4,
+          "supportCategory": "Video Collaboration Downloads",
+          "url": "https://www.logitech.com/en-us/mice"
+        },
+        {
+          "id": 5,
+          "supportCategory": "Contact Us",
           "url": "https://www.logitech.com/en-us/mice"
         }
       ]

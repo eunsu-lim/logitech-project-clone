@@ -1,14 +1,17 @@
-@import '../../Styles/common.scss';
+@import "../../Styles/common.scss";
 
 .searchBar {
   position: absolute;
+  z-index: 100;
   width: 100%;
   .searchBarContainer {
     @include flexJcsb;
     align-items: center;
+    max-width: 1280px;
+    width: 100%;
     height: 90px;
     padding: 0 50px;
-    margin: 0 72px;
+    margin: 0 auto;
     .searchBarLogo {
       width: 132px;
       height: 45px;
@@ -16,24 +19,26 @@
     .searchBarListWrap {
       @include flex;
       .searchBarList {
-        margin: 15px;
-        font-weight: 700;
+        padding: 25px 15px 25px 15px;
+        font-weight: 500;
         font-size: 15px;
-
         div {
           font-size: 16px;
         }
         .mainList {
           @include flex;
           flex-wrap: wrap;
+          justify-content: center;
           position: absolute;
           width: 100%;
           margin-top: 25px;
           padding-left: 150px;
-          padding-right: 170px;
+          padding-right: 130px;
+          padding-bottom: 50px;
           background-color: white;
           z-index: 3;
           left: 0;
+
           &.show {
             display: flex;
           }
@@ -41,6 +46,21 @@
           //   display: none;
           // }
         }
+      }
+
+      .searchBarList .mainList:nth-child(3) {
+        @include flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        margin-top: 25px;
+        padding-left: 150px;
+        padding-right: 130px;
+        padding-bottom: 50px;
+        background-color: white;
+        z-index: 3;
+        left: 0;
       }
     }
     .searchBarInput {

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import './NavBarList.scss';
+import React, { Component } from "react";
+import "./ProductList.scss";
 
-class NavBarList extends Component {
+class ProductList extends Component {
   render() {
     const { mainMenu } = this.props;
 
     return (
-      <ul className="productList">
-        <li className="mainCategory">{mainMenu.category}</li>
+      <ul className="productListWrap">
+        <li className="productList">{mainMenu.category}</li>
         {mainMenu.subcategory.map((el) => {
           return (
             <a href={el.url}>
@@ -20,4 +20,4 @@ class NavBarList extends Component {
   }
 }
 
-export default NavBarList;
+export default ProductList;
