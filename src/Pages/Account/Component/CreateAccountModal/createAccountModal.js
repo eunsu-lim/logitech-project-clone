@@ -13,14 +13,18 @@ class CreateAccountModal extends Component {
       enteredEmail,
       enteredPw,
       enteredConfirmPw,
-
+      enteredName,
       createEmailStatus,
       createPwStatus,
       createConfirmPwStatus,
       createNameStatus,
+      createEmailValue,
+      createPwValue,
+      createConfirmPwValue,
+      createNameValue,
       clickedCreateBtn,
     } = this.props;
-    console.log(createConfirmPwStatus, createNameStatus);
+    
     return (
       <div
         onClick={closeModal}
@@ -54,7 +58,7 @@ class CreateAccountModal extends Component {
               placeholder="Email address"
               onChange={saveCreateEmail}
               onKeyUp={enteredEmail}
-              value={this.props.email}
+              value={createEmailValue}
             />
             <div
               className={
@@ -76,6 +80,7 @@ class CreateAccountModal extends Component {
               placeholder="Password"
               onChange={saveCreatePw}
               onKeyUp={enteredPw}
+              value={createPwValue}
             />
             <div
               className={
@@ -99,6 +104,7 @@ class CreateAccountModal extends Component {
               placeholder="Confirm Password"
               onChange={saveCreateConfirmPw}
               onKeyUp={enteredConfirmPw}
+              value={createConfirmPwValue}
             />
             <div
               className={
@@ -124,6 +130,8 @@ class CreateAccountModal extends Component {
               type="text"
               placeholder="Name"
               onChange={saveCreateName}
+              onKeyUp={enteredName}
+              value={createNameValue}
             />
             <div
               className={

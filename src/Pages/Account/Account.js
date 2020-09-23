@@ -39,7 +39,12 @@ class Account extends Component {
       this.setState({
         loginModal: false,
         createAccountModal: false,
+        emailValue: "",
+        passwordValue: "",
         createEmailValue: "",
+        createPwValue: "",
+        createConfirmPwValue: "",
+        createNameValue: "",
       });
   };
   //---------------------------------------------------------------
@@ -91,7 +96,7 @@ class Account extends Component {
   //-----------------------------------------------
   // 로그인 기능 구현하는 함수-----------------------------------------------------
   handleLoginBtn = () => {
-    fetch("http://10.58.5.78:8000/account/signin", {
+    fetch("http://10.58.6.147:8000/account/signin", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.emailValue,
@@ -101,6 +106,7 @@ class Account extends Component {
       .then((res) => res.json())
       .then((result) => {
         const { emailValue, passwordValue, inputEmailStatus } = this.state;
+
         if (inputEmailStatus === false) {
           this.setState({
             inputPwStatus: true,
@@ -124,7 +130,7 @@ class Account extends Component {
   };
   //------------------------------------------------------------------------------
 
-  // 회원가입에 정보 입력 시 입력된 값 저장하는 함수
+  // 회원가입에 정보 입력 시 입력된 값 저장하는 함수---------------
   saveCreateEmail = (e) => {
     const { value } = e.target;
     this.setState({
@@ -152,109 +158,47 @@ class Account extends Component {
       createNameValue: value,
     });
   };
-  //--------------------------
+  //--------------------------------------------------------------
 
   // 회원가입 정보 입력 시 빨간 기능 없애는 함수
+  enteredEmail = () => {
+    this.setState({
+      createEmailStatus: this.state.createEmailValue.length >= 1,
+      createPwStatus: null,
+      createConfirmPwStatus: null,
+      createNameStatus: null,
+    });
+  };
 
+  enteredPw = () => {
+    this.setState({
+      createPwStatus: this.state.createPwValue.length >= 1,
+      createConfirmPwStatus: null,
+      createNameStatus: null,
+    });
+  };
+
+  enteredConfirmPw = () => {
+    this.setState({
+      createConfirmPwStatus: this.state.createConfirmPwValue.length >= 1,
+      createNameStatus: null,
+    });
+  };
+
+  enteredName = () => {
+    this.setState({
+      createNameStatus: this.state.createNameValue.length >= 1,
+    });
+  };
   // -----------------------------------------
 
   // 회원가입 기능 구현하는 함수-------------------------------------------
-  // clickedCreateBtn = () => {
-  //   fetch("http://10.58.5.78:8000/account/signup", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       email: this.state.createEmailValue,
-  //       password: this.state.createPwValue,
-  //       name: this.state.createNameValue,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       const {
-  //         createEmailValue,
-  //         createPwValue,
-  //         createConfirmPwValue,
-  //         createNameValue,
-  //       } = this.state;
-
-  //       const emailValid =
-  //         createEmailValue.length > 1 && createEmailValue.includes("@");
-  //       const passwordValid = createPwValue.length >= 5;
-  //       const passwordConfirmValid =
-  //         createConfirmPwValue.length >= 5 &&
-  //         createPwValue === createConfirmPwValue;
-  //       const nameValid = createNameValue.length > 1;
-
-  //       this.setState(
-  //         {
-  //           createEmailStatus: emailValid,
-  //           createPwStatus: passwordValid,
-  //           createConfirmPwStatus: passwordConfirmValid,
-  //           createNameStatus: nameValid,
-  //         },
-  //         () => console.log(emailValid)
-  //       );
-  //       if (result.message === "SUCCESS") {
-  //         alert("Sign Up Success!");
-  //         // localStorage.setItem("token", result.Authorization);
-  //         this.props.history.push("/ProductDetails");
-  //       } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
-  //         alert("The email or password you have entered is invalid");
-  //       }
-  //     });
-  // };
-  //---------------------------------------------------------------------
-
   clickedCreateBtn = () => {
     const {
       createEmailStatus,
       createPwStatus,
       createConfirmPwStatus,
       createNameStatus,
-    } = this.state;
-    const succeed =
-      createEmailStatus &&
-      createPwStatus &&
-      createConfirmPwStatus &&
-      createNameStatus === true;
-    if (succeed) {
-      fetch("http://10.58.5.78:8000/account/signup", {
-        method: "POST",
-        body: JSON.stringify({
-          email: this.state.createEmailValue,
-          password: this.state.createPwValue,
-          name: this.state.createNameValue,
-        }),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          const emailValid =
-            createEmailValue.length > 1 && createEmailValue.includes("@");
-          const passwordValid = createPwValue.length >= 5;
-          const passwordConfirmValid =
-            createConfirmPwValue.length >= 5 &&
-            createPwValue === createConfirmPwValue;
-          const nameValid = createNameValue.length > 1;
-
-          this.setState(
-            {
-              createEmailStatus: emailValid,
-              createPwStatus: passwordValid,
-              createConfirmPwStatus: passwordConfirmValid,
-              createNameStatus: nameValid,
-            },
-            () => console.log(emailValid)
-          );
-          if (result.message === "SUCCESS") {
-            alert("Sign Up Success!");
-            // localStorage.setItem("token", result.Authorization);
-            this.props.history.push("/ProductDetails");
-          } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
-            alert("The email or password you have entered is invalid");
-          }
-        });
-    }
-    const {
       createEmailValue,
       createPwValue,
       createConfirmPwValue,
@@ -275,6 +219,33 @@ class Account extends Component {
       createConfirmPwStatus: passwordConfirmValid,
       createNameStatus: nameValid,
     });
+
+    const succeed =
+      createEmailStatus &&
+      createPwStatus &&
+      createConfirmPwStatus &&
+      createNameStatus === true;
+
+    if (succeed) {
+      fetch("http://10.58.6.147:8000/account/signup", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.createEmailValue,
+          password: this.state.createPwValue,
+          name: this.state.createNameValue,
+        }),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.message === "SUCCESS") {
+            alert("Sign Up Success!");
+            // localStorage.setItem("token", result.Authorization);
+            this.props.history.push("/Main");
+          } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
+            alert("The email or password you have entered is invalid");
+          }
+        });
+    }
   };
   //---------------------------------------------------------------------
 
@@ -285,6 +256,15 @@ class Account extends Component {
       inputEmailStatus,
       inputPwStatus,
       createEmailStatus,
+      emailValue,
+      passwordValue,
+      createEmailValue,
+      createPwValue,
+      createConfirmPwValue,
+      createPwStatus,
+      createNameValue,
+      createConfirmPwStatus,
+      createNameStatus,
     } = this.state;
     return (
       <div className="account">
@@ -325,6 +305,8 @@ class Account extends Component {
           isActive={loginModal}
           inputEmailStatus={inputEmailStatus}
           inputPwStatus={inputPwStatus}
+          emailValue={emailValue}
+          passwordValue={passwordValue}
           closeModal={this.closeModal}
           handleEmailValue={this.handleEmailValue}
           handlePwValue={this.handlePwValue}
@@ -337,18 +319,22 @@ class Account extends Component {
           isActive={createAccountModal}
           closeModal={this.closeModal}
           saveCreateEmail={this.saveCreateEmail}
-          email={this.state.createEmailValue}
+          createEmailValue={createEmailValue}
+          createPwValue={createPwValue}
+          createConfirmPwValue={createConfirmPwValue}
+          createNameValue={createNameValue}
           saveCreatePw={this.saveCreatePw}
           saveCreateConfirmPw={this.saveCreateConfirmPw}
           saveCreateName={this.saveCreateName}
           enteredEmail={this.enteredEmail}
           enteredPw={this.enteredPw}
           enteredConfirmPw={this.enteredConfirmPw}
-          createPwStatus={this.createPwStatus}
-          createConfirmPwStatus={this.createConfirmPwStatus}
-          createNameStatus={this.createNameStatus}
-          clickedCreateBtn={this.clickedCreateBtn}
+          enteredName={this.enteredName}
           createEmailStatus={createEmailStatus}
+          createPwStatus={createPwStatus}
+          createConfirmPwStatus={createConfirmPwStatus}
+          createNameStatus={createNameStatus}
+          clickedCreateBtn={this.clickedCreateBtn}
         />
       </div>
     );
