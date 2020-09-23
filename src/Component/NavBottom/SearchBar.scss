@@ -1,0 +1,51 @@
+@import '../../Styles/common.scss';
+
+.searchBar {
+  position: absolute;
+  width: 100%;
+  .searchBarContainer {
+    @include flexJcsb;
+    align-items: center;
+    height: 90px;
+    padding: 0 50px;
+    margin: 0 72px;
+    .searchBarLogo {
+      width: 132px;
+      height: 45px;
+    }
+    .searchBarListWrap {
+      @include flex;
+      .searchBarList {
+        margin: 15px;
+        font-weight: 700;
+        font-size: 15px;
+
+        div {
+          font-size: 16px;
+        }
+        .mainList {
+          @include flex;
+          flex-wrap: wrap;
+          position: absolute;
+          width: 100%;
+          margin-top: 25px;
+          padding-left: 150px;
+          padding-right: 170px;
+          background-color: white;
+          z-index: 3;
+          left: 0;
+          &.show {
+            display: flex;
+          }
+          // &.hide {
+          //   display: none;
+          // }
+        }
+      }
+    }
+    .searchBarInput {
+      width: 100px;
+      height: 20px;
+    }
+  }
+}

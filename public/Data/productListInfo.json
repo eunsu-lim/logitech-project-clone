@@ -1,0 +1,46 @@
+{
+    "productListInfo": [
+        {
+            "id": 1,
+            "imageUrl": "content/dam/logitech/en/products/mice/mx-master-3-mac/gallery/glamour-lg.png",
+            "productName": "MX MASTER 3 for Mac",
+            "productInfo": "The Master Series by Logitech",
+            "productPrice": "$99.99"
+        },
+        {
+            "id": 2,
+            "imageUrl": "assets/65776/73/mx-master-3.png",
+            "productName": "MX MASTER 3",
+            "productInfo": "The Master Series by Logitech",
+            "productPrice": "$99.99"
+        },
+        {
+            "id": 3,
+            "imageUrl": "assets/65520/20/mx-vertical-pdp.png",
+            "productName": "MX VERTICAL",
+            "productInfo": "Advanced Ergonomic Mouth",
+            "productPrice": "$99.99"
+        },
+        {
+            "id": 4,
+            "imageUrl": "content/dam/logitech/en/products/mice/mx-master-3-mac/gallery/glamour-lg.png",
+            "productName": "MX MASTER 3 for Mac",
+            "productInfo": "The Master Series by Logitech",
+            "productPrice": "$99.99"
+        },
+        {
+            "id": 5,
+            "imageUrl": "assets/65776/73/mx-master-3.png",
+            "productName": "MX MASTER 3",
+            "productInfo": "The Master Series by Logitech",
+            "productPrice": "$99.99"
+        },
+        {
+            "id": 6,
+            "imageUrl": "assets/65520/20/mx-vertical-pdp.png",
+            "productName": "MX VERTICAL",
+            "productInfo": "Advanced Ergonomic Mouth",
+            "productPrice": "$99.99"
+        }
+    ]
+}

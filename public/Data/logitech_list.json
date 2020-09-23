@@ -1,0 +1,172 @@
+{
+  "data": [
+    {
+      "thumbnail_url": "https://resource.logitech.com/w_900,h_900,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/mice/mx-master-3-mac/gallery/mx-master-3-for-mac-gallery-top.png?v=1",
+      "product_title": "MX Master 3 for Mac",
+      "product_details": "The Master Series by Logitech\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 99.99"
+    },
+    {
+      "thumbnail_url": "https://resource.logitech.com/w_900,h_900,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/mice/mx-master-3/gallery/mx-master-product-gallery-graphite-top.png?v=1",
+      "product_title": "MX MASTER 3",
+      "product_details": "The Master Series by Logitech\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 99.99"
+    },
+    {
+      "thumbnail_url": "https://resource.logitech.com/w_900,h_900,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-04.png?v=1",
+      "product_title": "MX Vertical\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "Advanced Ergonomic Mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 99.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65275/10/mx-ergo-wireless-trackball.png",
+      "product_title": "MX ERGO\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "Wireless Trackball\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 99.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65107/13/mx-anywhere-2s.png",
+      "product_title": "MX Anywhere 2S",
+      "product_details": "Make things happen anywhere\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 79.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/32954/4/logitech-wireless-trackball-m570.png",
+      "product_title": "Wireless Trackball M570",
+      "product_details": "",
+      "price": "$ 49.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/content/dam/logitech/en/products/mice/m720/m720-glamour-lg.png",
+      "product_title": "M720 Triathlon",
+      "product_details": "Multi-device wireless mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 49.99"
+    },
+    {
+      "thumbnail_url": "https://assets.logitech.com/assets/65390/3/m705-refresh-pdp.png",
+      "product_title": "Marathon Mouse M705",
+      "product_details": "Impressive 3-year battery life",
+      "price": "$ 49.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64674/2/wireless-mouse-m525.png",
+      "product_title": "Wireless Mouse M525",
+      "product_details": "Performance and precision\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65122/13/wireless-mouse-m585-multi-device.png",
+      "product_title": "M585 Multi-Device",
+      "product_details": "Multi-Tasking Mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/54064/22/m535m337-bluetooth-mouse.png",
+      "product_title": "M535",
+      "product_details": "Bluetooth mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65015/10/fiji-3-bt-m557.png",
+      "product_title": "Bluetooth Mouse M557",
+      "product_details": "Designed for PC users\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64386/wireless-mouse-m510.png",
+      "product_title": "Wireless Mouse M510",
+      "product_details": "Full-size, laser-grade tracking, comfort mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65123/13/wireless-mouse-m590-multi-device-silent.png",
+      "product_title": "M590 Multi-Device Silent",
+      "product_details": "Silent wireless mouse for power users\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 39.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65875/10/logitech-advanced-corded-mouse-m500s-pdp-refresh.png",
+      "product_title": "M500s ADVANCED CORDED MOUSE",
+      "product_details": "Full-Size mouse with a contoured design, hyper-fast wheel and 7 customizable buttons",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://assets.logitech.com/assets/65685/logitech-pebble-m350.png",
+      "product_title": "Logitech Pebble M350",
+      "product_details": "Modern, Slim, and Silent Wireless and Bluetooth Mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65683/53/color-collection.png",
+      "product_title": "Color Collection Wireless Mouse\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "Compact and comfortable mouse for web scrolling\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64432/31/party-collection.png",
+      "product_title": "PARTY COLLECTION\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "M325c Wireless Mouse",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65097/104/doodle-collection.png",
+      "product_title": "DOODLE COLLECTION\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "M325C Wireless Mouse",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/content/dam/logitech/en/products/mice/design-collection/spring-meadow-glamour-lg.png",
+      "product_title": "Design Collection Wireless Mouse\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "The wireless mouse that’s comfortable, portable, and fresh.\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64384/wireless-mouse-m310.png",
+      "product_title": "Wireless Mouse M310",
+      "product_details": "Full-size, Optical mouse\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64361/2/wireless-mouse-m325.png",
+      "product_title": "Wireless Mouse M325",
+      "product_details": "Designed for web scrolling\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 29.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65477/33/wireless-ultra-portable-m187-refresh.png",
+      "product_title": "Wireless Ultra Portable M187",
+      "product_details": "Pocket-ready, extra-small design\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 24.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/64366/wireless-mouse-m185.png",
+      "product_title": "Wireless Mouse M185",
+      "product_details": "Plug-and-play wireless\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 24.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/content/dam/logitech/en/products/mice/m190-wireless-mouse/m190-wireless-mouse-midgrey-glamour-lg.png",
+      "product_title": "M190 Full-Size Wireless Mouse",
+      "product_details": "Contoured design, essential comfort for mid to large hands.\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 14.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/65172/7/usb-unifying-receiver.png",
+      "product_title": "USB Unifying receiver\n\t\t\t\t\t\t\t\t                    \n\t\t\t\t\t\t\t\t\t\t\t\t",
+      "product_details": "USB receiver to be used with a Unifying mouse or keyboard.\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 14.99"
+    },
+    {
+      "thumbnail_url": "https://www.logitech.com/assets/25840/25840.png",
+      "product_title": "Mouse M100",
+      "product_details": "Corded full-size comfort\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t",
+      "price": "$ 9.99"
+    },
+    {
+      "thumbnail_url": "https://assets.logitech.com/assets/64354/36/wireless-mouse-m235.png",
+      "product_title": "Wireless Mouse M317",
+      "product_details": "",
+      "price": "$ 8.99"
+    }
+  ]
+}

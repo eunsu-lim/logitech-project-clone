@@ -1,0 +1,267 @@
+.accountModalBackground {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+
+  &.isActive {
+    display: block;
+  }
+
+  .createAccountModal {
+    width: 540px;
+    min-height: 720px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-bottom: 40px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+
+    .logoContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    .createAccountTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      margin-bottom: 15px;
+      font-size: 25px;
+      font-weight: bold;
+      color: #222222;
+    }
+
+    .createAccountText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      font-weight: lighter;
+      color: #222222;
+    }
+
+    .inputInfoAndCreateBtn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 70px;
+
+      .inputEmail {
+        //이메일 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notInputEmailClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputEmail {
+        //이메일 안넣었을 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputEmailClicked {
+          display: block;
+        }
+      }
+
+      .inputPw {
+        //패스워드 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notInputPwClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputPw {
+        // 비밀번호 안 넣었을 때텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputPwClicked {
+          display: block;
+        }
+      }
+
+      .confirmPw {
+        //패스워드 확인 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notConfirmPwClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notConfirmPw {
+        //비밀번호 다를 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notConfirmPwClicked {
+          display: block;
+        }
+      }
+
+      .inputName {
+        //이름 인풋박스
+        width: 400px;
+        height: 45px;
+        margin: 5px 0px;
+        padding: 14px 7px;
+        border: 1px solid rgb(195, 195, 195);
+        border-radius: 2px;
+        font-size: 16px;
+        &.notInputNameClicked {
+          border: 1px solid #dc4949;
+        }
+      }
+
+      .notInputName {
+        //이름 안 넣었을 때 텍스트
+        display: none;
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: lighter;
+        color: #dc4949;
+        &.notInputNameClicked {
+          display: block;
+        }
+      }
+
+      .policyCheck {
+        display: flex;
+        margin-top: 2px;
+        padding-right: 20px;
+
+        .policyCheckbox {
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          background: #fff;
+          cursor: pointer;
+        }
+
+        .policyCheckText {
+          margin-top: 5px;
+          margin-bottom: 20px;
+          color: #6f7678;
+        }
+
+        .privacyPolicy {
+          text-decoration: underline;
+          font-weight: bold;
+          &:hover {
+            text-decoration: none;
+            color: #00a0dd;
+          }
+        }
+      }
+
+      .notRobotBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 50px;
+        width: 300px;
+        height: 74px;
+        padding: 0 10px;
+        border-radius: 3px;
+        border: 1px solid #d3d3d3;
+        background-color: #f9f9f9;
+
+        .notRobotCheckbox {
+          width: 24px;
+          height: 24px;
+          border-radius: 2px;
+          border: 2px solid #d3d3d3;
+        }
+
+        .notRobot {
+          display: flex;
+          align-items: center;
+
+          .notRobotText {
+            margin-left: 10px;
+          }
+        }
+
+        .reCAPTCHABox {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          font-size: 10px;
+
+          img {
+            width: 30px;
+            margin-bottom: 4px;
+            margin-right: 10px;
+          }
+
+          .reCAPCHATLink:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .createBtn {
+        width: 400px;
+        height: 50px;
+        margin-top: 20px;
+        border-radius: 2px;
+        background-color: #00b8fc;
+        font-size: 13px;
+        font-weight: bold;
+        &:hover {
+          background-color: transparent;
+          border: 2px solid #00b8fc;
+          color: #00b8fc;
+          transition: linear 0.08s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
