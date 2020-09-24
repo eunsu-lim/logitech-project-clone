@@ -37,7 +37,7 @@ class SearchBar extends Component {
       <div>
         <div className="searchBar">
           <div className="searchBarContainer">
-            <Link to="/account">
+            <Link to="/">
               <img
                 className="searchBarLogo"
                 alt="logo"
