@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
-import NavBarList from './Components/NavBarList';
-import './SearchBar.scss';
+import React, { Component } from "react";
+import ProductList from "./Components/ProductList";
+import SolutionList from "./Components/SolutionList";
+import BusinessList from "./Components/BusinessList";
+import SupportList from "./Components/SupportList";
+import { Link } from "react-router-dom";
+import "./SearchBar.scss";
 
 class SearchBar extends Component {
   constructor() {
@@ -12,14 +16,18 @@ class SearchBar extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3001/Data/navBarData.json')
+    fetch("http://localhost:3000/Data/navBarData.json")
       .then((res) => res.json())
-      .then((res) => this.setState({ productList: res.MainMenu }));
+      .then((res) => {
+        this.setState({ productList: res.MainMenu });
+      });
   };
 
   mainNavHover = (num) => {
-    if (this.state.activeTab === num) this.setState({ activeTab: null });
-    else this.setState({ activeTab: num });
+    const { activeTab } = this.state;
+    if (activeTab === num) {
+      this.setState({ activeTab: null });
+    } else this.setState({ activeTab: num });
   };
 
   render() {
@@ -29,11 +37,13 @@ class SearchBar extends Component {
       <div>
         <div className="searchBar">
           <div className="searchBarContainer">
-            <img
-              className="searchBarLogo"
-              alt="logo"
-              src="/Image/Main/logoDark.png"
-            />
+            <Link to="/account">
+              <img
+                className="searchBarLogo"
+                alt="logo"
+                src="/Image/Main/logoDark.png"
+              />
+            </Link>
             <div className="searchBarListWrap">
               <div
                 className="searchBarList"
@@ -42,45 +52,71 @@ class SearchBar extends Component {
               >
                 PRODUCT
                 <div
-                  className={`mainList ${activeTab === 0 ? 'show' : 'hide'}`}
+                  className={`mainList ${activeTab === 0 ? "show" : "hide"}`}
                 >
-                  {productList.map((el, index) => {
-                    return <NavBarList key={index} mainMenu={el} />;
-                  })}
+                  {productList
+                    .filter((el) => el.category)
+                    .map((el, index) => {
+                      return <ProductList key={index} mainMenu={el} />;
+                    })}
                 </div>
               </div>
               <div
                 className="searchBarList"
-                onmouseOver={() => this.mainNavHover(1)}
+                onMouseOver={() => this.mainNavHover(1)}
                 onMouseOut={() => this.mainNavHover(1)}
               >
                 SOLUTION
                 <div
-                  className={`mainList ${activeTab === 1 ? 'show' : 'hide'}`}
-                ></div>
+                  className={`mainList ${activeTab === 1 ? "show" : "hide"}`}
+                >
+                  {productList
+                    .filter((el) => el.solutionCategory)
+                    .map((el, index) => {
+                      return <SolutionList key={index} mainMenu={el} />;
+                    })}
+                </div>
               </div>
               <div
                 className="searchBarList"
-                onmouseOver={() => this.mainNavHover(2)}
+                onMouseOver={() => this.mainNavHover(2)}
                 onMouseOut={() => this.mainNavHover(2)}
               >
                 BUSINESS
                 <div
-                  className={`mainList ${activeTab === 2 ? 'show' : 'hide'}`}
-                ></div>
+                  className={`mainList businessMainList ${
+                    activeTab === 2 ? "show" : "hide"
+                  }`}
+                >
+                  {productList
+                    .filter((el) => el.businessCategory)
+                    .map((el, index) => {
+                      return <BusinessList key={index} mainMenu={el} />;
+                    })}
+                </div>
               </div>
               <div
                 className="searchBarList"
-                onmouseOver={() => this.mainNavHover(3)}
+                onMouseOver={() => this.mainNavHover(3)}
                 onMouseOut={() => this.mainNavHover(3)}
               >
                 SUPPORT
                 <div
-                  className={`mainList ${activeTab === 3 ? 'show' : 'hide'}`}
-                ></div>
+                  className={`mainList supportMainList ${
+                    activeTab === 3 ? "show" : "hide"
+                  }`}
+                >
+                  {productList
+                    .filter((el) => el.supportCategory)
+                    .map((el, index) => {
+                      return <SupportList key={index} mainMenu={el} />;
+                    })}
+                </div>
               </div>
             </div>
-            <input className="searchBarInput" placeholder="Search" />
+            <a href="/#" className="searchTrigger" role="button">
+              <span>Search</span>
+            </a>
           </div>
         </div>
       </div>
