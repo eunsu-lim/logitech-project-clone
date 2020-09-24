@@ -1,0 +1,57 @@
+{
+  "mice_product": {
+    "id": 1,
+    "product_title": "MX Master 3 for Mac",
+    "product_details": "The Master Series by Logitech",
+    "product_price": "$ 99.99",
+    "product_note": "Free shipping on orders over $29.00",
+    "color_images": [
+      {
+        "id": 1,
+        "color": "white",
+        "image_url": "https://assets.logitech.com/assets/65882/3/pebble-i345-portable-wireless-mouse.jpg"
+      },
+      {
+        "id": 2,
+        "color": "rose",
+        "image_url": "https://assets.logitech.com/assets/65608/8/logitech-pebble.jpg"
+      },
+      {
+        "id": 3,
+        "color": "Blue Grey",
+        "image_url": "https://assets.logitech.com/assets/65608/35/logitech-pebble.jpg"
+      },
+      {
+        "id": 4,
+        "color": "Graphite",
+        "image_url": "https://assets.logitech.com/assets/65685/20/logitech-pebble-m350.jpg"
+      }
+    ],
+    "thumbnail_url": {
+      "white": [
+        "https://assets.logitech.com/assets/65685/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/2/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/3/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/4/logitech-pebble-m350.png"
+      ],
+      "rose": [
+        "https://assets.logitech.com/assets/65685/9/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/10/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/11/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/12/logitech-pebble-m350.png"
+      ],
+      "Blue Grey": [
+        "https://assets.logitech.com/assets/65685/60/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/61/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/62/logitech-pebble-m350.png",
+        "https://assets.logitech.com/assets/65685/63/logitech-pebble-m350.png"
+      ],
+      "Graphite": [
+        "https://assets.logitech.com/assets/65608/16/logitech-pebble.png",
+        "https://assets.logitech.com/assets/65608/17/logitech-pebble.png",
+        "https://assets.logitech.com/assets/65608/18/logitech-pebble.png",
+        "https://assets.logitech.com/assets/65608/19/logitech-pebble.png"
+      ]
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import "../../Styles/common.scss";
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+@mixin padding {
+  padding: 80px 0;
+}
+
+.containerWrap {
+  padding-top: 90px;
+  padding-bottom: 40px;
+  background-color: #f4f4f4;
+
+  .detailContainer {
+    @include flexAic;
+    @include container;
+    justify-content: center;
+
+    .detailLeft {
+      display: flex;
+      flex-direction: column;
+
+      .productList {
+        margin-right: 200px;
+        width: 540px;
+
+        .productShot {
+          padding: 30px 50px;
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+    }
+
+    .infoBox {
+      padding: 15px 0;
+
+      h3 {
+        margin-bottom: 3px;
+        font-size: 1.95em;
+        font-weight: 600;
+        color: #000;
+      }
+
+      .infoDetail {
+        margin-bottom: 1em;
+        font-size: 1em;
+      }
+
+      .infoPrice {
+        line-height: 1em;
+        font-size: 1.5em;
+        font-weight: 200;
+      }
+
+      em {
+        font-size: 13px;
+      }
+    }
+
+    .infoColor {
+      padding: 15px 0;
+      border-top: 1px solid #c3c6c8;
+      border-bottom: 1px solid #c3c6c8;
+      font-size: 16px;
+
+      .color {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          overflow: hidden;
+          margin-right: 10px;
+          width: 33px;
+          height: 33px;
+          border-radius: 100%;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .infoBtn {
+      margin: 15px 0;
+
+      button {
+        display: block;
+        padding: 17px 5px;
+        width: 142px;
+        background-color: #252a2c;
+        color: #dcfd00;
+        font-size: 0.75em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #dcfd00;
+          color: #252a2c;
+        }
+      }
+
+      a {
+        display: block;
+        margin-top: 40px;
+      }
+    }
+  }
+
+  .productsBelow {
+    @include container;
+    padding: 25px 0 15px;
+    border-top: 1px solid #c3c6c8;
+
+    .productThumbs {
+      display: flex;
+
+      li {
+        margin-right: 32px;
+        margin-bottom: 10px;
+        width: 50px;
+        cursor: pointer;
+
+        img {
+          height: 45px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
