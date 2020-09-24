@@ -1,21 +1,90 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./loginModal.scss";
 
 class LoginModal extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      emailValue: "",
+      passwordValue: "",
+      inputEmailStatus: null,
+      inputPwStatus: null,
+    };
+  }
+
+  saveLoginValue = (e) => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleInputEmailStatus = () => {
+    const { emailValue } = this.state;
+    this.setState({
+      inputEmailStatus: emailValue.length >= 1,
+      inputPwStatus: null,
+    });
+  };
+
+  handleInputPwStatus = () => {
+    const { passwordValue } = this.state;
+    this.setState({
+      inputPwStatus: passwordValue.length >= 1,
+    });
+  };
+
+  handleLoginBtn = () => {
+    console.log(this.state.inputEmailStatus, this.state.inputPwStatus);
     const {
-      isActive,
-      closeModal,
-      saveLoginValue,
+      emailValue,
+      passwordValue,
+      inputEmailStatus,
+      inputPwStatus,
+    } = this.state;
+
+    const loginValid =
+      emailValue.length > 1 &&
+      emailValue.includes("@") &&
+      emailValue.includes(".");
+    const loginPwValid = passwordValue.length >= 5;
+
+    this.setState({
+      inputEmailStatus: loginValid,
+      inputPwStatus: loginPwValid,
+    });
+
+    const loginSucceed = inputEmailStatus && inputPwStatus;
+
+    if (loginSucceed) {
+      fetch("http://10.58.1.236:8000/account/signin", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.emailValue,
+          password: this.state.passwordValue,
+        }),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.Authorization) {
+            localStorage.setItem("token", result.Authorization);
+            this.props.history.push("/");
+          } else if (result.message === "UNAUTHORIZED") {
+            alert("The email or password you have entered is invalid");
+          }
+        });
+    }
+  };
+
+  render() {
+    const { isActive, closeModal } = this.props;
+    const {
       inputEmailStatus,
       inputPwStatus,
       emailValue,
       passwordValue,
-      handleLoginBtn,
-      handleInputEmailStatus,
-      goToCreateAccountModal,
-    } = this.props;
+    } = this.state;
 
     return (
       <div
@@ -36,44 +105,44 @@ class LoginModal extends Component {
           <div className="inputInfoAndLoginBtn">
             <input
               className={
-                inputEmailStatus === null || inputEmailStatus
-                  ? "inputIdInfo"
-                  : "inputIdInfo notInputIdClicked"
+                inputEmailStatus === false
+                  ? "inputIdInfo notInputIdClicked"
+                  : "inputIdInfo"
               }
               type="text"
               placeholder="Email address"
-              onChange={saveLoginValue}
-              onKeyUp={handleInputEmailStatus}
+              onChange={this.saveLoginValue}
+              onKeyUp={this.handleInputEmailStatus}
               value={emailValue}
               name="emailValue"
             />
             <div
               className={
-                inputEmailStatus === null || inputEmailStatus
-                  ? "notInputId"
-                  : "notInputId notInputIdClicked"
+                inputEmailStatus === false
+                  ? "notInputId notInputIdClicked"
+                  : "notInputId"
               }
             >
               Please enter a valid email address
             </div>
             <input
               className={
-                inputPwStatus === null || inputPwStatus
-                  ? "inputPwInfo"
-                  : "inputPwInfo notInputPwClicked"
+                inputEmailStatus && inputPwStatus === false
+                  ? "inputPwInfo notInputPwClicked"
+                  : "inputPwInfo"
               }
               type="password"
               placeholder="Password"
-              onChange={saveLoginValue}
+              onChange={this.saveLoginValue}
               onKeyUp={this.props.handleInputPwStatus}
               value={passwordValue}
               name="passwordValue"
             ></input>
             <div
               className={
-                inputPwStatus === null || inputPwStatus
-                  ? "notInputPw"
-                  : "notInputPw notInputPwClicked"
+                inputEmailStatus && inputPwStatus === false
+                  ? "notInputPw notInputPwClicked"
+                  : "notInputPw"
               }
             >
               Please provide a password
@@ -81,7 +150,11 @@ class LoginModal extends Component {
             <div className="forgetText">
               <Link to="http://localhost:3000/Account">Forgot Password?</Link>
             </div>
-            <button className="loginBtn" type="button" onClick={handleLoginBtn}>
+            <button
+              className="loginBtn"
+              type="button"
+              onClick={this.handleLoginBtn}
+            >
               Login
             </button>
           </div>
@@ -96,11 +169,7 @@ class LoginModal extends Component {
             <div id="google" className="otherSiteBtn" />
           </div>
           <div className="clickLinks">
-            <Link
-              className="clickLink"
-              to="/Account"
-              onClick={goToCreateAccountModal}
-            >
+            <Link className="clickLink" to="/Account">
               CREATE AN ACCOUNT
             </Link>
             <Link className="clickLink" to="/Account">
@@ -113,4 +182,4 @@ class LoginModal extends Component {
   }
 }
 
-export default LoginModal;
+export default withRouter(LoginModal);

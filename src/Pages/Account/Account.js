@@ -10,25 +10,9 @@ class Account extends Component {
     this.state = {
       loginModal: false,
       createAccountModal: false,
-      // 로그인 state----------
-      emailValue: "",
-      passwordValue: "",
-      inputEmailStatus: null,
-      inputPwStatus: null,
-      //-----------------------
-      // 회원가입 state------------------
-      createEmailValue: "",
-      createPwValue: "",
-      createConfirmPwValue: "",
-      createNameValue: "",
-      createEmailStatus: null,
-      createPwStatus: null,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
-      //--------------------------------
     };
   }
-  // 모달 창 끄는 함수----------------------------------------------
+
   closeModal = (e) => {
     const isClickedAccountModal =
       e.target.className === "accountModalBackground isActive";
@@ -39,17 +23,9 @@ class Account extends Component {
       this.setState({
         loginModal: false,
         createAccountModal: false,
-        emailValue: "",
-        passwordValue: "",
-        createEmailValue: "",
-        createPwValue: "",
-        createConfirmPwValue: "",
-        createNameValue: "",
       });
   };
-  //--------------------------------------------------------------
 
-  // 모달 창 켜는 함수---------------------------------------------
   handleClick = () => {
     const { loginModal } = this.state;
     this.setState({
@@ -63,180 +39,9 @@ class Account extends Component {
       createAccountModal: !createAccountModal,
     });
   };
-  //--------------------------------------------------------------
-  // 로그인에 정보 입력 시 입력된 값 저장하는 함수
-  saveLoginValue = (e) => {
-    const { value, name } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-  //-------------------------------------------------------------
-  // 로그인에 정보 입력 시 빨간 기능 없애는 함수
-  handleInputEmailStatus = () => {
-    const { emailValue } = this.state;
-    this.setState({
-      inputEmailStatus: emailValue.length >= 1,
-    });
-  };
-
-  handleInputPwStatus = () => {
-    const { passwordValue } = this.state;
-    this.setState({
-      inputPwStatus: passwordValue.length >= 1,
-    });
-  };
-  //-----------------------------------------------
-  // 로그인 기능 구현하는 함수------------------------------------------------------
-  handleLoginBtn = () => {
-    fetch("http://10.58.6.147:8000/account/signin", {
-      method: "POST",
-      body: JSON.stringify({
-        email: this.state.emailValue,
-        password: this.state.passwordValue,
-      }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        const { emailValue, passwordValue, inputEmailStatus } = this.state;
-
-        if (!inputEmailStatus) {
-          this.setState({
-            inputPwStatus: true,
-          });
-        }
-        this.setState({
-          inputEmailStatus: emailValue.length > 1 && emailValue.includes("@"),
-        });
-        if (inputEmailStatus && passwordValue.length < 5) {
-          this.setState({
-            inputPwStatus: false,
-          });
-        }
-        if (result.Authorization) {
-          localStorage.setItem("token", result.Authorization);
-          this.props.history.push("/Main");
-        } else if (result.message === "UNAUTHORIZED") {
-          alert("The email or password you have entered is invalid");
-        }
-      });
-  };
-  //------------------------------------------------------------------------------
-
-  // 회원가입에 정보 입력 시 입력된 값 저장하는 함수---------------
-  saveAccount = (e) => {
-    const { value, name } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-  //--------------------------------------------------------------
-
-  // 회원가입 정보 입력 시 빨간 기능 없애는 함수---------
-  enteredEmail = () => {
-    this.setState({
-      createEmailStatus: this.state.createEmailValue.length >= 1,
-      createPwStatus: null,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
-    });
-  };
-
-  enteredPw = () => {
-    this.setState({
-      createPwStatus: this.state.createPwValue.length >= 1,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
-    });
-  };
-
-  enteredConfirmPw = () => {
-    this.setState({
-      createConfirmPwStatus: this.state.createConfirmPwValue.length >= 1,
-      createNameStatus: null,
-    });
-  };
-
-  enteredName = () => {
-    this.setState({
-      createNameStatus: this.state.createNameValue.length >= 1,
-    });
-  };
-  // -------------------------------------------------
-
-  // 회원가입 기능 구현하는 함수-------------------------------------------
-  clickedCreateBtn = () => {
-    const {
-      createEmailStatus,
-      createPwStatus,
-      createConfirmPwStatus,
-      createNameStatus,
-      createEmailValue,
-      createPwValue,
-      createConfirmPwValue,
-      createNameValue,
-    } = this.state;
-
-    const emailValid =
-      createEmailValue.length > 1 && createEmailValue.includes("@") && createEmailValue.includes(".");
-    const passwordValid = createPwValue.length >= 5;
-    const passwordConfirmValid =
-      createConfirmPwValue.length >= 5 &&
-      createPwValue === createConfirmPwValue;
-    const nameValid = createNameValue.length > 1;
-
-    this.setState({
-      createEmailStatus: emailValid,
-      createPwStatus: passwordValid,
-      createConfirmPwStatus: passwordConfirmValid,
-      createNameStatus: nameValid,
-    });
-
-    const succeed =
-      createEmailStatus &&
-      createPwStatus &&
-      createConfirmPwStatus &&
-      createNameStatus === true;
-
-    if (succeed) {
-      fetch("http://10.58.6.147:8000/account/signup", {
-        method: "POST",
-        body: JSON.stringify({
-          email: this.state.createEmailValue,
-          password: this.state.createPwValue,
-          name: this.state.createNameValue,
-        }),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          if (result.message === "SUCCESS") {
-            alert("Sign Up Success!");
-            // localStorage.setItem("token", result.Authorization);
-            this.props.history.push("/Main");
-          } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
-            alert("The email or password you have entered is invalid");
-          }
-        });
-    }
-  };
-  //---------------------------------------------------------------------
 
   render() {
-    const {
-      loginModal,
-      createAccountModal,
-      inputEmailStatus,
-      inputPwStatus,
-      createEmailStatus,
-      emailValue,
-      passwordValue,
-      createPwValue,
-      createConfirmPwValue,
-      createPwStatus,
-      createNameValue,
-      createConfirmPwStatus,
-      createNameStatus,
-    } = this.state;
+    const { loginModal, createAccountModal } = this.state;
     return (
       <div className="account">
         <div
@@ -272,38 +77,10 @@ class Account extends Component {
           handleClick={this.handleClick}
           handleCaClick={this.handleCaClick}
         />
-        <LoginModal
-          isActive={loginModal}
-          inputEmailStatus={inputEmailStatus}
-          inputPwStatus={inputPwStatus}
-          emailValue={emailValue}
-          passwordValue={passwordValue}
-          saveLoginValue={this.saveLoginValue}
-          closeModal={this.closeModal}
-          handleEmailValue={this.handleEmailValue}
-          handlePwValue={this.handlePwValue}
-          handleInputEmailStatus={this.handleInputEmailStatus}
-          handleInputPwStatus={this.handleInputPwStatus}
-          handleLoginBtn={this.handleLoginBtn}
-          goToCreateAccountModal={this.goToCreateAccountModal}
-        />
+        <LoginModal isActive={loginModal} closeModal={this.closeModal} />
         <CreateAccountModal
           isActive={createAccountModal}
           closeModal={this.closeModal}
-          // saveCreateEmail={this.saveCreateEmail}
-          saveAccount={this.saveAccount}
-          createPwValue={createPwValue}
-          createConfirmPwValue={createConfirmPwValue}
-          createNameValue={createNameValue}
-          enteredEmail={this.enteredEmail}
-          enteredPw={this.enteredPw}
-          enteredConfirmPw={this.enteredConfirmPw}
-          enteredName={this.enteredName}
-          createEmailStatus={createEmailStatus}
-          createPwStatus={createPwStatus}
-          createConfirmPwStatus={createConfirmPwStatus}
-          createNameStatus={createNameStatus}
-          clickedCreateBtn={this.clickedCreateBtn}
         />
       </div>
     );

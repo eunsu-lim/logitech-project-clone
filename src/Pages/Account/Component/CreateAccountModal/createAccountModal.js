@@ -1,17 +1,61 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./createAccountModal.scss";
 
 class CreateAccountModal extends Component {
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      createEmailValue: "",
+      createPwValue: "",
+      createConfirmPwValue: "",
+      createNameValue: "",
+      createEmailStatus: null,
+      createPwStatus: null,
+      createConfirmPwStatus: null,
+      createNameStatus: null,
+    };
+  }
+
+  saveAccount = (e) => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  enteredEmail = () => {
+    this.setState({
+      createEmailStatus: this.state.createEmailValue.length >= 1,
+      createPwStatus: null,
+      createConfirmPwStatus: null,
+      createNameStatus: null,
+    });
+  };
+
+  enteredPw = () => {
+    this.setState({
+      createPwStatus: this.state.createPwValue.length >= 1,
+      createConfirmPwStatus: null,
+      createNameStatus: null,
+    });
+  };
+
+  enteredConfirmPw = () => {
+    this.setState({
+      createConfirmPwStatus: this.state.createConfirmPwValue.length >= 1,
+      createNameStatus: null,
+    });
+  };
+
+  enteredName = () => {
+    this.setState({
+      createNameStatus: this.state.createNameValue.length >= 1,
+    });
+  };
+
+  clickedCreateBtn = () => {
     const {
-      isActive,
-      closeModal,
-      saveAccount,
-      enteredEmail,
-      enteredPw,
-      enteredConfirmPw,
-      enteredName,
       createEmailStatus,
       createPwStatus,
       createConfirmPwStatus,
@@ -20,8 +64,64 @@ class CreateAccountModal extends Component {
       createPwValue,
       createConfirmPwValue,
       createNameValue,
-      clickedCreateBtn,
-    } = this.props;
+    } = this.state;
+    const emailValid =
+      createEmailValue.length > 1 &&
+      createEmailValue.includes("@") &&
+      createEmailValue.includes(".");
+    const passwordValid = createPwValue.length >= 5;
+    const passwordConfirmValid =
+      createConfirmPwValue.length >= 5 &&
+      createPwValue === createConfirmPwValue;
+    const nameValid = createNameValue.length > 1;
+
+    this.setState({
+      createEmailStatus: emailValid,
+      createPwStatus: passwordValid,
+      createConfirmPwStatus: passwordConfirmValid,
+      createNameStatus: nameValid,
+    });
+
+    const createAccountSucceed =
+      createEmailStatus &&
+      createPwStatus &&
+      createConfirmPwStatus &&
+      createNameStatus;
+
+    if (createAccountSucceed) {
+      fetch("http://10.58.1.236:8000/account/signup", {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.state.createEmailValue,
+          password: this.state.createPwValue,
+          name: this.state.createNameValue,
+        }),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.message === "SUCCESS") {
+            alert("Sign Up Success!");
+            // localStorage.setItem("token", result.Authorization);
+            this.props.history.push("/");
+          } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
+            alert("The email or password you have entered is invalid");
+          }
+        });
+    }
+  };
+
+  render() {
+    const { isActive, closeModal } = this.props;
+    const {
+      createEmailStatus,
+      createPwStatus,
+      createConfirmPwStatus,
+      createNameStatus,
+      createEmailValue,
+      createPwValue,
+      createConfirmPwValue,
+      createNameValue,
+    } = this.state;
 
     return (
       <div
@@ -45,7 +145,6 @@ class CreateAccountModal extends Component {
             Complete the following fields to create an account
           </div>
           <div className="inputInfoAndCreateBtn">
-            {/* ------------------------------ 여기서부터  -----------------------------------*/}
             <input
               className={
                 createEmailStatus === false
@@ -54,8 +153,8 @@ class CreateAccountModal extends Component {
               }
               type="text"
               placeholder="Email address"
-              onChange={saveAccount}
-              onKeyUp={enteredEmail}
+              onChange={this.saveAccount}
+              onKeyUp={this.enteredEmail}
               value={createEmailValue}
               name="createEmailValue"
             />
@@ -68,7 +167,6 @@ class CreateAccountModal extends Component {
             >
               Please enter a valid email address
             </div>
-            {/* 비밀번호 */}
             <input
               className={
                 createEmailStatus && createPwStatus === false
@@ -77,8 +175,8 @@ class CreateAccountModal extends Component {
               }
               type="password"
               placeholder="Password"
-              onChange={saveAccount}
-              onKeyUp={enteredPw}
+              onChange={this.saveAccount}
+              onKeyUp={this.enteredPw}
               value={createPwValue}
               name="createPwValue"
             />
@@ -91,7 +189,6 @@ class CreateAccountModal extends Component {
             >
               Password does not meet requirements
             </div>
-            {/* 비밀번호 확인 */}
             <input
               className={
                 createEmailStatus &&
@@ -102,8 +199,8 @@ class CreateAccountModal extends Component {
               }
               type="password"
               placeholder="Confirm Password"
-              onChange={saveAccount}
-              onKeyUp={enteredConfirmPw}
+              onChange={this.saveAccount}
+              onKeyUp={this.enteredConfirmPw}
               value={createConfirmPwValue}
               name="createConfirmPwValue"
             />
@@ -118,7 +215,6 @@ class CreateAccountModal extends Component {
             >
               Password does not match
             </div>
-            {/* 이름 */}
             <input
               className={
                 createEmailStatus &&
@@ -130,8 +226,8 @@ class CreateAccountModal extends Component {
               }
               type="text"
               placeholder="Name"
-              onChange={saveAccount}
-              onKeyUp={enteredName}
+              onChange={this.saveAccount}
+              onKeyUp={this.enteredName}
               value={createNameValue}
               name="createNameValue"
             />
@@ -147,7 +243,6 @@ class CreateAccountModal extends Component {
             >
               Please enter name
             </div>
-            {/* --------------------------------- 여기까지 ---------------------------------- */}
             <div className="policyCheck">
               <input className="policyCheckbox" type="checkbox" />
               <span className="policyCheckText">
@@ -192,7 +287,7 @@ class CreateAccountModal extends Component {
             <button
               className="createBtn"
               type="button"
-              onClick={clickedCreateBtn}
+              onClick={this.clickedCreateBtn}
             >
               CREATE
             </button>
@@ -203,4 +298,4 @@ class CreateAccountModal extends Component {
   }
 }
 
-export default CreateAccountModal;
+export default withRouter(CreateAccountModal);
