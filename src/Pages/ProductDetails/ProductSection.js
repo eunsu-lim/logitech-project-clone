@@ -11,7 +11,7 @@ class ProductSection extends Component {
   };
 
   componentDidMount() {
-    fetch(`${api}/products/product_mice/103`) // 88- 115
+    fetch(`${api}/products/product_mice/100`) // 88- 115
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -20,6 +20,7 @@ class ProductSection extends Component {
             result.mice_data["color_images"].length &&
             result.mice_data["color_images"][0].color,
         });
+        window.scrollTo(0, 0);
       });
   }
 
@@ -34,7 +35,6 @@ class ProductSection extends Component {
 
   handleImgColor = (e) => {
     const { name } = e.target;
-    console.log("e.target", e.target);
     this.setState({
       imgColor: name,
     });
@@ -43,7 +43,7 @@ class ProductSection extends Component {
   render() {
     const { dataDetail, imgIndex, imgColor, colorKeys } = this.state;
     return (
-      <div>
+      <div className="ProductSection">
         {Object.keys(dataDetail).length && colorKeys.length && (
           <div className="ProductSection">
             <section className="containerWrap">
@@ -70,37 +70,28 @@ class ProductSection extends Component {
                     <p className="infoPrice">$ {dataDetail.product_price}</p>
                     <em>{dataDetail.product_note}</em>
                   </div>
-
-                  {imgColor ? (
+                  {imgColor.length > 0 && (
                     <div className="infoColor">
                       <p className="color">{imgColor}</p>
                       <ul>
-                        {dataDetail.color_images.length
-                          ? dataDetail.color_images.map((colorName, i) => {
-                              return (
-                                <li
-                                  key={colorName.id}
-                                  onClick={this.handleImgColor}
-                                >
-                                  <a href="#">
-                                    <img
-                                      name={colorName.color}
-                                      src={colorName.image_url}
-                                      alt="color images"
-                                    />
-                                  </a>
-                                </li>
-                              );
-                            })
-                          : () => {
-                              return;
-                            }}
+                        {dataDetail.color_images &&
+                          dataDetail.color_images.map((colorName, i) => {
+                            return (
+                              <li
+                                key={colorName.id}
+                                onClick={this.handleImgColor}
+                              >
+                                <img
+                                  name={colorName.color}
+                                  src={colorName.image_url}
+                                  alt="color images"
+                                />
+                              </li>
+                            );
+                          })}
                       </ul>
                     </div>
-                  ) : (
-                    <></>
                   )}
-
                   <div className="infoBtn">
                     <button>add to cart</button>
                     <a href="#">+ specifications</a>
@@ -119,9 +110,7 @@ class ProductSection extends Component {
                         key={idx}
                         onClick={() => this.setState({ imgIndex: idx })}
                       >
-                        <a href="#">
-                          <img src={imgList} />
-                        </a>
+                        <img alt="imgList" src={imgList} />
                       </li>
                     );
                   })}

@@ -80,6 +80,7 @@
           width: 33px;
           height: 33px;
           border-radius: 100%;
+          cursor: pointer;
 
           img {
             width: 100%;
@@ -126,13 +127,11 @@
         margin-right: 32px;
         margin-bottom: 10px;
         width: 50px;
+        cursor: pointer;
 
-        a {
+        img {
           height: 45px;
-
-          img {
-            width: 100%;
-          }
+          width: 100%;
         }
       }
     }
