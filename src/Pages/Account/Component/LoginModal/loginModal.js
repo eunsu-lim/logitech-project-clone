@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./loginModal.scss";
 
 class LoginModal extends Component {
@@ -13,7 +13,7 @@ class LoginModal extends Component {
       handlePwValue,
       handleLoginBtn,
       handleInputEmailStatus,
-      goToCreateAccountModal
+      goToCreateAccountModal,
     } = this.props;
     return (
       <div
@@ -90,7 +90,11 @@ class LoginModal extends Component {
             <div id="google" className="otherSiteBtn" />
           </div>
           <div className="clickLinks">
-            <Link className="clickLink" to="/Account" onClick={goToCreateAccountModal}>
+            <Link
+              className="clickLink"
+              to="/Account"
+              onClick={goToCreateAccountModal}
+            >
               CREATE AN ACCOUNT
             </Link>
             <Link className="clickLink" to="/Account">

@@ -27,12 +27,10 @@ export default class SidebarFilter extends Component {
   };
 
   render() {
-    const {
-      sidebarFilterList,
-      isCheckOpened,
-      collapseIcon,
-      expandIcon,
-    } = this.state;
+    const { sidebarFilterList, isCheckOpened } = this.state;
+    const collapseIcon =
+      "https://www.logitech.com/images/icons/icon-collapse.svg";
+    const expandIcon = "https://www.logitech.com/images/icons/icon-expand.svg";
     return (
       <div className="SidebarFilter">
         {sidebarFilterList.map((filter, index) => {

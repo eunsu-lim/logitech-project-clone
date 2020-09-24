@@ -1,67 +1,67 @@
 const SITE_MAP = [
   {
     id: 1,
-    content: 'Accessibility',
+    content: "Accessibility",
   },
   {
     id: 2,
-    content: 'Careers',
+    content: "Careers",
   },
   {
     id: 3,
-    content: 'Investors',
+    content: "Investors",
   },
   {
     id: 4,
-    content: 'Return Policy',
+    content: "Return Policy",
   },
   {
     id: 5,
-    content: 'About',
+    content: "About",
   },
   {
     id: 6,
-    content: 'Privacy + Security',
+    content: "Privacy + Security",
   },
   {
     id: 7,
-    content: 'Terms of Use',
+    content: "Terms of Use",
   },
   {
     id: 8,
-    content: 'Email Subscription',
+    content: "Email Subscription",
   },
   {
     id: 9,
-    content: 'Contact',
+    content: "Contact",
   },
   {
     id: 10,
-    content: 'Social Impact',
+    content: "Social Impact",
   },
   {
     id: 11,
-    content: 'Sustainability',
+    content: "Sustainability",
   },
   {
     id: 12,
-    content: 'Student Discount',
+    content: "Student Discount",
   },
   {
     id: 13,
-    content: 'Blog',
+    content: "Blog",
   },
   {
     id: 14,
-    content: 'Sitemap',
+    content: "Sitemap",
   },
   {
     id: 15,
-    content: 'Press',
+    content: "Press",
   },
   {
     id: 16,
-    content: 'Affiliate Program',
+    content: "Affiliate Program",
   },
 ];
 
