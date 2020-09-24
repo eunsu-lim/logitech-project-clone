@@ -24,24 +24,12 @@ class Nav extends Component {
             </ul>
             <ul className="navRight">
               <li>
-                <a className="flagLink" href="/#">
-                  <span className="flag"></span>
-                  <span>EN</span>
-                </a>
-              </li>
-              <li>
                 <Link to="/account">
-                  <div className="accountLink">
-                    <span className="account"></span>
-                    <span>MY ACCOUNT</span>
-                  </div>
+                  <span>MY ACCOUNT</span>
                 </Link>
               </li>
               <li>
-                <a className="cartLink" href="/#">
-                  <span className="cart"></span>
-                  <span>MY CART</span>
-                </a>
+                <span>MY CART</span>
               </li>
             </ul>
           </div>

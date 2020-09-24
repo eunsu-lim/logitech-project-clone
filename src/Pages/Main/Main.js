@@ -3,6 +3,7 @@ import Nav from "../../Component/Nav/Nav";
 import NavBottom from "../../Component/NavBottom/SearchBar";
 import MainBanner from "./componenets/MainBanner";
 import CategoryTiles from "./componenets/CategoryTiles";
+import PangeaImg from "./Data/pangeaImg";
 import Footer from "../../Component/Footer/Footer";
 import "./Main.scss";
 
@@ -40,18 +41,10 @@ class Main extends Component {
                   <span>- Bracken Darrell, -</span>
                 </div>
                 <p>
-                  "Logitech and its brands have made donations to:&nbsp;"
-                  <a href="https://eji.org">Equal Justice Initiative</a>
-                  ", "
-                  <a href="https://www.splcenter.org">
-                    Southern Poverty Law Center
-                  </a>
-                  ", "
-                  <a href="https://www.welovelakestreet.com">
-                    We Love Lake Street
-                  </a>
-                  " and other organizations that are fighting racial
-                  inequities."
+                  "Logitech and its brands have made donations to:&nbsp;" Equal
+                  Justice Initiative ", " Southern Poverty Law Center ", " We
+                  Love Lake Street " and other organizations that are fighting
+                  racial inequities."
                 </p>
                 <a
                   class="commitments"
@@ -66,26 +59,13 @@ class Main extends Component {
         <section>
           <div class="pangeaWrap">
             <div className="pangeaCmp">
-              <a href="/#">
-                <div className="pangeaPicA">
-                  <span>SOCIAL IMPACT</span>
-                </div>
-              </a>
-              <a href="/#">
-                <div className="pangeaPicB">
-                  <span>SUSTAINABILITY</span>
-                </div>
-              </a>
-              <a href="/#">
-                <div className="pangeaPicC">
-                  <span>DESIGN AWARDS</span>
-                </div>
-              </a>
-              <a href="/#">
-                <div className="pangeaPicD">
-                  <span>ABOUT US</span>
-                </div>
-              </a>
+              {PangeaImg.map(({ id, name }) => {
+                return (
+                  <div className={`pangeaPic${id}`}>
+                    <span>{name}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

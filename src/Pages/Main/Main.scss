@@ -130,45 +130,42 @@
       @include flexJcsb;
       padding: 130px 0 140px 0;
       transform: scale(1);
-      a {
-        margin-right: 20px;
-      }
-      a:last-child {
-        margin-right: 0;
-      }
+
       div {
         width: 286px;
         height: 428px;
       }
-      .pangeaPicA {
+      .pangeaPic1 {
         background: url("https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-logi-cares-2.jpg?v=1")
           no-repeat;
       }
-      .pangeaPicA:hover {
+      .pangeaPic1:hover {
         transform: scale(1.03);
         transition: transform 0.5s;
       }
-      .pangeaPicB {
+      .pangeaPic2 {
+        margin: 0 20px;
         background: url("https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-sustainability-2.jpg?v=1")
           no-repeat;
       }
-      .pangeaPicB:hover {
+      .pangeaPic2:hover {
         transform: scale(1.03);
         transition: transform 0.5s;
       }
-      .pangeaPicC {
+      .pangeaPic3 {
+        margin-right: 20px;
         background: url("https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-awards.jpg?v=1")
           no-repeat;
       }
-      .pangeaPicC:hover {
+      .pangeaPic3:hover {
         transform: scale(1.03);
         transition: transform 0.5s;
       }
-      .pangeaPicD {
+      .pangeaPic4 {
         background: url("https://resource.logitech.com/w_286,c_limit,q_auto,f_auto,dpr_1.0/content/dam/logitech/en/homepage/home-about.jpg?v=1")
           no-repeat;
       }
-      .pangeaPicD:hover {
+      .pangeaPic4:hover {
         transform: scale(1.03);
         transition: transform 0.5s;
       }
