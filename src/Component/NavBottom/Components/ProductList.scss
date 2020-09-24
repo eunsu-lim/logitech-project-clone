@@ -1,0 +1,21 @@
+@import "../../../Styles/common.scss";
+.productListWrap {
+  width: 180px;
+  padding-top: 50px;
+
+  .productList {
+    width: 150px;
+    margin-bottom: 13px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  li {
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: 100;
+
+    a {
+      opacity: 0.6;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.componentWrap {
+  position: relative;
+  width: 100%;
+
+  .firstBannerImg {
+    width: 100%;
+    height: 1072px;
+  }
+  .firstBannerTextWrap {
+    transform: translatex(-50%);
+    position: absolute;
+    left: 72%;
+    top: 280px;
+    z-index: 100;
+    text-align: left;
+
+    .firstBannerText {
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: #2f3132;
+    }
+    .firstBannerText-1 {
+      width: 400px;
+      margin-bottom: 60px;
+      font-size: 48px;
+      font-weight: 700;
+      color: #2f3132;
+    }
+    .firstBannerBtn {
+      padding: 18px 40px;
+      border: 1px solid #2f3132;
+      font-size: 15px;
+      font-weight: 400;
+      color: white;
+      background-color: #2f3132;
+    }
+  }
+  .secondBannerImg {
+    width: 100%;
+    height: 1072px;
+  }
+  .secondBannerTextWrap {
+    position: absolute;
+    text-align: center;
+    transform: translatex(-50%);
+    left: 50%;
+    top: 660px;
+    z-index: 100;
+
+    .secondBannerText {
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: #2f3132;
+    }
+    .secondBannerText-1 {
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 48px;
+      color: #2f3132;
+    }
+    .secondBannerBtn {
+      padding: 18px 60px;
+      margin-right: 20px;
+      border: 1px solid #2f3132;
+      font-size: 15px;
+      font-weight: 500;
+      color: #2f3132;
+    }
+    .secondBannerBtnA {
+      padding: 18px 30px;
+      border: 1px solid #2f3132;
+      font-size: 15px;
+      font-weight: 500;
+      color: #2f3132;
+    }
+  }
+  .thirdBannerImg {
+    width: 100%;
+    height: 1072px;
+  }
+  .thirdBannerTextWrap {
+    transform: translatex(-50%);
+    position: absolute;
+    left: 27%;
+    top: 200px;
+    z-index: 100;
+    text-align: left;
+
+    .thirdBannerText {
+      width: 400px;
+      margin-bottom: 20px;
+      font-size: 48px;
+      font-weight: 700;
+      color: #2f3132;
+    }
+    .thirdBannerText-1 {
+      width: 300px;
+      margin-bottom: 60px;
+      color: #2f3132;
+      font-weight: 400;
+    }
+    .thirdBannerBtn {
+      padding: 18px 60px;
+      border: 1px solid #2f3132;
+      font-size: 15px;
+      font-weight: 500;
+      background-color: #2f3132;
+      color: white;
+    }
+  }
+}

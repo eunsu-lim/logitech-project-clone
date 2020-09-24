@@ -85,7 +85,6 @@ class LoginModal extends Component {
       emailValue,
       passwordValue,
     } = this.state;
-
     return (
       <div
         onClick={closeModal}

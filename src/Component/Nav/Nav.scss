@@ -1,120 +1,130 @@
-@import '../../Styles/common.scss';
+@import "../../Styles/common.scss";
 
 .topBar {
-  height: 45px;
+  position: relative;
   @include flex;
   align-items: center;
   justify-content: space-;
-  background-color: #333;
+  height: 45px;
   color: #999;
-  position: relative;
+  background-color: #333;
+
   .navWrapper {
+    @include flexJcsb;
+    align-items: center;
+    max-width: 1280px;
     width: 100%;
     height: 100%;
     padding: 0 40px;
-    margin: 0 72px;
-    @include flexJcsb;
-    align-items: center;
+    margin: 0 auto;
+
     .navLeft {
       @include flex;
       height: 100%;
-      a {
-        position: relative;
-        display: block;
-        padding: 12px;
-      }
+
       .lightLogo {
+        width: 80px;
         height: 20px;
+        margin: 12px;
       }
-      .lightLogoA {
-        background: url('https://www.logitech.com/content/dam/logitech/en/header/logitechg-bottom.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 0.5;
+      .lightLogo1 {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/en/header/logitechg-bottom.svg"),
+          cover,
+          0.5
+        );
       }
-      .lightLogoA:hover {
-        background: url('https://www.logitech.com/content/dam/logitech/en/header/logitechg-overlay.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 1;
+      .lightLogo1:hover {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/logitechg-overlay.svg"),
+          cover,
+          1
+        );
       }
-      .lightLogoB {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/jaybird-bottom.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 0.5;
+      .lightLogo2 {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/jaybird-bottom.svg"),
+          cover,
+          0.5
+        );
       }
-      .lightLogoB:hover {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/jaybird-overlay.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 1;
+      .lightLogo2:hover {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/jaybird-overlay.svg"),
+          cover,
+          1
+        );
       }
-      .lightLogoC {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/ue-bottom.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 0.5;
+      .lightLogo3 {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/ue-bottom.svg"),
+          cover,
+          0.5
+        );
+        width: 45px;
       }
-      .lightLogoC:hover {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/ue-bottom.svg')
-          no-repeat;
-        background-size: cover;
-        opacity: 1;
+      .lightLogo3:hover {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/ue-overlay.svg"),
+          contain,
+          1
+        );
       }
-      .lightLogoD {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/astro-bottom.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 0.5;
+      .lightLogo4 {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/astro-bottom.svg"),
+          cover,
+          0.5
+        );
       }
-      .lightLogoD:hover {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/astro-overlay.svg')
-          no-repeat;
-        background-size: cover;
-        width: 80px;
-        opacity: 1;
+      .lightLogo4:hover {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/astro-overlay.svg"),
+          cover,
+          1
+        );
       }
-      .lightLogoE {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/blue-bottom.svg')
-          no-repeat;
-        background-size: contain;
-        width: 80px;
-        opacity: 0.5;
+      .lightLogo5 {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/blue-bottom.svg"),
+          contain,
+          0.5
+        );
+        background-repeat: no-repeat;
       }
-      .lightLogoE:hover {
-        background: url('https://www.logitech.com/content/dam/logitech/common/header/blue-overlay.svg')
-          no-repeat;
-        background-size: contain;
-        width: 80px;
-        opacity: 1;
+      .lightLogo5:hover {
+        @include backGround(
+          url("https://www.logitech.com/content/dam/logitech/common/header/blue-overlay.svg"),
+          contain,
+          1
+        );
+        background-repeat: no-repeat;
       }
     }
     .navRight {
       @include flex;
-      a {
+      span {
+        margin-right: 30px;
         line-height: 25px;
         font-size: 12px;
       }
-      .flagLink {
-        padding: 10px 20px 10px 5px;
-      }
-      .accountLink {
-        padding: 10px 20px;
-      }
-      .cartLink {
-        padding: 12px 0 10px 20px;
-      }
       .flag {
+        padding-right: 30px;
         background: url(https://www.logitech.com/asset/images/flags/united-states.gif)
           no-repeat;
+        background-position: center;
       }
+    }
+    .accountLink {
+      display: inline;
+      padding: 10px 20px 10px 5px;
+      opacity: 0.6;
+      color: white;
+    }
+    .cartLink {
+      padding: 10px 20px 10px 5px;
+      opacity: 0.6;
+      color: white;
     }
   }
 }
