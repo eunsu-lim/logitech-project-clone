@@ -10,8 +10,8 @@ class InfoBoxTopLink extends Component {
         <ul>
           {links.map((link, index) => {
             return (
-              <li key={index} className="links">
-                <Link to="http://localhost:3000/Account">{link}</Link>
+              <li key={index} className="infoBoxLink">
+                <Link to="/Account">{link}</Link>
               </li>
             );
           })}

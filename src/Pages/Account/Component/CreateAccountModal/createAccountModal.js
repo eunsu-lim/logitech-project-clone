@@ -6,14 +6,14 @@ class CreateAccountModal extends Component {
   constructor() {
     super();
     this.state = {
-      createEmailValue: "",
-      createPwValue: "",
-      createConfirmPwValue: "",
-      createNameValue: "",
-      createEmailStatus: null,
-      createPwStatus: null,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
+      emailValue: "",
+      passwordValue: "",
+      confirmPwValue: "",
+      nameValue: "",
+      emailStatus: null,
+      passwordStatus: null,
+      confirmPwStatus: null,
+      nameStatus: null,
     };
   }
 
@@ -26,82 +26,81 @@ class CreateAccountModal extends Component {
 
   enteredEmail = () => {
     this.setState({
-      createEmailStatus: this.state.createEmailValue.length >= 1,
-      createPwStatus: null,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
+      emailStatus: this.state.emailValue.length >= 1,
+      passwordStatus: null,
+      confirmPwStatus: null,
+      nameStatus: null,
     });
   };
 
   enteredPw = () => {
     this.setState({
-      createPwStatus: this.state.createPwValue.length >= 1,
-      createConfirmPwStatus: null,
-      createNameStatus: null,
+      passwordStatus: this.state.passwordValue.length >= 1,
+      confirmPwStatus: null,
+      nameStatus: null,
     });
   };
 
   enteredConfirmPw = () => {
     this.setState({
-      createConfirmPwStatus: this.state.createConfirmPwValue.length >= 1,
-      createNameStatus: null,
+      confirmPwStatus: this.state.confirmPwValue.length >= 1,
+      nameStatus: null,
     });
   };
 
   enteredName = () => {
     this.setState({
-      createNameStatus: this.state.createNameValue.length >= 1,
+      nameStatus: this.state.nameValue.length >= 1,
     });
   };
 
   clickedCreateBtn = () => {
     const {
-      createEmailStatus,
-      createPwStatus,
-      createConfirmPwStatus,
-      createNameStatus,
-      createEmailValue,
-      createPwValue,
-      createConfirmPwValue,
-      createNameValue,
+      emailStatus,
+      passwordStatus,
+      confirmPwStatus,
+      nameStatus,
+      emailValue,
+      passwordValue,
+      confirmPwValue,
+      nameValue,
     } = this.state;
     const emailValid =
-      createEmailValue.length > 1 &&
-      createEmailValue.includes("@") &&
-      createEmailValue.includes(".");
-    const passwordValid = createPwValue.length >= 5;
+      emailValue.length > 1 &&
+      emailValue.includes("@") &&
+      emailValue.includes(".");
+    const passwordValid = passwordValue.length >= 5;
     const passwordConfirmValid =
-      createConfirmPwValue.length >= 5 &&
-      createPwValue === createConfirmPwValue;
-    const nameValid = createNameValue.length > 1;
+      confirmPwValue.length >= 5 &&
+      passwordValue === confirmPwValue;
+    const nameValid = nameValue.length > 1;
 
     this.setState({
-      createEmailStatus: emailValid,
-      createPwStatus: passwordValid,
-      createConfirmPwStatus: passwordConfirmValid,
-      createNameStatus: nameValid,
+      emailStatus: emailValid,
+      passwordStatus: passwordValid,
+      confirmPwStatus: passwordConfirmValid,
+      nameStatus: nameValid,
     });
 
     const createAccountSucceed =
-      createEmailStatus &&
-      createPwStatus &&
-      createConfirmPwStatus &&
-      createNameStatus;
+      emailStatus &&
+      passwordStatus &&
+      confirmPwStatus &&
+      nameStatus;
 
     if (createAccountSucceed) {
       fetch("http://10.58.1.236:8000/account/signup", {
         method: "POST",
         body: JSON.stringify({
-          email: this.state.createEmailValue,
-          password: this.state.createPwValue,
-          name: this.state.createNameValue,
+          email: this.state.emailValue,
+          password: this.state.passwordValue,
+          name: this.state.nameValue,
         }),
       })
         .then((res) => res.json())
         .then((result) => {
           if (result.message === "SUCCESS") {
             alert("Sign Up Success!");
-            // localStorage.setItem("token", result.Authorization);
             this.props.history.push("/");
           } else if (result.message === "ACCOUNT_ALREADY_EXIST") {
             alert("The email or password you have entered is invalid");
@@ -113,14 +112,14 @@ class CreateAccountModal extends Component {
   render() {
     const { isActive, closeModal } = this.props;
     const {
-      createEmailStatus,
-      createPwStatus,
-      createConfirmPwStatus,
-      createNameStatus,
-      createEmailValue,
-      createPwValue,
-      createConfirmPwValue,
-      createNameValue,
+      emailStatus,
+      passwordStatus,
+      confirmPwStatus,
+      nameStatus,
+      emailValue,
+      passwordValue,
+      confirmPwValue,
+      nameValue,
     } = this.state;
 
     return (
@@ -147,7 +146,7 @@ class CreateAccountModal extends Component {
           <div className="inputInfoAndCreateBtn">
             <input
               className={
-                createEmailStatus === false
+                emailStatus === false
                   ? "inputEmail notInputEmailClicked"
                   : "inputEmail"
               }
@@ -155,12 +154,12 @@ class CreateAccountModal extends Component {
               placeholder="Email address"
               onChange={this.saveAccount}
               onKeyUp={this.enteredEmail}
-              value={createEmailValue}
-              name="createEmailValue"
+              value={emailValue}
+              name="emailValue"
             />
             <div
               className={
-                createEmailStatus === false
+                emailStatus === false
                   ? "notInputEmail notInputEmailClicked"
                   : "notInputEmail"
               }
@@ -169,7 +168,7 @@ class CreateAccountModal extends Component {
             </div>
             <input
               className={
-                createEmailStatus && createPwStatus === false
+                emailStatus && passwordStatus === false
                   ? "inputPw notInputPwClicked"
                   : "inputPw"
               }
@@ -177,12 +176,12 @@ class CreateAccountModal extends Component {
               placeholder="Password"
               onChange={this.saveAccount}
               onKeyUp={this.enteredPw}
-              value={createPwValue}
-              name="createPwValue"
+              value={passwordValue}
+              name="passwordValue"
             />
             <div
               className={
-                createEmailStatus && createPwStatus === false
+                emailStatus && passwordStatus === false
                   ? "notInputPw notInputPwClicked"
                   : "notInputPw"
               }
@@ -191,9 +190,9 @@ class CreateAccountModal extends Component {
             </div>
             <input
               className={
-                createEmailStatus &&
-                createPwStatus &&
-                createConfirmPwStatus === false
+                emailStatus &&
+                passwordStatus &&
+                confirmPwStatus === false
                   ? "confirmPw notConfirmPwClicked"
                   : "confirmPw"
               }
@@ -201,14 +200,14 @@ class CreateAccountModal extends Component {
               placeholder="Confirm Password"
               onChange={this.saveAccount}
               onKeyUp={this.enteredConfirmPw}
-              value={createConfirmPwValue}
-              name="createConfirmPwValue"
+              value={confirmPwValue}
+              name="confirmPwValue"
             />
             <div
               className={
-                createEmailStatus &&
-                createPwStatus &&
-                createConfirmPwStatus === false
+                emailStatus &&
+                passwordStatus &&
+                confirmPwStatus === false
                   ? "notConfirmPw notConfirmPwClicked"
                   : "notConfirmPw"
               }
@@ -217,10 +216,10 @@ class CreateAccountModal extends Component {
             </div>
             <input
               className={
-                createEmailStatus &&
-                createPwStatus &&
-                createConfirmPwStatus &&
-                createNameStatus === false
+                emailStatus &&
+                passwordStatus &&
+                confirmPwStatus &&
+                nameStatus === false
                   ? "inputName notInputNameClicked"
                   : "inputName"
               }
@@ -228,15 +227,15 @@ class CreateAccountModal extends Component {
               placeholder="Name"
               onChange={this.saveAccount}
               onKeyUp={this.enteredName}
-              value={createNameValue}
-              name="createNameValue"
+              value={nameValue}
+              name="nameValue"
             />
             <div
               className={
-                createEmailStatus &&
-                createPwStatus &&
-                createConfirmPwStatus &&
-                createNameStatus === false
+                emailStatus &&
+                passwordStatus &&
+                confirmPwStatus &&
+                nameStatus === false
                   ? "notInputName notInputNameClicked"
                   : "notInputName"
               }
@@ -249,7 +248,7 @@ class CreateAccountModal extends Component {
                 Yes, I want to receive news and product emails. Read our
                 <Link
                   className="privacyPolicy"
-                  to="http://localhost:3000/Account"
+                  to="/Account"
                 >
                   privacy policy
                 </Link>
@@ -270,14 +269,14 @@ class CreateAccountModal extends Component {
                 <div>
                   <Link
                     className="reCAPCHATLink"
-                    to="http://localhost:3000/Account"
+                    to="/Account"
                   >
                     Privacy
                   </Link>
                   -
                   <Link
                     className="reCAPCHATLink"
-                    to="http://localhost:3000/Account"
+                    to="/Account"
                   >
                     Terms
                   </Link>

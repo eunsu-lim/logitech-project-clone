@@ -13,6 +13,8 @@ class LoginModal extends Component {
     };
   }
 
+  
+
   saveLoginValue = (e) => {
     const { value, name } = e.target;
     this.setState({
@@ -36,7 +38,6 @@ class LoginModal extends Component {
   };
 
   handleLoginBtn = () => {
-    console.log(this.state.inputEmailStatus, this.state.inputPwStatus);
     const {
       emailValue,
       passwordValue,
@@ -133,7 +134,7 @@ class LoginModal extends Component {
               type="password"
               placeholder="Password"
               onChange={this.saveLoginValue}
-              onKeyUp={this.props.handleInputPwStatus}
+              onKeyUp={this.handleInputPwStatus}
               value={passwordValue}
               name="passwordValue"
             ></input>
@@ -147,7 +148,7 @@ class LoginModal extends Component {
               Please provide a password
             </div>
             <div className="forgetText">
-              <Link to="http://localhost:3000/Account">Forgot Password?</Link>
+              <Link to="/Account">Forgot Password?</Link>
             </div>
             <button
               className="loginBtn"
