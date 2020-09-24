@@ -37,3 +37,9 @@ $theme-background-color: "white";
   font-size: 16px;
   font-weight: 200;
 }
+
+@mixin backGround($background: null, $size: null, $opacity: null) {
+  background: $background;
+  background-size: $size;
+  opacity: $opacity;
+}

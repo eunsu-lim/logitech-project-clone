@@ -1,27 +1,35 @@
 import React, { Component } from "react";
-//import COLOR from "./colorData";
-//import PRODUCTCOLOR from "./data";
 import "./ProductSection.scss";
-import { api } from "../../config/api.js";
-
-//const COLORLIST = ["White", "Rose", "Blue Grey", "Graphite"];
+//import { api } from "../../config/api.js";
 
 class ProductSection extends Component {
   state = {
-    dataDetail: [],
-    imgColor: "White",
+    dataDetail: {},
+    colorKeys: [],
     imgIndex: 0,
+    imgColor: "",
   };
 
+  //fetch(`${api}/products/product_mice/199`) // 177-204   184 192
+
   componentDidMount() {
-    fetch(`${api}/products/product_mice/199`) // 177-204   184 192
+    fetch("/data/product.json")
       .then((res) => res.json())
       .then((result) => {
-        console.log("result.mice_data: ", result.mice_data);
         this.setState({
-          dataDetail: result.mice_data,
+          dataDetail: result.mice_product,
+          imgColor: result.mice_product["color_images"][0].name,
         });
       });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { dataDetail } = this.state;
+    if (prevState.dataDetail !== this.state.dataDetail) {
+      this.setState({
+        colorKeys: Object.keys(dataDetail["thumbnail_url"]),
+      });
+    }
   }
 
   handleImgColor = (e) => {
@@ -32,25 +40,22 @@ class ProductSection extends Component {
   };
 
   render() {
-    const { dataDetail, imgIndex, imgColor } = this.state;
-    console.log(dataDetail);
+    const { dataDetail, imgIndex, imgColor, colorKeys } = this.state;
+    console.log(colorKeys);
+
+    console.log("imgIndex : ", imgIndex);
     return (
       <div>
-        {dataDetail.length !== 0 && (
+        {Object.keys(dataDetail).length > 0 && colorKeys.length > 0 && (
           <div className="ProductSection">
             <section className="containerWrap">
               <div className="detailContainer">
                 <div className="detailLeft">
                   <ul className="">
                     <li className="productList">
-                      {/* <img
-                      className="productShot"
-                      src={PRODUCTCOLOR[imgColor][imgIndex]}
-                      alt="Logitech"
-                    /> */}
                       <img
                         className="productShot"
-                        src={dataDetail.thumnbnail_url[0]}
+                        src={dataDetail.thumbnail_url[imgColor][imgIndex]}
                         alt="Logitech"
                       />
                     </li>
@@ -58,34 +63,30 @@ class ProductSection extends Component {
                 </div>
                 <div className="productInfo">
                   <div className="infoBox">
-                    <h3>{dataDetail && dataDetail.product_title}</h3>
-                    <p className="infoDetail">
-                      {dataDetail && dataDetail.product_details}
-                    </p>
-                    <p className="infoPrice">
-                      {dataDetail && dataDetail.product_price}
-                    </p>
+                    <h3>{dataDetail.product_title}</h3>
+                    <p className="infoDetail">{dataDetail.product_details}</p>
+                    <p className="infoPrice">{dataDetail.product_price}</p>
                     <em>{dataDetail.product_note}</em>
                   </div>
 
-                  {/* <div className="infoColor">
-                  <p className="color">{imgColor}</p>
-                  <ul>
-                    {COLOR.map((el, i) => {
-                      return (
-                        <li key={i} onClick={this.handleImgColor}>
-                          <a href="#">
-                            <img
-                              name={COLORLIST[i]}
-                              src={el}
-                              alt="color images"
-                            />
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div> */}
+                  <div className="infoColor">
+                    <p className="color">{imgColor}</p>
+                    <ul>
+                      {dataDetail.color_images.map((el, i) => {
+                        return (
+                          <li key={el.id} onClick={this.handleImgColor}>
+                            <a href="#">
+                              <img
+                                name={el.name}
+                                src={el.image_url}
+                                alt="color images"
+                              />
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                   <div className="infoBtn">
                     <button>add to cart</button>
                     <a href="#">+ specifications</a>
@@ -94,15 +95,21 @@ class ProductSection extends Component {
               </div>
               <div className="productsBelow">
                 <ul className="productThumbs">
-                  {/* {dataDetail[imgColor].map((el, i) => {
-                  return (
-                    <li key={i} onClick={() => this.setState({ imgIndex: i })}>
-                      <a href="#">
-                        <img src={el} />
-                      </a>
-                    </li>
-                  );
-                })} */}
+                  {Object.values(dataDetail.thumbnail_url[imgColor]).map(
+                    (el, idx) => {
+                      console.log("el", el);
+                      return (
+                        <li
+                          key={idx}
+                          onClick={() => this.setState({ imgIndex: idx })}
+                        >
+                          <a href="#">
+                            <img src={el} />
+                          </a>
+                        </li>
+                      );
+                    }
+                  )}
                 </ul>
               </div>
             </section>
