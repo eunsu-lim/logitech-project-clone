@@ -27,7 +27,12 @@ export default class SidebarFilter extends Component {
   };
 
   render() {
-    const { sidebarFilterList, isCheckOpened } = this.state;
+    const {
+      sidebarFilterList,
+      isCheckOpened,
+      collapseIcon,
+      expandIcon,
+    } = this.state;
     return (
       <div className="SidebarFilter">
         {sidebarFilterList.map((filter, index) => {
@@ -39,19 +44,11 @@ export default class SidebarFilter extends Component {
                   onClick={() => this.openSubFilter(index)}
                 >
                   <span
-                    className={
-                      this.state.isCheckOpened[index] ? "expanded" : "collapsed"
-                    }
+                    className={isCheckOpened[index] ? "expanded" : "collapsed"}
                   >
                     {filter.filterTitle}
                   </span>
-                  <img
-                    src={
-                      this.state.isCheckOpened[index]
-                        ? this.state.collapseIcon
-                        : this.state.expandIcon
-                    }
-                  />
+                  <img src={isCheckOpened[index] ? collapseIcon : expandIcon} />
                 </button>
                 {/*<SidebarSubFilter />} */}
                 <li className="filterCollectionList">

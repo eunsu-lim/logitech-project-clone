@@ -18,15 +18,16 @@ class SidebarfilterColletcion extends Component {
   };
 
   render() {
+    const { isOpened, collectionIcon } = this.state;
     return (
       <div className="filterTitle">
         <button className="filterCollection" onClick={this.openFilter}>
-          <span className={this.state.isOpened ? "expanded" : "collapsed"}>
+          <span className={isOpened ? "expanded" : "collapsed"}>
             COLLECTION
           </span>
-          <img src={this.state.collectionIcon} />
+          <img alt="icon" src={collectionIcon} />
         </button>
-        {this.state.isOpened && <CollectionFilter />}
+        {isOpened && <CollectionFilter />}
       </div>
     );
   }

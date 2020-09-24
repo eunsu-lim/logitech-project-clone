@@ -10,9 +10,10 @@ class CollectionFilter extends Component {
   }
 
   render() {
+    const { filterList } = this.state;
     return (
       <ul className="CollectionFilter">
-        {this.state.filterList.map((subFilter) => {
+        {filterList.map((subFilter) => {
           return (
             <li className="filterCollectionList" key={subFilter.id}>
               <label className="filterCollectionLabel">

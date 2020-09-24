@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../../ProductList.scss";
+import "../ProductList.scss";
 
-class LowToHighMiceList extends Component {
+class MiceList extends Component {
   state = {
     products: [],
     isChecked: false,
@@ -16,6 +16,10 @@ class LowToHighMiceList extends Component {
         });
       });
   }
+
+  // -http localhost:8000/products/mice_list\?sort\=price_low_high
+  // -http localhost:8000/products
+  // -http localhost:8000/products/mice_list}
 
   handleMouseOver = () => {
     this.setState((state) => ({ a: !state.a }));
@@ -108,4 +112,4 @@ class LowToHighMiceList extends Component {
   }
 }
 
-export default LowToHighMiceList;
+export default MiceList;
