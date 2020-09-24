@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import "./ProductSection.scss";
-//import { api } from "../../config/api.js";
+import { api } from "../../config/api.js";
 
 class ProductSection extends Component {
   state = {
     dataDetail: {},
     colorKeys: [],
     imgIndex: 0,
-    imgColor: "",
+    imgColor: [],
   };
 
-  //fetch(`${api}/products/product_mice/199`) // 177-204   184 192
-
   componentDidMount() {
-    fetch("/data/product.json")
+    fetch(`${api}/products/product_mice/103`) // 88- 115
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          dataDetail: result.mice_product,
-          imgColor: result.mice_product["color_images"][0].name,
+          dataDetail: result.mice_data,
+          imgColor:
+            result.mice_data["color_images"].length &&
+            result.mice_data["color_images"][0].color,
         });
       });
   }
@@ -34,6 +34,7 @@ class ProductSection extends Component {
 
   handleImgColor = (e) => {
     const { name } = e.target;
+    console.log("e.target", e.target);
     this.setState({
       imgColor: name,
     });
@@ -41,12 +42,9 @@ class ProductSection extends Component {
 
   render() {
     const { dataDetail, imgIndex, imgColor, colorKeys } = this.state;
-    console.log(colorKeys);
-
-    console.log("imgIndex : ", imgIndex);
     return (
       <div>
-        {Object.keys(dataDetail).length > 0 && colorKeys.length > 0 && (
+        {Object.keys(dataDetail).length && colorKeys.length && (
           <div className="ProductSection">
             <section className="containerWrap">
               <div className="detailContainer">
@@ -55,7 +53,11 @@ class ProductSection extends Component {
                     <li className="productList">
                       <img
                         className="productShot"
-                        src={dataDetail.thumbnail_url[imgColor][imgIndex]}
+                        src={
+                          imgColor
+                            ? dataDetail.thumbnail_url[imgColor][imgIndex]
+                            : dataDetail.thumbnail_url.null[imgIndex]
+                        }
                         alt="Logitech"
                       />
                     </li>
@@ -65,28 +67,40 @@ class ProductSection extends Component {
                   <div className="infoBox">
                     <h3>{dataDetail.product_title}</h3>
                     <p className="infoDetail">{dataDetail.product_details}</p>
-                    <p className="infoPrice">{dataDetail.product_price}</p>
+                    <p className="infoPrice">$ {dataDetail.product_price}</p>
                     <em>{dataDetail.product_note}</em>
                   </div>
 
-                  <div className="infoColor">
-                    <p className="color">{imgColor}</p>
-                    <ul>
-                      {dataDetail.color_images.map((el, i) => {
-                        return (
-                          <li key={el.id} onClick={this.handleImgColor}>
-                            <a href="#">
-                              <img
-                                name={el.name}
-                                src={el.image_url}
-                                alt="color images"
-                              />
-                            </a>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+                  {imgColor ? (
+                    <div className="infoColor">
+                      <p className="color">{imgColor}</p>
+                      <ul>
+                        {dataDetail.color_images.length
+                          ? dataDetail.color_images.map((colorName, i) => {
+                              return (
+                                <li
+                                  key={colorName.id}
+                                  onClick={this.handleImgColor}
+                                >
+                                  <a href="#">
+                                    <img
+                                      name={colorName.color}
+                                      src={colorName.image_url}
+                                      alt="color images"
+                                    />
+                                  </a>
+                                </li>
+                              );
+                            })
+                          : () => {
+                              return;
+                            }}
+                      </ul>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+
                   <div className="infoBtn">
                     <button>add to cart</button>
                     <a href="#">+ specifications</a>
@@ -95,21 +109,22 @@ class ProductSection extends Component {
               </div>
               <div className="productsBelow">
                 <ul className="productThumbs">
-                  {Object.values(dataDetail.thumbnail_url[imgColor]).map(
-                    (el, idx) => {
-                      console.log("el", el);
-                      return (
-                        <li
-                          key={idx}
-                          onClick={() => this.setState({ imgIndex: idx })}
-                        >
-                          <a href="#">
-                            <img src={el} />
-                          </a>
-                        </li>
-                      );
-                    }
-                  )}
+                  {Object.values(
+                    imgColor
+                      ? dataDetail.thumbnail_url[imgColor]
+                      : dataDetail.thumbnail_url.null
+                  ).map((imgList, idx) => {
+                    return (
+                      <li
+                        key={idx}
+                        onClick={() => this.setState({ imgIndex: idx })}
+                      >
+                        <a href="#">
+                          <img src={imgList} />
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </section>
