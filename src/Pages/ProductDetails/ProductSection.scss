@@ -10,6 +10,7 @@
 }
 
 .containerWrap {
+  padding-top: 90px;
   padding-bottom: 40px;
   background-color: #f4f4f4;
 
@@ -79,6 +80,7 @@
           width: 33px;
           height: 33px;
           border-radius: 100%;
+          cursor: pointer;
 
           img {
             width: 100%;
@@ -125,13 +127,11 @@
         margin-right: 32px;
         margin-bottom: 10px;
         width: 50px;
+        cursor: pointer;
 
-        a {
+        img {
           height: 45px;
-
-          img {
-            width: 100%;
-          }
+          width: 100%;
         }
       }
     }
