@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import Nav from "../../Component/Nav/Nav";
+import NavBottom from "../../Component/NavBottom/SearchBar";
 import SpecList from "./component/SpecList";
 import ProductImg from "./component/ProductImg";
 import ProductSection from "./ProductSection";
+import Footer from "../../Component/Footer/Footer";
 import PRODUCTSET from "./setupData";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -67,6 +70,8 @@ class ProductDetails extends Component {
 
     return (
       <div className="ProductDetails">
+        <Nav />
+        <NavBottom />
         <ProductSection />
         <section className="mainBg">
           <div className="bgContent">
@@ -166,6 +171,7 @@ class ProductDetails extends Component {
             ></iframe>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

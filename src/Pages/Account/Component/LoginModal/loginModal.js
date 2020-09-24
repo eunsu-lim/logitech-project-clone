@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./loginModal.scss";
+import {LoginAPI} from "../../../../../src/config/api" 
 
 class LoginModal extends Component {
   constructor() {
@@ -59,7 +60,7 @@ class LoginModal extends Component {
     const loginSucceed = inputEmailStatus && inputPwStatus;
 
     if (loginSucceed) {
-      fetch("http://10.58.1.236:8000/account/signin", {
+      fetch(`${LoginAPI}/account/signin`, {
         method: "POST",
         body: JSON.stringify({
           email: this.state.emailValue,

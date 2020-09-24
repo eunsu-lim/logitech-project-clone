@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./createAccountModal.scss";
-
+import {LoginAPI} from "../../../../../src/config/api"
 class CreateAccountModal extends Component {
   constructor() {
     super();
@@ -89,7 +89,7 @@ class CreateAccountModal extends Component {
       nameStatus;
 
     if (createAccountSucceed) {
-      fetch("http://10.58.1.236:8000/account/signup", {
+      fetch(`${LoginAPI}/account/signup`, {
         method: "POST",
         body: JSON.stringify({
           email: this.state.emailValue,
