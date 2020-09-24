@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 import "./Cart.scss";
 
 class Cart extends Component {
@@ -116,12 +115,6 @@ class Cart extends Component {
         </section>
       </div>
     );
-=======
-
-class Cart extends Component {
-  render() {
-    return <div></div>;
->>>>>>> master
   }
 }
 
