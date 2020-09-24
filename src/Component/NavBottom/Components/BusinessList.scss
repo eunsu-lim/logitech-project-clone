@@ -1,0 +1,20 @@
+.businessListWrap {
+  width: 150px;
+  height: 250px;
+  margin: 60px 20px 0px 0px;
+
+  .businessList {
+    width: 150px;
+    margin-bottom: 13px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  li {
+    margin-bottom: 13px;
+    font-size: 14px;
+
+    a {
+      opacity: 0.6;
+    }
+  }
+}

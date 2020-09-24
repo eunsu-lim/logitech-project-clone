@@ -1,57 +1,35 @@
-import React, { Component } from 'react';
-import './Nav.scss';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./Nav.scss";
+import NAV_LOGO from "./Data/navLogoImg";
 
 class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      navLogo: NAV_LOGO,
+      navImgHover: false,
+    };
+  }
+
   render() {
     return (
       <nav>
         <div className="topBar">
           <div className="navWrapper">
             <ul className="navLeft">
-              <li>
-                <a href="#/">
-                  <div className="lightLogo lightLogoA"></div>
-                </a>
-              </li>
-              <li>
-                <a href="/#">
-                  <div className="lightLogo lightLogoB"></div>
-                </a>
-              </li>
-              <li>
-                <a href="/#">
-                  <div className="lightLogo lightLogoC"></div>
-                </a>
-              </li>
-              <li>
-                <a href="/#">
-                  <div className="lightLogo lightLogoD"></div>
-                </a>
-              </li>
-              <li>
-                <a href="/#">
-                  <div className="lightLogo lightLogoE"></div>
-                </a>
-              </li>
+              {this.state.navLogo.map(({ id }) => {
+                return <div className={`lightLogo lightLogo${id}`} />;
+              })}
             </ul>
             <ul className="navRight">
               <li>
-                <a className="flagLink" href="/#">
-                  <span className="flag"></span>
-                  <span>EN</span>
-                </a>
-              </li>
-              <li>
-                <a className="accountLink" href="/#">
-                  <span className="account"></span>
+                <Link to="/account">
                   <span>MY ACCOUNT</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="cartLink" href="/#">
-                  <span className="cart"></span>
-                  <span>MY CART</span>
-                </a>
+                <span>MY CART</span>
               </li>
             </ul>
           </div>
