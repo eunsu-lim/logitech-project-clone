@@ -1,14 +1,20 @@
 .priceFilter {
-  background-color: orange;
   position: absolute;
-  margin: 130px 0 0 65px;
-  padding: 30px 30px 50px 30px;
+  margin: 89px 0 0 5px;
+  padding: 10px 20px 10px 20px;
+  background-color: white;
+  border: 1px solid #aaaaaa;
   z-index: 1;
 
   ul {
     li {
       width: 120px;
-      margin-top: 20px;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+    .highToLow {
+      padding-bottom: 17px;
+      border-bottom: 1px solid #aaaaaa;
     }
   }
 }

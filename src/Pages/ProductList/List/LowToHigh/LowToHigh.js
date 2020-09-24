@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../../ProductList/ProductList.scss";
+import "../../ProductList.scss";
 
-class MiceList extends Component {
+class LowToHighMiceList extends Component {
   state = {
     products: [],
     isChecked: false,
@@ -108,4 +108,4 @@ class MiceList extends Component {
   }
 }
 
-export default MiceList;
+export default LowToHighMiceList;

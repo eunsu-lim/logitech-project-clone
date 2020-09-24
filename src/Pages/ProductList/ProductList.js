@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from "../../Component/Nav/Nav";
 import NavBottom from "../../Component/NavBottom/SearchBar";
 import PriceFilter from "./PriceFilter/PriceFilter";
-import List from "../ProductList/List/List";
+import NewestMiceList from "./List/Newest/NewestMiceList";
 import SidebarFilter from "./sidebar/SidebarFilter";
 import SidebarfilterColletcion from "./sidebarCollection/SidebarfilterCollection";
 import Footer from "../../Component/Footer/Footer";
@@ -17,6 +17,7 @@ class ProductList extends Component {
       hideFilter: true,
       hideFilterText: "HIDE FILTERS",
       showFilterIcon: true,
+      showPriceFilter: false,
     };
   }
 
@@ -33,7 +34,14 @@ class ProductList extends Component {
     });
   }
 
+  handlePriceFilter() {
+    this.setState({
+      showPriceFilter: !this.state.showPriceFilter,
+    });
+  }
+
   render() {
+    const { showPriceFilter } = this.state;
     return (
       <div className="productList">
         <Nav />
@@ -66,13 +74,13 @@ class ProductList extends Component {
                 {this.state.hideFilterText}
               </span>
             </button>
-            <button>
+            <button onClick={() => this.handlePriceFilter()}>
               <img
                 src="https://www.logitech.com/images/icons/down-arrow.svg"
                 alt=""
               />
-              <p>SORTY BY: NEWEST</p>
-              <PriceFilter />
+              <p> SORTY BY: NEWEST</p>
+              {showPriceFilter ? <PriceFilter /> : null}
             </button>
           </div>
           <div className="filterContainer">
@@ -85,7 +93,7 @@ class ProductList extends Component {
               ) : null}
             </div>
             <div className="container">
-              <List />
+              <NewestMiceList />
             </div>
             <div></div>
           </div>
