@@ -270,20 +270,23 @@
         li {
           display: flex;
           flex-direction: column;
-          margin-right: 8px;
+          margin-right: 32px;
+          width: 400px;
 
           h4 {
-            margin: 20px 0;
+            margin: 20px 0 4px;
             font-size: 22px;
             text-transform: uppercase;
           }
 
           p {
             font-size: 16px;
+            font-weight: lighter;
             line-height: 28px;
 
             strong {
-              margin: 16px 0;
+              margin: 24px 0;
+              font-size: 16px;
             }
           }
         }
@@ -320,6 +323,7 @@
 
     ul {
       @include container;
+      width: 1280px;
       padding: 50px 0 40px;
       border-bottom: 1px solid #555;
 
@@ -327,7 +331,6 @@
         color: #fff;
         font-size: 12px;
         line-height: 2;
-        list-style: decimal;
       }
     }
   }
@@ -335,11 +338,12 @@
   .modalBox {
     display: none;
     position: fixed;
+    z-index: 101;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 0 180px;
+    padding: 0 200px;
     background-color: rgba(0, 0, 0, 0.8);
 
     .modalBg {
@@ -350,6 +354,9 @@
       bottom: 0;
 
       .closeBtn {
+        position: absolute;
+        right: 190px;
+        top: 60px;
         color: #fff;
         font-size: 20px;
         font-weight: 500;

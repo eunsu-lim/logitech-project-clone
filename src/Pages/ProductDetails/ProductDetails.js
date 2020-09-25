@@ -138,19 +138,20 @@ class ProductDetails extends Component {
         <section className="productFooter">
           <ul>
             <li>
-              Sound level comparison between Logitech Pebble M350 and Logitech
-              M170. Left click dBA measured by an independent lab at 1m.
+              1. Sound level comparison between Logitech Pebble M350 and
+              Logitech M170. Left click dBA measured by an independent lab at
+              1m.
             </li>
             <li>
-              Wireless range may vary based on environmental and computing
+              2. Wireless range may vary based on environmental and computing
               conditions.
             </li>
             <li>
-              Battery life may vary based on user and computing conditions.
+              3. Battery life may vary based on user and computing conditions.
               Battery included.
             </li>
             <li>
-              Wireless range may vary due to environmental and computing
+              4. Wireless range may vary due to environmental and computing
               condition
             </li>
           </ul>
