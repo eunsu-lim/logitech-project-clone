@@ -1,21 +1,17 @@
-.links {
+.infoBoxLink {
   padding-bottom: 10px;
   font-size: 14px;
   font-weight: 500;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &::after {
-    content: " >";
-  }
 
   a {
     &:hover {
       margin-right: 5px;
       transition-timing-function: linear;
       transition-duration: 0.1s;
+      text-decoration: underline;
+      &::after {
+        content: " >";
+      }
     }
   }
 }

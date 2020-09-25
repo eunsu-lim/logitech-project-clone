@@ -9,6 +9,7 @@
 
   &.isActive {
     display: block;
+    z-index: 100;
   }
 
   .loginModal {

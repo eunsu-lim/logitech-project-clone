@@ -15,14 +15,14 @@ class InfoBox extends Component {
     const {
       loginModal,
       createAccountModal,
-      handleClick,
-      handleCaClick,
+      openLoginModal,
+      openSignUpModal,
     } = this.props;
     return (
       <div
         className="myAccountBottom"
         onClick={
-          (loginModal && handleClick) || (createAccountModal && handleCaClick)
+          (loginModal && openLoginModal) || (createAccountModal && openSignUpModal)
         }
       >
         <ul className="infoBoxes">

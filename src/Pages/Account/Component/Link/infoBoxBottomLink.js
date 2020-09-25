@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./infoBoxLink.scss";
 
 class InfoBoxBottomLink extends Component {
@@ -8,8 +9,8 @@ class InfoBoxBottomLink extends Component {
       <ul>
         {links.map((link, index) => {
           return (
-            <li key={index} className="links">
-              <a href="http://localhost:3000/Account">{link}</a>
+            <li key={index} className="infoBoxLink">
+              <Link to="/Account">{link}</Link>
             </li>
           );
         })}
