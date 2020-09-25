@@ -35,7 +35,7 @@ export default class SidebarFilter extends Component {
       <div className="SidebarFilter">
         {sidebarFilterList.map((filter, index) => {
           return (
-            <ul>
+            <ul key={index}>
               <div className="filterTitle">
                 <button
                   className="filterCollection"

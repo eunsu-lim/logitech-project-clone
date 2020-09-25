@@ -29,9 +29,9 @@ class ProductList extends Component {
         LowHigh: "price_low_high",
       },
       priceFName: {
-        mice_list: "NEWEST",
-        price_high_low: "Price: High to Low",
-        price_low_high: "Price: Low to High",
+        NEWEST: "NEWEST",
+        HighLow: "Price: High to Low",
+        LowHigh: "Price: Low to High",
       },
       filterAddress: "",
       sortBy: "NEWEST",
@@ -87,14 +87,14 @@ class ProductList extends Component {
     });
   }
 
-  callbackFunction = () => {
-    const { filterList, filterAddress, priceFName, sortBy } = this.state;
-    setTimeout(() => {
-      this.setState({
-        sortBy: priceFName[filterAddress],
-      });
-    }, 0);
-  };
+  // callbackFunction = () => {
+  //   const { filterList, filterAddress, priceFName, sortBy } = this.state;
+  //   setTimeout(() => {
+  //     this.setState({
+  //       sortBy: priceFName[e.target.id],
+  //     });
+  //   }, 0);
+  // };
 
   showPriceFilter = (e) => {
     const { filterList, filterAddress, priceFName, sortBy } = this.state;
@@ -102,10 +102,11 @@ class ProductList extends Component {
     this.setState(
       {
         filterAddress: filterList[e.target.id],
-        // sortBy: priceFName[filterAddress],
+        sortBy: priceFName[e.target.id],
+        // sortBy: priceFName[filterList[e.target.id]],
       },
-      () => this.handleFetch(),
-      this.callbackFunction()
+      () => this.handleFetch()
+      // this.callbackFunction()
     );
   };
   render() {
@@ -177,23 +178,13 @@ class ProductList extends Component {
             </div>
 
             <div className="container">
-              <ul className="MiceList">
+              <ul className="miceList">
                 {products.map((product, index) => {
                   if (index !== 2 && product.product_details !== "") {
                     return (
                       <li className="List" key={index}>
                         <div className="productContainer">
                           <div className="productImage">
-                            <div className="check" onClick={this.isChecked}>
-                              <input
-                                type="checkbox"
-                                className="productCheckbox"
-                                checked={isChecked}
-                              />
-                              <label for="productCheckbox">
-                                <span></span>Compare
-                              </label>
-                            </div>
                             <img
                               alt={product.product_title}
                               src={`${product.thumbnail_url}`}

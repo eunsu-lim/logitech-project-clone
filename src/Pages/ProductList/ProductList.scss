@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     background-color: #00b8fc;
+
     .categoryBox {
       width: 1280px;
       position: relative;
@@ -162,6 +163,7 @@
             text-align: left;
             color: #6f7678;
             white-space: initial;
+
             input {
               margin-right: 10px;
             }
@@ -221,17 +223,6 @@
               width: 276px;
               height: 276px;
               background-color: #f4f4f4;
-
-              .check {
-                position: absolute;
-                top: 15px;
-                left: 10px;
-                display: none;
-                span {
-                  margin-right: 5px;
-                }
-              }
-
               img {
                 position: absolute;
                 top: 50%;
