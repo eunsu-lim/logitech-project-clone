@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class PriceFilter extends Component {
   render() {
-    const { showPriceFilter, handleFetch } = this.props;
+    const { showPriceFilter } = this.props;
     return (
       <div className="priceFilter">
         <ul onClick={showPriceFilter}>
