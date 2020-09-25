@@ -1,81 +1,72 @@
 import React, { Component } from "react";
-import SIDIEBARFILTER from "./SidebarFilterData";
-import SidebarSubFilter from "./SidebarSubFilter";
+import SIDIEBAR_PRODUCT_FILTER from "./SidebarFilterData";
+//import SidebarSubFilter from "./SidebarSubFilter";
 
 export default class SidebarFilter extends Component {
   constructor() {
     super();
     this.state = {
-      filterList: [],
+      sidebarFilterList: SIDIEBAR_PRODUCT_FILTER,
       isOpened: false,
-      collectionIcon: "https://www.logitech.com/images/icons/icon-expand.svg",
+      isCheckOpened: [false, false, false, false, false, false],
+      expandIcon: "https://www.logitech.com/images/icons/icon-expand.svg",
+      collapseIcon: "https://www.logitech.com/images/icons/icon-collapse.svg",
     };
   }
 
-  componentDidMount() {
+  openSubFilter = (idx) => {
+    const { isCheckOpened } = this.state;
     this.setState({
-      filterList: SIDIEBARFILTER,
-    });
-  }
-
-  openSubFilter = () => {
-    const expandIcon = "https://www.logitech.com/images/icons/icon-expand.svg";
-    const collapseIcon =
-      "https://www.logitech.com/images/icons/icon-collapse.svg";
-    this.setState({
-      isOpened: !this.state.isOpened,
-      collectionIcon: !this.state.isOpened ? collapseIcon : expandIcon,
+      isCheckOpened: isCheckOpened.map((isChecked, index) => {
+        if (index === idx) {
+          return !isChecked;
+        }
+        return isChecked;
+      }),
     });
   };
 
   render() {
-    const { filterList } = this.state;
+    const { sidebarFilterList, isCheckOpened } = this.state;
+    const collapseIcon =
+      "https://www.logitech.com/images/icons/icon-collapse.svg";
+    const expandIcon = "https://www.logitech.com/images/icons/icon-expand.svg";
     return (
-      <div>
-        {filterList.map((filter, index) => {
+      <div className="SidebarFilter">
+        {sidebarFilterList.map((filter, index) => {
           return (
-            <div className="filterTitle">
-              <button className="filterCollection" onClick={this.openSubFilter}>
-                <span
-                  className={this.state.isOpened ? "expanded" : "collapsed"}
+            <ul key={index}>
+              <div className="filterTitle">
+                <button
+                  className="filterCollection"
+                  onClick={() => this.openSubFilter(index)}
                 >
-                  {filter.filterTitle}
-                </span>
-                <img src={this.state.collectionIcon} />
-              </button>
-              {this.state.isOpened && <SidebarSubFilter />}
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-}
-
-{
-  /* render() {
-    const { filterList } = this.state;
-    return (
-      <div>
-        {filterList.map((filter) => {
-          return (
-            <ul>
-              {filter.filterTitle}
-              <li>
-                {filter.filterList.map((subfilter) => {
-                  return (
-                    <div>
-                      <input type="checkbox" name={subfilter} />
-                      {subfilter}
-                    </div>
-                  );
-                })}
-              </li>
+                  <span
+                    className={isCheckOpened[index] ? "expanded" : "collapsed"}
+                  >
+                    {filter.filterTitle}
+                  </span>
+                  <img src={isCheckOpened[index] ? collapseIcon : expandIcon} />
+                </button>
+                {/*<SidebarSubFilter />} */}
+                <li className="filterCollectionList">
+                  <label className="filterCollectionLabel">
+                    {isCheckOpened[index] &&
+                      filter.filterList.map((subfilter) => {
+                        return (
+                          <div>
+                            <input type="button" />
+                            <label className="subfilter">{subfilter}</label>
+                          </div>
+                        );
+                      })}
+                  </label>
+                </li>
+              </div>
             </ul>
           );
         })}
       </div>
     );
   }
-} */
 }

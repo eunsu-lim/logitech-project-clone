@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "./ProductSection.scss";
 import { api } from "../../config/api.js";
 
@@ -11,7 +12,8 @@ class ProductSection extends Component {
   };
 
   componentDidMount() {
-    fetch(`${api}/products/product_mice/100`) // 88- 115
+    const id = this.props.match.params.id;
+    fetch(`${api}/products/product_mice/${id}`) // 88- 115
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -124,4 +126,4 @@ class ProductSection extends Component {
   }
 }
 
-export default ProductSection;
+export default withRouter(ProductSection);

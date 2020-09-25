@@ -1,4 +1,4 @@
-const SIDIEBARFILTER = [
+const SIDEBAR_PRODUCT_FILTER = [
   {
     id: 1,
     filterTitle: "CONNECTIVITY",
@@ -44,17 +44,19 @@ const SIDIEBARFILTER = [
       "USB-C Charging",
     ],
   },
+  {
+    id: 7,
+    filterTitle: "ACTIVE & USE",
+    filterList: [
+      "E-mailing",
+      "Web Browsing",
+      "Text Editing",
+      "Spreadsheet Navigation",
+      "Photo, Video, Music Editing",
+      `3D Creation, Software 
+      　　Developments`,
+    ],
+  },
 ];
-export default SIDIEBARFILTER;
-// {
-//   id: 7,
-//   filterTitle: "ACTIVE & USE",
-//   filterList: [
-//     "E-mailing",
-//     "Web Browsing",
-//     "Text Editing",
-//     "Spreadsheet Navigation",
-//     "Photo, Video, Music Editing",
-//     "3D Creation, Software Developments",
-//   ],
-// },
+
+export default SIDEBAR_PRODUCT_FILTER;

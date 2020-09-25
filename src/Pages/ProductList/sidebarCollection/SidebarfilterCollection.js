@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Filter1 from "./Filter1";
+import CollectionFilter from "./SidebarCollectionSubfilter";
 
-class filterConnectivity extends Component {
+class SidebarfilterColletcion extends Component {
   state = {
     isOpened: false,
     collectionIcon: "https://www.logitech.com/images/icons/icon-expand.svg",
@@ -18,18 +18,19 @@ class filterConnectivity extends Component {
   };
 
   render() {
+    const { isOpened, collectionIcon } = this.state;
     return (
       <div className="filterTitle">
         <button className="filterCollection" onClick={this.openFilter}>
-          <span className={this.state.isOpened ? "expanded" : "collapsed"}>
+          <span className={isOpened ? "expanded" : "collapsed"}>
             COLLECTION
           </span>
-          <img src={this.state.collectionIcon} />
+          <img alt="icon" src={collectionIcon} />
         </button>
-        {this.state.isOpened && <Filter1 />}
+        {isOpened && <CollectionFilter />}
       </div>
     );
   }
 }
 
-export default filterConnectivity;
+export default SidebarfilterColletcion;

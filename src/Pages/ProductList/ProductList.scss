@@ -13,48 +13,57 @@
     justify-content: center;
     background-color: #00b8fc;
 
-    .categoryData {
-      align-self: center;
+    .categoryBox {
+      width: 1280px;
+      position: relative;
       display: flex;
-      flex-direction: column;
-      .miceKeyboardMice {
-        width: 300px;
-        .miceKeyboard {
-          width: 160px;
-          text-decoration-line: underline;
+      align-items: center;
+
+      .categoryData {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+
+        .miceKeyboardMice {
+          width: 300px;
+
+          .miceKeyboard {
+            width: 160px;
+            text-decoration-line: underline;
+          }
+        }
+
+        p {
+          font-size: 20px;
+          margin: 18px 0px 11px 8px;
+          font-weight: 400;
+        }
+
+        h1 {
+          margin: 8px 0 0 8px;
+          font-weight: bold;
+          font-size: 70px;
+          letter-spacing: 1px;
+        }
+
+        h6 {
+          margin-left: 8px;
+          font-size: 17.28px;
+          margin: 11px 0px;
         }
       }
 
-      p {
-        font-size: 20px;
-        margin: 18px 0px 11px 8px;
-        font-weight: 400;
+      .mouseImage {
+        img {
+          position: absolute;
+          right: 3%;
+          bottom: 0;
+        }
       }
-
-      h1 {
-        margin: 8px 0 0 8px;
-        font-weight: bold;
-        font-size: 70px;
-        letter-spacing: 1px;
-      }
-
-      h6 {
-        margin-left: 8px;
-        font-size: 17.28px;
-        margin: 11px 0px;
-      }
-    }
-
-    .mouseImage {
-      display: flex;
-      align-items: flex-end;
-      // width: 800px;
-      height: 100%;
     }
   }
 
   .filterProductContainer {
-    // padding: 0 30px;
     width: 100%;
     max-width: 1250px;
     display: flex;
@@ -67,7 +76,7 @@
       justify-content: space-between;
       height: 50px;
       width: 100%;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid #aaaaaa;
 
       button {
         &:first-child {
@@ -96,7 +105,6 @@
     }
 
     .filterContainer {
-      margin-top: 10px;
       padding: 0 20px;
       display: flex;
     }
@@ -112,9 +120,9 @@
 
       .filterTitle {
         width: 250px;
-        padding: 20px 60px 20px 20px;
+        padding: 30px 60px 20px 20px;
         line-height: 150%;
-        border-bottom: 1px solid #6f7678;
+        border-bottom: 1px solid #aaaaaa;
 
         button {
           margin: 0 60px 10px 0;
@@ -145,6 +153,7 @@
         }
 
         .filterCollectionList {
+          width: 250px;
           margin-bottom: 3px;
 
           .filterCollectionLabel {
@@ -153,6 +162,11 @@
             font-weight: lighter;
             text-align: left;
             color: #6f7678;
+            white-space: initial;
+
+            input {
+              margin-right: 10px;
+            }
           }
         }
       }
@@ -175,7 +189,7 @@
             border: 1px solid transparent;
 
             &:hover {
-              border: 1px solid black;
+              border: 1px solid #aaaaaa;
 
               .productInfo {
                 width: 276px;
@@ -209,29 +223,6 @@
               width: 276px;
               height: 276px;
               background-color: #f4f4f4;
-
-              .check {
-                position: absolute;
-                top: 15px;
-                left: 10px;
-                display: none;
-                span {
-                  margin-right: 5px;
-                }
-                input[type="checkbox"] {
-                  display: none;
-                }
-                input[type="checkbox"] + label span {
-                  display: inline-block;
-                  width: 20px;
-                  height: 20px;
-                  background-color: white;
-                }
-                input[type="checkbox"]:checkecd + label sapn {
-                  background-color: black;
-                }
-              }
-
               img {
                 position: absolute;
                 top: 50%;

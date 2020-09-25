@@ -1,4 +1,4 @@
-const DATA = [
+const COLLECTION_LIST = [
   {
     id: 1,
     filterName: "MX Performance",
@@ -30,4 +30,4 @@ const DATA = [
   },
 ];
 
-export default DATA;
+export default COLLECTION_LIST;

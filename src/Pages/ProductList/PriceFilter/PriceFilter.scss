@@ -1,0 +1,26 @@
+.priceFilter {
+  position: absolute;
+  margin: 111px 0 0 5px;
+  padding: 0px 20px 10px 20px;
+  background-color: white;
+  border: 1px solid #aaaaaa;
+  z-index: 1;
+
+  ul {
+    li {
+      width: 120px;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    .newest {
+      padding-bottom: 17px;
+      border-bottom: 1px solid #aaaaaa;
+    }
+
+    .price_high_low {
+      padding-bottom: 17px;
+      border-bottom: 1px solid #aaaaaa;
+    }
+  }
+}
