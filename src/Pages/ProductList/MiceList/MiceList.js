@@ -11,7 +11,7 @@ export default class MiceList extends Component {
                 <li className="List" key={index}>
                   <div className="productContainer">
                     <div className="productImage">
-                      <div className="check" onClick={this.isChecked}>
+                      {/* <div className="check" onClick={this.isChecked}>
                         <input
                           type="checkbox"
                           className="productCheckbox"
@@ -20,7 +20,7 @@ export default class MiceList extends Component {
                         <label for="productCheckbox">
                           <span></span>Compare
                         </label>
-                      </div>
+                      </div> */}
                       <img
                         alt={product.product_title}
                         src={`${product.thumbnail_url}`}
