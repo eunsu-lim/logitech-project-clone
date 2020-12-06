@@ -43,4 +43,4 @@
   - **Product detail Page Back-end API  통신** 
      **(각 상품의 이미지, 상품 이름, 색상 정보 불러오기)**
   - **slick slider 사용한 이미지 슬라이더**
-  - **Video iframe **
+  - **Video iframe**
