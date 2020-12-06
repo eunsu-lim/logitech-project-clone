@@ -38,9 +38,9 @@
   - Product List Back-end API 통신
   - Filter 기능 (Back-end API) 가격별 기능 추가
   
-- **상품 상세 페이지**
- ** - Logitech mice Product detail page layout
-  - Product detail Page Back-end API  통신 
-     (각 상품의 이미지, 상품 이름, 색상 정보 불러오기)
-  - slick slider 사용한 이미지 슬라이더
-  - Video iframe **
+- **상품 상세 페이지(내가 맡은 부분)** 
+  - **Logitech mice Product detail page layout**
+  - **Product detail Page Back-end API  통신** 
+     **(각 상품의 이미지, 상품 이름, 색상 정보 불러오기)**
+  - **slick slider 사용한 이미지 슬라이더**
+  - **Video iframe **
